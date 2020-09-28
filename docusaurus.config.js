@@ -8,22 +8,47 @@ module.exports = {
   organizationName: 'intilery', // Usually your GitHub org/user name.
   projectName: 'developer-docs', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      disableSwitch: true,
+    },
+    // announcementBar: {
+    //   id: 'support_us', // Any value that will identify this message.
+    //   content:
+    //       'We are looking to revamp our docs, please <a href="https://github.com/Intilery/intilery.github.io/issues" target="_blank">raise an issue</a> for more help',
+    //   backgroundColor: '#213247', // Defaults to `#fff`.
+    //   textColor: '#fea621', // Defaults to `#000`.
+    // },
     navbar: {
-      title: 'Intilery',
+      title: 'intilery',
       logo: {
-        alt: 'Intilery',
+        alt: 'intilery',
         src: 'img/logo.png',
       },
       items: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
+          to: 'docs/guides/contents',
+          label: 'Guides',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/intilery/developer-docs',
+          to: 'docs/apis/api1',
+          label: 'APIs',
+          position: 'left',
+        },
+        {
+          to: 'docs/tag/tag1',
+          label: 'Tag',
+          position: 'left',
+        },
+        {
+          to: 'docs/schema/intilery',
+          activeBasePath: 'docs/schema/intilery',
+          label: 'Schema',
+          position: 'left',
+        },
+        {to: 'blog', label: 'Blog', position: 'right'},
+        {
+          href: 'https://github.com/Intilery/intilery.github.io',
           label: 'GitHub',
           position: 'right',
         },
@@ -37,11 +62,11 @@ module.exports = {
           items: [
             {
               label: 'API Guide',
-              to: 'docs/',
+              to: 'docs/apis',
             },
             {
               label: 'JavaScript Tag',
-              to: 'docs/',
+              to: 'docs/tag',
             },
           ],
         },
@@ -71,7 +96,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/intilery/developer-docs',
+              href: 'https://github.com/Intilery/intilery.github.io',
             },
           ],
         },
@@ -84,18 +109,14 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'api1',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/intilery/developer-docs/edit/master/website/',
+            'https://github.com/Intilery/intilery.github.io/edit/master/website/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
           editUrl:
-            'https://github.com/intilery/developer-docs/edit/master/website/blog/',
+            'https://github.com/Intilery/intilery.github.io/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

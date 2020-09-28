@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e36f276a-e288-4736-ac7f-098e28319424" name="Default Changelist" comment="" />
+    <list default="true" id="e36f276a-e288-4736-ac7f-098e28319424" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/guides/contents.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/guides/faq.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/schema/contents.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/schema/gaming.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/schema/intilery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/schema/retail.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/undraw_intilery_focus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/undraw_intilery_mountain.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/undraw_intilery_power.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/api1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/apis/api1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/style-guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/guides/style-guide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tag1.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tag/tag1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docusaurus.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/docusaurus.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sidebars.js" beforeDir="false" afterPath="$PROJECT_DIR$/sidebars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/undraw_docusaurus_mountain.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/undraw_docusaurus_react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/undraw_docusaurus_tree.svg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="83650125-8c75-447b-8c42-1a506d267f29" />
   <component name="MavenImportPreferences">
@@ -16,6 +67,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1g61NnSLc7cNjzYI0cJfnYxbHYA" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,12 +78,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML&#10;JavaScript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/schema" />
+    <property name="nodejs_package_manager_path" value="yarn" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/guides" />
       <recent name="$PROJECT_DIR$/docs" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/docs/tag" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/schema" />
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/docs" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -41,17 +106,48 @@
       <option name="presentableId" value="Default" />
       <updated>1597420195314</updated>
       <workItem from="1597420196713" duration="43000" />
-      <workItem from="1597420246199" duration="1371000" />
+      <workItem from="1597420246199" duration="5383000" />
+      <workItem from="1597764397007" duration="440000" />
+      <workItem from="1600167204926" duration="583000" />
+      <workItem from="1600174339458" duration="1682000" />
+      <workItem from="1600339939460" duration="1087000" />
+      <workItem from="1600349191487" duration="39000" />
+      <workItem from="1600434558693" duration="1378000" />
+      <workItem from="1601301940610" duration="7795000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="537" y="298" width="606" height="476" key="find.popup" timestamp="1597421197309">
+    <state x="100" y="123" width="1293" height="827" key="DiffContextDialog" timestamp="1600341249397">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="537" y="298" width="606" height="476" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1597421197309" />
+    <state x="100" y="123" width="1293" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1600341249397" />
+    <state width="509" height="446" key="SwitcherDM" timestamp="1601306082097">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state width="509" height="446" key="SwitcherDM/0.23.1680.1027@0.23.1680.1027" timestamp="1601306082097" />
+    <state x="550" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600339944090">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="550" y="457" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1680.1027@0.23.1680.1027" timestamp="1600339944090" />
+    <state x="537" y="298" width="606" height="476" key="find.popup" timestamp="1601304914811">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="537" y="298" width="606" height="476" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1601304914811" />
   </component>
 </project>

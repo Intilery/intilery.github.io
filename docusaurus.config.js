@@ -62,11 +62,11 @@ module.exports = {
           items: [
             {
               label: 'API Guide',
-              to: 'docs/apis',
+              to: 'docs/apis/api1',
             },
             {
               label: 'JavaScript Tag',
-              to: 'docs/tag',
+              to: 'docs/tag/tag1',
             },
           ],
         },

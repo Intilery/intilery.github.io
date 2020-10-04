@@ -4,4 +4,4 @@ title: Gaming Schema
 sidebar_label: Gaming
 ---
 
-Gaming
+Coming soon

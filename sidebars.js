@@ -6,7 +6,8 @@ module.exports = {
     'Getting Started': ['apis/api1'],
   },
     tag: {
-      'Getting Started': ['tag/tag1'],
+      'Getting Started': ['tag/tag1', 'tag/reference'],
     },
-    schema:  ["schema/contents", "schema/intilery", "schema/retail", "schema/gaming"],
+    schema:  ["schema/contents", "schema/intilery", "schema/screen", "schema/common",
+    "schema/identify", "schema/mobile", "schema/track", "schema/email", "schema/retail", "schema/gaming"],
 };

@@ -4,7 +4,7 @@ title: Common Fields
 sidebar_label: Common
 ---
 
-# Spec: Common Fields
+# Common Fields
 
 In the Intilery [Schema](contents) all the [API calls](/apis/api1) have a common structure, and a few common fields.
 

@@ -12,28 +12,28 @@ The Intilery Schema has three components.
 
 First, it **outlines the semantic definition of the customer data we capture across all of Intilery's libraries and APIs**. There are four API calls in the Schema. They each represent a distinct type of semantic information about a customer. Every call shares the same [common fields](common).
 
-- [Identify](/schema/identify): who is the customer?
-- [Track](https://segment.com/docs/connections/spec/track/): what are they doing?
-- [Page](https://segment.com/docs/connections/spec/page/): what web page are they on?
-- [Screen](/schema/screen): what app screen are they on?
+- [Identify](./identify): who is the customer?
+- [Track](./track): what are they doing?
+- [Page]: what web page are they on?
+- [Screen](./screen): what app screen are they on?
 
 ### Engagement Channels
 
 Second, it **details the event data we capture across customer engagement channels**.
 
-- [Email](/schema/email)
+- [Email](./email)
 - SMS
-- [Live Chat](https://segment.com/docs/connections/spec/live-chat/)
-- [A/B Testing](https://segment.com/docs/connections/spec/ab-testing/)
+- [Live Chat]
+- [A/B Testing]
 
 ## Industry Specs
 
 Third, it **shares the events we recommend you track for a particular industry based on our experience working with many customers**. When you respect these specs, it makes your data more robust and portable, as well as enabling you to choose other technologies to move data to and from Intilery, such as Google, Facebook, Segment, Zapier
 
-- [Mobile](/schema/mobile)
+- [Mobile](./mobile)
 
-- [E-Commerce](/schema/retail)
+- [E-Commerce](./retail)
 
-- [Video](https://segment.com/docs/connections/spec/video/)
+- [Video]
 
-- [B2B SaaS](https://segment.com/docs/connections/spec/b2b-saas/)
+- [B2B SaaS]

@@ -94,7 +94,7 @@ The track call has the following fields:
 | options    | optional | Object   | {}Mostly not required, though see anonymous ID below         |
 | callback   | optional | Function | A function that is executed after a short timeout, giving the browser time to make outbound requests first. |
 
-The only required argument to track in analytics.js is an event name string. You can read more about [how we recommend naming your events](../schema//track#event).
+The only required argument to track in analytics.js is an event name string. You can read more about [how we recommend naming your events](../schema/track#event).
 
 Example track call:
 

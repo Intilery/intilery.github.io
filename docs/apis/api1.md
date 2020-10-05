@@ -250,7 +250,7 @@ You can import historical data by adding the `timestamp` argument to any of your
 
 The `batch` method lets you send a series of `identify`, `group`, `track`, `page` and `screen` requests in a single batch, saving on outbound requests.
 
-There is a maximum of `500KB` per batch request and `32KB` per call.
+There is a maximum of `1mb` per batch request and `32KB` per call.
 
 Here’s the what the `batch` request signature looks like:
 

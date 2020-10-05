@@ -1,7 +1,7 @@
 ---
 id: intilery
 title: Intilery Default Schema
-sidebar_label: Default
+sidebar_label: Intilery Schema
 ---
 
 The following events are reserved events in the Intilery Default Schema, you should not use these Event names/types unless for their intended purpose.

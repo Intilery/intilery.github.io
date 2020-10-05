@@ -4,7 +4,7 @@ title: Common Fields
 sidebar_label: Common
 ---
 
-In the Intilery [Schema](contents) all the [API calls](/docs/apis/api1) have a common structure, and a few common fields.
+In the Intilery [Schema](contents) all the [API calls](../apis/api1) have a common structure, and a few common fields.
 
 Not all fields are required for all events, the required fields for each event are detailed in the corrisponding event schema
 
@@ -99,14 +99,14 @@ In more detail these common fields for every API call are:
 
 | Field         |                                          | Type   | Description                                                  |
 | ------------- | ---------------------------------------- | ------ | ------------------------------------------------------------ |
-| `anonymousId` | *optional if userID is set instead*      | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required. See the [Identities docs](identify#identities) for more details. |
-| `context`     | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](common#context) for more details. |
+| `anonymousId` | *optional if userID is set instead*      | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
+| `context`     | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](../schema/common#context) for more details. |
 | `messageId`   | *implicit*                               | String | Automatically collected by Segment, a unique identifier for each message that lets you find an individual message across the API. |
-| `receivedAt`  | *implicit*                               | Date   | Automatically set by Segment, the timestamp of when a message is received by Segment It is an [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date string. See the [Timestamps fields docs](https://segment.com/docs/connections/spec/common#timestamps) for more detail. |
-| `sentAt`      | *optional*                               | Date   | Timestamp of when a message is sent to Segment, used for clock skew correction It is set automatically by the Segment tracking libraries. It is an [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date string. See the [Timestamps fields docs](https://segment.com/docs/connections/spec/common#timestamps) for more detail. |
-| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Segment Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](https://segment.com/docs/connections/spec/common#timestamps) for more detail. |
+| `receivedAt`  | *implicit*                               | Date   | Automatically set by Segment, the timestamp of when a message is received by Segment It is an [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date string. See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
+| `sentAt`      | *optional*                               | Date   | Timestamp of when a message is sent to Segment, used for clock skew correction It is set automatically by the Segment tracking libraries. It is an [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date string. See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
+| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Segment Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
 | `type`        | *implicit*                               | String | Type of message, corresponding to the API method: `'identify'`, `'group'`, `'track'`, `'page'`, `'screen'` or `'alias'`. |
-| `userId`      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](identify#identities) for more details. |
+| `userId`      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
 | `version`     | *implicit*                               | Number | Version of the Tracking API that received the message, automatically set by Segment. |
 
 Beyond this common structure, each API call adds a few specialized top-level fields.
@@ -132,7 +132,7 @@ Context is a dictionary of extra information that provides useful context about 
 | `screen`    | Object   | Dictionary of information about the device’s screen, containing `density`, `height` and `width` |
 | `timezone`  | String   | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York` |
 | `groupId`   | String   | Group / Account ID.  This is useful in B2B use cases where you need to attribute your non-group calls to a company or account. It is relied on by several Customer Success and CRM tools. |
-| `traits`    | Object   | Dictionary of `traits` of the current user  This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](identify/#traits). |
+| `traits`    | Object   | Dictionary of `traits` of the current user  This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](../schema/identify/#traits). |
 | `userAgent` | String   | User agent of the device making the request                  |
 
 ## Context Fields Automatically Collected
@@ -184,7 +184,7 @@ Other libraries only collect `context.library`, any other context variables must
 | timezone                 |              | √             | √                 |
 
 - IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-- Our Android library collects `screen.density` with [this method](https://segment.com/docs/connections/spec/common/#context-fields-automatically-collected).
+- Our Android library collects `screen.density` with [this method](../schema/common/#context-fields-automatically-collected).
 
 ## Timestamps
 

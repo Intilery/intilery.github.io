@@ -19,9 +19,9 @@ The first three examples are pretty self-explanatory, but many might ask: why yo
 
 Let’s imagine this scenario:
 
-Calling `identify` in one of our [libraries](https://segment.com/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
+Calling `identify` in one of our  the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
 
-Here’s the payload of a typical `identify` call with most [common fields](common) removed:
+Here’s the payload of a typical `identify` call with most [common fields](../schema/common) removed:
 
 ```javascript
 {

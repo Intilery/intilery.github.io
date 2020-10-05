@@ -1,14 +1,12 @@
 ---
 id: retail
 title: Retail/Ecommerce Schema
-sidebar_label: Retail
+sidebar_label: Retail/Ecommerce
 ---
 
-This schema is based on the Segment V2 ecommerce spec it has been extended to work in a multinational audience, particularly currencies, which are not supported in the Segment spec
+Intilery’s e-commerce Schema helps define the journey for a customer as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase.
 
 **Note:** The convention in the UK is to call the cart a "basket", keeping to the Segment spec "basket" is called a "cart"
-
-Intilery’s e-commerce Schema helps define the journey for a customer as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase.
 
 ## Event Lifecycles
 

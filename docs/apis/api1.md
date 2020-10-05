@@ -165,7 +165,7 @@ Example added to basket event
 | **properties** | optional     | Free-form dictionary of properties of the event, like price or sku |
 | **context**    | optional     | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like page or userAgent |
 
-The track endpoint can also be used to pass specific [Track Action Commands](https://intilery.atlassian.net/wiki/spaces/HEA/pages/1857880109/Track+Action+Commands)  to trigger campaign sends.
+The track endpoint can also be used to pass specific [Track Action Commands](./actions)  to trigger campaign sends.
 
 # Page Action
 
@@ -209,7 +209,7 @@ Example page call:
 
 ## Screen
 
-The [screen](https://segment.com/docs/connections/spec/screen/) method let you record whenever a user sees a screen of your mobile app.
+The [screen](../schema/screen) method let you record whenever a user sees a screen of your mobile app.
 
 You’ll want to send the `screen` message whenever a user requests a page of your app.
 
@@ -226,19 +226,16 @@ POST https://api.segment.io/v1/screen
 
 The `screen` call has the following fields:
 
-_
+| Field         |                                          | Type   | Description                                                  |
+| ------------- | ---------------------------------------- | ------ | ------------------------------------------------------------ |
+| `anonymousId` | *optional if userID is set instead*      | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
+| `context`     | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](../schema/common#context) for more details. |
+| `name`        | *optional*                               | String | Name of the screen See the [Name field docs](../schema/screen#name) for more details. |
+| `properties`  | *optional*                               | Object | Free-form dictionary of properties of the screen, like `name` See the [Properties field docs](../schema/screen#properties) for a list of reserved property names. |
+| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Segment Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
+| `userId`      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
 
-| Field          |                                          | Type   | Description                                                  |
-| -------------- | ---------------------------------------- | ------ | ------------------------------------------------------------ |
-| `anonymousId`  | *optional if userID is set instead*      | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required. See the [Identities docs](https://segment.com/docs/connections/spec/identify#identities) for more details. |
-| `context`      | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](https://segment.com/docs/connections/spec/common#context) for more details. |
-| `integrations` | *optional*                               | Object | Dictionary of destinations to either enable or disable See the [Destinations field docs](https://segment.com/docs/connections/spec/common#integrations) for more details. |
-| `name`         | *optional*                               | String | Name of the screen See the [Name field docs](https://segment.com/docs/connections/spec/screen#name) for more details. |
-| `properties`   | *optional*                               | Object | Free-form dictionary of properties of the screen, like `name` See the [Properties field docs](https://segment.com/docs/connections/spec/screen#properties) for a list of reserved property names. |
-| `timestamp`    | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Segment Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](https://segment.com/docs/connections/spec/common#timestamps) for more detail. |
-| `userId`       | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](https://segment.com/docs/connections/spec/identify#identities) for more details. |
-
-Find details on the **`screen` payload** in our [Spec](https://segment.com/docs/connections/spec/screen/).
+Find details on the **`screen` payload** in our [Spec](../schema/screen).
 
 ## Historical Import
 
@@ -250,7 +247,7 @@ Historical imports can only be done into destinations that can accept historical
 
 ## Batch
 
-The `batch` method lets you send a series of `identify`, `group`, `track`, `page` and `screen` requests in a single batch, saving on outbound requests. Our server-side and mobile [sources](https://segment.com/docs/connections/sources/) make use of this method automatically for higher performance.
+The `batch` method lets you send a series of `identify`, `group`, `track`, `page` and `screen` requests in a single batch, saving on outbound requests.
 
 There is a maximum of `500KB` per batch request and `32KB` per call.
 
@@ -310,11 +307,10 @@ POST https://api.segment.io/v1/batch
 }
 ```
 
-| Field                             |                                                              | Type | Description |
-| --------------------------------- | ------------------------------------------------------------ | ---- | ----------- |
-| `batch` *Array*                   | An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `type` property with a valid method name. |      |             |
-| `context` *Object, optional*      | The same as [Context](https://segment.com/docs/connections/spec/common#context) for other calls, but it will be merged with any context inside each of the items in the batch. |      |             |
-| `integrations` *Object, optional* | The same as [Destinations](https://segment.com/docs/connections/spec/common#integrations) for other calls, but it will be merged with any destinations inside each of the items in the batch. |      |             |
+| Field                        |                                                              | Type | Description |
+| ---------------------------- | ------------------------------------------------------------ | ---- | ----------- |
+| `batch` *Array*              | An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `type` property with a valid method name. |      |             |
+| `context` *Object, optional* | The same as [Context](../schema/common#context) for other calls, but it will be merged with any context inside each of the items in the batch. |      |             |
 
 ## Collecting IP Address
 
@@ -327,10 +323,4 @@ If you’re having trouble we have a few tips that help common problems.
 ### No events in my debugger
 
 1. Double check that you’ve set up the library correctly.
-2. Make sure that you’re calling one of our API methods once the library is successfully installed—[`identify`](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#identify), [`track`](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/#track), etc.
-
-### No events in my end tools
-
-1. Double check your credentials for that destination.
-2. Make sure that the destination you are troubleshooting can accept server-side API calls. Compatibility is shown on the [destination docs](https://segment.com/docs/connections/destinations/) pages and on the sheets on your Segment source Destinations page.
-3. Check out the [destination’s documentation](https://segment.com/docs/connections/destinations/) to see if there are other requirements for using the method and destination you’re trying to get working.
+2. Make sure that you’re calling one of our API methods once the library is successfully installed—[`identify`](../api/api2/#identify), [`track`](../api1#track), etc.

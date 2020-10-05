@@ -4,7 +4,7 @@ title: Native Mobile Schema
 sidebar_label: Mobile
 ---
 
-One of the core components of the Intilery [Schema](contents) is the [`track`](https://segment.com/docs/connections/spec/track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you’ll want to send **specific event names** that we recognize semantically. That way, we can transform them correctly before actioning them in the Intilery CDP and Customer Engagement Platform.
+One of the core components of the Intilery [Schema](./contents) is the [`track`](./track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you’ll want to send **specific event names** that we recognize semantically. That way, we can transform them correctly before actioning them in the Intilery CDP and Customer Engagement Platform.
 
 By standardizing the events that comprise the core **mobile application lifecycle** and associated **mobile campaign and referral events**, Intilery can, wherever possible, automatically collect and action these events on your behalf and build downstream actions which take full advantage of the semantic meaning associated with these events and their properties.
 

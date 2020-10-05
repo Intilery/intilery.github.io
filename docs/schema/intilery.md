@@ -48,3 +48,13 @@ These Events can be founf in the Intilery app on the Schema page shown below
 - [Track](./track)
 - Page
 - Screen
+
+## Industry
+
+The following industry schemas can be added to your account within the Intilery CDP, enabling default events to be automatically recognised
+
+- [Retail/Ecommerce](./retail)
+- [Gaming](./gaming)
+- Travel
+- Insurance
+- B2B

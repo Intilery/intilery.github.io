@@ -54,7 +54,7 @@ Here’s a complete example of a `track` call:
       "referrer": "",
       "search": "",
       "title": "Analytics Academy",
-      "url": "https://segment.com/academy/"
+      "url": "https://intilery.com/academy/"
     },
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36",
     "ip": "108.0.78.21"

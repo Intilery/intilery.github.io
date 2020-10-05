@@ -12,7 +12,7 @@ By standardizing the events that comprise the core **mobile application lifecycl
 
 ## Overview of Events
 
-The Segment Native Mobile Spec includes the following semantic events:
+The Intilery Native Mobile Spec includes the following semantic events:
 
 **Application Lifecycle Events**
 
@@ -131,7 +131,7 @@ This event fires when a user updates the application. Our SDK will automatically
 
 ### Application Uninstalled
 
-Fire this event when a user uninstalls the application. Several destination partners will detect this for you using Silent Push Notifications and send this event to Segment on your behalf.
+Fire this event when a user uninstalls the application. Several destination partners will detect this for you using Silent Push Notifications and send this event to Intilery on your behalf.
 
 ```javascript
 {
@@ -161,7 +161,6 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 ### Install Attributed
 
-When Segment or an integrated partner can discern the source of an install, weâ€™ll collect an `Install Attributed` event. This event may be sent to Segment using server-to-server connection from your attribution provider, or directly on the device using packaged destinations. In either case, this will happen **after** install, and does not apply to all installs, which is why it is a discrete event.
 
 ```javascript
 {
@@ -193,7 +192,7 @@ When Segment or an integrated partner can discern the source of an install, weâ€
 
 ### Push Notification Received
 
-This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
+This event can be sent when a push notification is received in the app. It can be automatically enabled on iOS (coming soon)
 
 ```javascript
 {
@@ -220,7 +219,7 @@ This event can be sent when a push notification is received in the app. It can b
 
 ### Push Notification Tapped
 
-This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-push-notification-tracking).
+This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on iOS (coming soon)
 
 ```javascript
 {
@@ -249,7 +248,7 @@ This event can be sent when a user taps on a push notification associated with y
 
 ### Push Notification Bounced
 
-This event fires when a push notification from a provider bounces. If your push notification provider forwards push lifecycle events to Segment, they should include this event in their suite.
+This event fires when a push notification from a provider bounces. If your push notification provider forwards push lifecycle events to Intielry, they should include this event in their suite.
 
 ```javascript
 {
@@ -278,11 +277,11 @@ This event fires when a push notification from a provider bounces. If your push 
 
 ### Deep Link Opened
 
-When your application is opened using a referring link, Segment or your packaged deep link partner can fire this event on your behalf. If the deep link has additional data associated with it, either passed through the third party service or as `annotations` in `launchOption`, you may want to include those values as properties here as well.
+When your application is opened using a referring link, Intilery or your packaged deep link partner can fire this event on your behalf.
 
 This event is fired *in addition* to the associated `Application Opened` event.
 
-Our [iOS](https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#automatic-deep-link-tracking) SDK can collect this event automatically if configured to do so.
+Our iOS (coming soon) SDK can collect this event automatically if configured to do so.
 
 ```javascript
 {

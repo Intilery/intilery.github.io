@@ -232,16 +232,16 @@ The `screen` call has the following fields:
 | `context`     | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](../schema/common#context) for more details. |
 | `name`        | *optional*                               | String | Name of the screen See the [Name field docs](../schema/screen#name) for more details. |
 | `properties`  | *optional*                               | Object | Free-form dictionary of properties of the screen, like `name` See the [Properties field docs](../schema/screen#properties) for a list of reserved property names. |
-| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Segment Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
+| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Intilery Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
 | `userId`      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
 
 Find details on the **`screen` payload** in our [Spec](../schema/screen).
 
 ## Historical Import
 
-You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you’ve just switched to Segment.
+You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you’ve just switched to Intilery.
 
-Historical imports can only be done into destinations that can accept historical timestamped data. Most analytics tools like Mixpanel, Amplitude, Kissmetrics, etc. can handle that type of data just fine. One common destination that does not accept historical data is Google Analytics since their API cannot accept historical data.
+
 
 **Note:** If you’re tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -254,7 +254,7 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 Here’s the what the `batch` request signature looks like:
 
 ```json
-POST https://api.segment.io/v1/batch
+POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/batch
 {
   "batch": [
     {

@@ -8,11 +8,11 @@ When you implement Intilery, you add Intilery code to your website, app, or serv
 
 In the simplest implementation, the code can be a snippet of JavaScript that you copy and paste into the HTML of a website to track page views and customer behaviours.
 
-This tag is based on the [segment javascript analytics tag](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/) it has been extended to work in a multinational audience, multiple accounts and brands, along with additional capabiltities for personalisation. [segment javascript github](https://github.com/segmentio/analytics.js/)
+This tag is based on the Segment javascript analytics tag it has been extended to work in a multinational audience, multiple accounts and brands, along with additional capabilities for personalisation.
 
 ## Before you begin
 
-The full reference of analytics.js (the tag) can be found here [Analytics.js](https://intilery.atlassian.net/wiki/spaces/HEA/pages/1868169259/Analytics.js) 
+The full reference of analytics.js (the tag) can be found here [Analytics.js](./reference) 
 
 ## Client Key(s)
 

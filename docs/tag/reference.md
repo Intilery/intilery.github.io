@@ -28,9 +28,9 @@ identify method definition:
 
 The identify call has the following fields:
 
-| userId   | optional | String   | The database ID for the customer. If you don’t know who the customer is yet, you can omit the userId and just record traits. You can read more about identities in the [identify reference](https://segment.com/docs/connections/spec/identify). |
+| userId   | optional | String   | The database ID for the customer. If you don’t know who the customer is yet, you can omit the userId and just record traits. You can read more about identities in the [identify reference](../schema/identify). |
 | -------- | -------- | -------- | ------------------------------------------------------------ |
-| traits   | optional | Object   | A dictionary of traits you know about the customer, like their email or name. You can read more about traits in the [identify reference](https://segment.com/docs/connections/spec/identify). |
+| traits   | optional | Object   | A dictionary of traits you know about the customer, like their email or name. You can read more about traits in the [identify reference](../schema/identify). |
 | options  | optional | Object   | {}Mostly not required, though see anonymous ID below         |
 | callback | optional | Function | A function executed after a short timeout, giving the browser time to make outbound requests first. |
 
@@ -88,13 +88,13 @@ track method definition:
 
 The track call has the following fields:
 
-| event      | required | String   | The name of the event you’re tracking. You can read more about the [track method](https://segment.com/docs/connections/spec/track) and what event names we recommend. |
+| event      | required | String   | The name of the event you’re tracking. You can read more about the [track method](../schema/track) and what event names we recommend. |
 | ---------- | -------- | -------- | ------------------------------------------------------------ |
-| properties | optional | Object   | A dictionary of [properties](https://segment.com/docs/connections/spec/track#properties) for the event. If the event was 'Added to Cart', it might have properties like price and productType. |
+| properties | optional | Object   | A dictionary of [properties](../schema/track#properties) for the event. If the event was 'Added to Cart', it might have properties like price and productType. |
 | options    | optional | Object   | {}Mostly not required, though see anonymous ID below         |
 | callback   | optional | Function | A function that is executed after a short timeout, giving the browser time to make outbound requests first. |
 
-The only required argument to track in analytics.js is an event name string. You can read more about [how we recommend naming your events](https://segment.com/docs/connections/spec/track#event).
+The only required argument to track in analytics.js is an event name string. You can read more about [how we recommend naming your events](../schema//track#event).
 
 Example track call:
 
@@ -105,15 +105,13 @@ analytics.track('Article Completed', {
 });
 ```
 
-For more information about choosing which events to track, event naming and more, check out [Analytics Academy](https://segment.com/academy/)
-
-The only required argument to track in analytics.js is an event name string. Read more about how we recommend [naming your events](https://segment.com/docs/connections/spec/track#event).
+The only required argument to track in analytics.js is an event name string. Read more about how we recommend [naming your events](../schema/track#event).
 
 ## Page
 
 The page method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-A page call is included by default as the final line in the analytics.js [snippet](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/quickstart/#step-1-copy-the-snippet). You may modify this page call within the guidelines below.
+A page call is included by default as the final line in the analytics.js [snippet](../tag/tag1#installing-intilery). You may modify this page call within the guidelines below.
 
 page method definition:
 
@@ -441,7 +439,7 @@ When enabled, analytics.js automatically retries network and server errors. With
 - Support offline tracking. analytics.js queues your events and delivers them when the user comes back online.
 - Better handle network issues. If there happens to be a time where your application can’t connect to Intilery’s API, we’ll continue to store the events on the browser to ensure you don’t lose any data.
 
-Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device’s local storage. You can see more details about the retry logic [here](https://segment.com/docs/connections/destinations/#retries).
+Analytics.js stores events in localStorage (falling back to in-memory storage when localStorage is unavailable), and retries up to 10 times with an incrementally increasing backoff between each retry. Analytics.js queues up to 100 events at a time to avoid using too much of the device’s local storage.
 
 ## Anonymizing IP
 
@@ -457,7 +455,7 @@ analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 
 ## Context & Traits
 
-Within the options dictionary, a sub-dictionary, context, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](https://segment.com/docs/connections/spec/common/#context). Within context is an optional traits dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
+Within the options dictionary, a sub-dictionary, context, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](../schema/common/#context). Within context is an optional traits dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
 
 Consider this identify event:
 
@@ -488,7 +486,7 @@ If a user comes back to your site after a cookie has expired, Analytics.js check
 
 ## Troubleshooting
 
-The console reveals all! [Learn how to access the Javascript console in each browser](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/#how-do-i-open-the-javascript-console-in-your-debugger-). Any analytics.js methods may be executed manually. Use the Network tab to inspect requests.
+The console reveals all! [Learn how to access the Javascript console in each browser](#how-do-i-open-the-javascript-console-in-your-debugger). Any analytics.js methods may be executed manually. Use the Network tab to inspect requests.
 
 ### Are you loading analytics.js?
 
@@ -500,7 +498,7 @@ The object means that you are successfully loading analytics.js onto your websit
 
 ![img](/img/console-b.gif)
 
-Solution: Follow the analytics.js [Quickstart Guide](https://intilery.atlassian.net/wiki/spaces/HEA/pages/1868136516/Website+Tagging)
+Solution: Follow the analytics.js [Quickstart Guide](../tag/tag1)
 
 ### Are you loading two instances of analytics.js?
 
@@ -584,4 +582,3 @@ We use the JSON.stringify() method under the hood. Property values set to null o
 console.log(JSON.stringify({ x: null, y: 6 })); // expected output: "{"x":null,"y":6}" console.log(JSON.stringify({ x: undefined, y: 6 })); // expected output: "{"y":6}"
 ```
 
- 

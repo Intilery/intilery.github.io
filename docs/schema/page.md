@@ -21,7 +21,7 @@ Here’s the payload of a typical `page` call with most [common fields](./common
 }
 ```
 
-And here’s the corresponding Javascript event that would generate the above payload. If you’re using Segment’s Javascript library, the page name and URL are automatically gathered and passed as properties into the event payload:
+And here’s the corresponding Javascript event that would generate the above payload. If you’re using Intilery's Javascript library, the page name and URL are automatically gathered and passed as properties into the event payload:
 
 ```java
 analytics.page("Home");

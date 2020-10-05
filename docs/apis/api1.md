@@ -323,4 +323,5 @@ If you’re having trouble we have a few tips that help common problems.
 ### No events in my debugger
 
 1. Double check that you’ve set up the library correctly.
-2. Make sure that you’re calling one of our API methods once the library is successfully installed—[`identify`](../api/api2/#identify), [`track`](../api1#track), etc.
+2. Make sure that you’re calling one of our API methods once the library is successfully installed—[`identify`](./api1/#identify), [`track`](./api1#track), etc.
+

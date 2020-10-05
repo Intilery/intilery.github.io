@@ -220,7 +220,7 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/scr
 ```json
 {
   "userId": "019mr8mf4r",
-  "name": "Tracking HTTP API",
+  "name": "Home",
   "timestamp": "2012-12-02T00:31:29.738Z"
 }
 ```

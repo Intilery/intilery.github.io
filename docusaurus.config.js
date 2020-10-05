@@ -41,8 +41,8 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/schema/intilery',
-          activeBasePath: 'docs/schema/intilery',
+          to: 'docs/schema/contents',
+          activeBasePath: 'docs/schema/contents',
           label: 'Schema',
           position: 'left',
         },

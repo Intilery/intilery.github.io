@@ -82,7 +82,7 @@ We recommend calling identify a single time when the user’s account is first c
 
 POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/identify
 
-```
+```json
 {
 	"userId": "123456",
 	"event":"identify",
@@ -253,7 +253,7 @@ There is a maximum of `500KB` per batch request and `32KB` per call.
 
 Here’s the what the `batch` request signature looks like:
 
-```
+```json
 POST https://api.segment.io/v1/batch
 {
   "batch": [

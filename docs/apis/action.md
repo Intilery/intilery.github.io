@@ -24,8 +24,14 @@ Note that you can only send to a **customer** who has been [identified](./api1#i
 
 POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/track
 
-```
-1 2 3 4 5 6 7 ``{  "userId": "ABC/123",  "event": "SEND_SMS",  "assetId": "202007-B-AbandonedBooking",  "timestamp": "2019-11-18T13:30:12.984Z",  "bookingId" : "1234" }
+```json
+{
+	"userId": "ABC/123",  
+	"event": "SEND_SMS",  
+	"assetId": "202007-B-AbandonedBooking",  
+	"timestamp": "2019-11-18T13:30:12.984Z",  
+	"bookingId" : "1234" 
+}
 ```
 
 | **userId**        | **required** | Unique identifier for the user in your database              |

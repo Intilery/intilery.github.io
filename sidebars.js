@@ -20,6 +20,7 @@ module.exports = {
                 "schema/identify",
                 "schema/track",
                 "schema/screen",
+                "schema/page",
                 "schema/mobile"
             ]
         },

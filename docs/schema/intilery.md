@@ -46,8 +46,8 @@ These Events can be founf in the Intilery app on the Schema page shown below
 
 - [Identify](./identify)
 - [Track](./track)
-- Page
-- Screen
+- [Page](./page)
+- [Screen](./screen)
 
 ## Industry
 

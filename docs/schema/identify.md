@@ -19,7 +19,7 @@ The first three examples are pretty self-explanatory, but many might ask: why yo
 
 Let’s imagine this scenario:
 
-Calling `identify` in one of our  the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
+Calling `identify` in the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
 
 Here’s the payload of a typical `identify` call with most [common fields](../schema/common) removed:
 

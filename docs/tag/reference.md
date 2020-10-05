@@ -354,7 +354,7 @@ analytics.debug(false);
 
 The global analytics object emits events whenever you call identify, track or page. Using the on method You can set listeners for these events and run your own custom code. Useful for sending data to a other services.
 
-```
+```javascript
 analytics.on(method, callback);
 ```
 
@@ -398,7 +398,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {  plan: 'Enterprise' });
 
 trackForm is a helper method that binds a track call to a form submission. With trackForm a small timeout (300 ms) is inserted to give the track call more time. Useful when a page would redirect before the track method can complete all requests.
 
-```
+```javascript
 analytics.trackForm(form, event, [properties])
 ```
 

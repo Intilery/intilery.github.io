@@ -16,7 +16,7 @@ First, it **outlines the semantic definition of the customer data we capture acr
 
 - [Identify](./identify): who is the customer?
 - [Track](./track): what are they doing?
-- [Page]: what web page are they on?
+- [Page](../schema/page): what web page are they on?
 - [Screen](./screen): what app screen are they on?
 
 ### Engagement Channels

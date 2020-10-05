@@ -48,7 +48,7 @@ The API is set to 100 requests per second with a burst of 500, limit and burst e
 
 If limits are exceeded you will receive a 429 Error (limit exceeded) response.
 
-The maximum size of any request is 6mb, exceeding this will return a 413 Error.
+The maximum size of any request is 1mb, exceeding this will return a 413 Error.
 
 ## Response
 
@@ -175,7 +175,7 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/pag
 
 Example page call:
 
-```javascript
+```json
 {
 	"event":"page", "userId":"ABC/123",
 	"anonymousId":"14834fb6-e82e-47f9-a7e0-892c45064d89",
@@ -215,8 +215,9 @@ You’ll want to send the `screen` message whenever a user requests a page of yo
 
 Example `screen` call:
 
-```
-POST https://api.segment.io/v1/screen
+POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/screen
+
+```json
 {
   "userId": "019mr8mf4r",
   "name": "Tracking HTTP API",

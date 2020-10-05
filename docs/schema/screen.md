@@ -6,7 +6,7 @@ sidebar_label: Screen
 
 The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or `screen` in one of our in analytics.js or HTTP API is the first step in getting started with Intilery.
 
-Here’s the payload of a typical `screen` call, with most [common fields](/schema/common) removed:
+Here’s the payload of a typical `screen` call, with most [common fields](../schema/common) removed:
 
 ```javascript
 {
@@ -66,11 +66,11 @@ Here’s a complete example of a `screen` call:
 
 ## Identities
 
-The User ID is a unique identifier for the user performing the actions. Check out the [User ID docs](/schema/identify#user-id) for more detail.
+The User ID is a unique identifier for the user performing the actions. Check out the [User ID docs](../schema/identify#user-id) for more detail.
 
-The Anonymous ID can be any pseudo-unique identifier, for cases where you don’t know who the user is, but you still want to tie them to an event. Check out the [Anonymous ID docs](/schema/identify#anonymous-id) for more detail.
+The Anonymous ID can be any pseudo-unique identifier, for cases where you don’t know who the user is, but you still want to tie them to an event. Check out the [Anonymous ID docs](../schema/identify#anonymous-id) for more detail.
 
-**Note: In our browser and mobile libraries a User ID is automatically added** from the state stored by a previous [`identify`](/schema/identify/) call, so you do not need to add it yourself. They will also automatically handle Anonymous ID’s under the covers.
+**Note: In our browser and mobile libraries a User ID is automatically added** from the state stored by a previous [`identify`](../schema/identify/) call, so you do not need to add it yourself. They will also automatically handle Anonymous ID’s under the covers.
 
 ## Name
 

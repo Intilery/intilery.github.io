@@ -13,15 +13,15 @@ Our recommendation for when and how often you should call `identify` is as follo
 - When a user updates their info (eg changes or adds a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
 
-**Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](/tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.
+**Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](../tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.
 
 The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we’re storing the userId in the cookie/local storage?
 
 Let’s imagine this scenario:
 
-Calling `identify` in one of our [libraries](https://segment.com/docs/connections/sources/) is one of the first steps to getting started with Segment. Refer to library-specific documentation for more details.
+Calling `identify` in one of our  the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
 
-Here’s the payload of a typical `identify` call with most [common fields](/schema/common) removed:
+Here’s the payload of a typical `identify` call with most [common fields](../schema/common) removed:
 
 ```javascript
 {
@@ -102,7 +102,7 @@ In these cases, you should use an Anonymous ID.
 
 The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don’t have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-**Note:** Our [Website Tag](/tag/tag1) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
+**Note:** Our [Website Tag](../tag/tag1) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
 
 Here’s an example of a Javascript event for an anonymous user:
 

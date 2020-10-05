@@ -3,7 +3,10 @@ module.exports = {
         'Getting Started': ["guides/contents", "guides/faq", "guides/style"],
     },
     apis: {
-        'Getting Started': ['apis/api1'],
+        'Getting Started': [
+        'apis/api1',
+        'apis/actions'
+        ],
     },
     tag: {
         'Getting Started': ['tag/tag1', 'tag/reference'],

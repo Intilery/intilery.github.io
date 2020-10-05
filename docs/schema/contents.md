@@ -6,6 +6,8 @@ sidebar_label: Introduction
 
 The Intilery schema provides guidance on meaningful data to capture, and the best format for it, across all of Intilery's libraries and APIs. If you implement Intilery using these formats, it’s simple to utilise your data within the Intilery CDP and Customer Engagement Platform
 
+This schema is based on the Segment specs, they have been extended to work in a multinational audience and multi-account setup.
+
 The Intilery Schema has three components.
 
 ### APIs

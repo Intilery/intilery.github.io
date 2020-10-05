@@ -6,9 +6,9 @@ sidebar_label: Track
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
-Each action is known as an event. Each event has a name, like **User Registered**, and properties, for example a **User Registered** event might have properties like `plan` or `accountType`. Calling `track` in the [Website Tag](/tag/tag1) or [HTTP API](/apis/api1) is the first step to integrationg and using Intilery.
+Each action is known as an event. Each event has a name, like **User Registered**, and properties, for example a **User Registered** event might have properties like `plan` or `accountType`. Calling `track` in the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
 
-Here’s the payload of a typical `track` call with most [common fields](/schema/common) removed:
+Here’s the payload of a typical `track` call with most [common fields](../schema/common) removed:
 
 ```json
 {
@@ -76,11 +76,11 @@ Here’s a complete example of a `track` call:
 
 ## Identities
 
-The User ID is a unique identifier for the user performing the actions. Check out the [User ID docs](/schema/identify#user-id) for more detail.
+The User ID is a unique identifier for the user performing the actions. Check out the [User ID docs](../schema/identify#user-id) for more detail.
 
-The Anonymous ID can be any pseudo-unique identifier, for cases where you don’t know who the user is, but you still want to tie them to an event. Check out the [Anonymous ID docs](/schema/identify#anonymous-id) for more detail.
+The Anonymous ID can be any pseudo-unique identifier, for cases where you don’t know who the user is, but you still want to tie them to an event. Check out the [Anonymous ID docs](../schema/identify#anonymous-id) for more detail.
 
-**Note: In ourwebsite tag and mobile libraries (coming soon) a User ID is automatically added** from the state stored by a previous [`identify`](/schema/identify/) call, so you do not need to add it yourself. They will also automatically handle Anonymous ID’s under the covers.
+**Note: In ourwebsite tag and mobile libraries (coming soon) a User ID is automatically added** from the state stored by a previous [`identify`](../schema/identify/) call, so you do not need to add it yourself. They will also automatically handle Anonymous ID’s under the covers.
 
 ## Event
 
@@ -90,7 +90,7 @@ Do not use nondescript names like **Event 12** or **TMDropd**. Instead, use uniq
 
 **We recommend event names built from a noun and past-tense verb.**
 
-We have standardized a series of reserved event names that have special semantic meaning. See the [Semantic Events docs](/schema/intilery) for more detail.
+We have standardized a series of reserved event names that have special semantic meaning. See the [Semantic Events docs](../schema/intilery) for more detail.
 
 ## Properties
 
@@ -100,7 +100,7 @@ We’ve reserved some properties that have semantic meanings, and we handle them
 
 You should **only use reserved properties for their intended meaning**.
 
-The following is all the reserved properties we have standardized that apply to all events. Check out the [Semantic Events docs](/schema/intilery) for properties specific to individual reserved events.
+The following is all the reserved properties we have standardized that apply to all events. Check out the [Semantic Events docs](../schema/intilery) for properties specific to individual reserved events.
 
 | **Property** | **Type** | **Description**                                              |
 | ------------ | -------- | ------------------------------------------------------------ |

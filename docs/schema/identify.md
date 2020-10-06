@@ -288,3 +288,21 @@ The resulting customer traits would be the following
 
 **Note: ** The value of the `policy` trait has been update to match explicitly what you passed in the `identify` call, note how the `policyNumber` value in the `policy` trait has been removed, as it was not present in the `identify` call for the trait `policy`
 
+### Asynchronous Processing
+
+The processing of all requests to the Intilery customer data platform is asynchronous,  each of the methods to call the CDP (Javascript tag or HTTP API) will return an eventID that represents the action requested, the format of the response is
+
+```javascript
+{ 
+  "success": true, 
+  "eventId": "3e112aa5-2bed-49a9-b1db-ead2b807066d" 
+}
+```
+
+`code` "success" indicates whether the call was accepted and `eventId` is the unique ID of this call (event). Any errors downstream will report this eventID.
+
+#### Timing
+
+Due to the nature of asynchronous processing, you should leave 500ms between an `identify` call, and further calls that may need to access traits on the customer, for example email merge tags, this gives the asynchronous storage the time to sve the traits.
+
+If it is imperative that the data is available to the campaign asset at the time of the call (not withstanding a 500ms gap between identify and other calls) then we recommend passing the merge tag data as part of the event, as the event object is passed to the downstream processor.

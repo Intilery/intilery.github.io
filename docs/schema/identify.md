@@ -13,11 +13,7 @@ Our recommendation for when and how often you should call `identify` is as follo
 - When a user updates their info (eg changes or adds a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
 
-**Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](../tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.
-
-The first three examples are pretty self-explanatory, but many might ask: why you would call identify on every page load if we’re storing the userId in the cookie/local storage?
-
-Let’s imagine this scenario:
+***Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](../tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.* (coming soon)
 
 Calling `identify` in the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
 
@@ -151,3 +147,144 @@ Reserved traits we’ve standardized:
 | `title`       | String   | Title of a user, usually related to their position at a specific company. Example: “Director of Engineering” |
 | `username`    | String   | User’s username. This should be unique to each user, like the usernames of Twitter or GitHub. |
 | `website`     | String   | Website of a user                                            |
+
+### Trait Updates
+
+Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](../tag/reference#identify) or the [HTTP API identify](../apis/api1#identify-action) will result in the value of the trait being updating for the customer.
+
+Changeable/transient values or multi-value traits should not be set as a single trait.
+
+Consider the following example: -
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+        "email": "joe.blogs@intilery.com",
+        "firstName": "Joe",
+        "phone": "123456789",
+        "policy": {
+            "policyType": "Private Car",
+            "policyNumber": "123"
+        }
+    });
+```
+
+The resulting traits of the customer would be 
+
+```javascript
+{
+  "traits": {
+  	  "clientReference": "something",
+    	"email": "joe.blogs@intilery.com",
+	    "firstName": "Joe",
+  	  "phone": "123456789",
+	    "policy": {
+  	      "policyType": "Private Car",
+    	    "policyNumber": "123"
+    	}
+	}
+}
+```
+
+If another identify reques is made, but it omits traits, then only the traits supplied are updated/set, e.g. calling identify with
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+   "lastName": "Bloggs",
+});
+```
+
+Would result in the `lastName` trait being added to the customer's traits, e.g. resulting in
+
+```javascript
+{
+  "traits": {
+  	  "clientReference": "something",
+    	"email": "joe.blogs@intilery.com",
+	    "firstName": "Joe",
+      "lastName" : "Bloggs"
+  	  "phone": "123456789",
+	    "policy": {
+  	      "policyType": "Private Car",
+    	    "policyNumber": "123"
+    	}
+	}
+}
+```
+
+If you pass in a different value for a trait, the value of the trait is updated, i.e. calling identify with
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+   "firstName": "Josephh",
+});
+```
+
+Would result in the fistName trait being updated in the customer's traits, e.g. resulting in
+
+```javascript
+{
+  "traits": {
+  	  "clientReference": "something",
+    	"email": "joe.blogs@intilery.com",
+	    "firstName": "Joseph",
+      "lastName" : "Bloggs"
+  	  "phone": "123456789",
+	    "policy": {
+  	      "policyType": "Private Car",
+    	    "policyNumber": "123"
+    	}
+	}
+}
+```
+
+**Note:** Special care should be taken when setting trait values when they are arrays or objects, the value passed in is what is set, example
+
+Starting with a customer that has traits previously set, e.g. resulting in
+
+```javascript
+{
+  "traits": {
+  	  "clientReference": "something",
+    	"email": "joe.blogs@intilery.com",
+	    "firstName": "Joe",
+      "lastName" : "Bloggs"
+  	  "phone": "123456789",
+	    "policy": {
+  	      "policyType": "Private Car",
+    	    "policyNumber": "123"
+    	}
+	}
+}
+```
+
+You then call `identify` with the following
+
+```javascript
+{
+  "traits": {
+	    "policy": {
+  	      "policyType": "Private Car"
+    	}
+	}
+}
+```
+
+The resulting customer traits would be the following
+
+```javascript
+{
+  "traits": {
+  	  "clientReference": "something",
+    	"email": "joe.blogs@intilery.com",
+	    "firstName": "Joe",
+      "lastName" : "Bloggs"
+  	  "phone": "123456789",
+	    "policy": {
+  	      "policyType": "Private Car",
+    	}
+	}
+}
+```
+
+**Note: ** The value of the `policy` trait has been update to match explicitly what you passed in the `identify` call, note how the `policyNumber` value in the `policy` trait has been removed, as it was not present in the `identify` call for the trait `policy`
+

@@ -173,13 +173,13 @@ The resulting traits of the customer would be
 ```javascript
 {
   "traits": {
-  	  "clientReference": "something",
-    	"email": "joe.blogs@intilery.com",
-	    "firstName": "Joe",
-  	  "phone": "123456789",
-	    "policy": {
-  	      "policyType": "Private Car",
-    	    "policyNumber": "123"
+    "clientReference": "something",
+     "email": "joe.blogs@intilery.com",
+     "firstName": "Joe",
+     "phone": "123456789",
+	   "policy": {
+       "policyType": "Private Car",
+       "policyNumber": "123"
     	}
 	}
 }
@@ -288,6 +288,115 @@ The resulting customer traits would be the following
 
 **Note: ** The value of the `policy` trait has been update to match explicitly what you passed in the `identify` call, note how the `policyNumber` value in the `policy` trait has been removed, as it was not present in the `identify` call for the trait `policy`
 
+#### Multi-value traits
+
+If you require to store multiple traits of a same type, either use arrays or explicit properties for each value, e.g
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+        "email": "joe.blogs@intilery.com",
+        "firstName": "Joe",
+        "phone": "123456789"
+    });
+```
+
+.The resulting customer traits would be the following
+
+```javascript
+{
+  "traits": {
+    "clientReference": "something",
+     "email": "joe.blogs@intilery.com",
+     "firstName": "Joe",
+     "phone": "123456789"
+	}
+}
+```
+
+Adding a new policy to a named trait
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+      "car-policy": {
+  	      "policyType": "Private Car",
+    	    "policyNumber": "123"
+    	}
+    });
+```
+
+.The resulting customer traits would be the following
+
+```javascript
+{
+  "traits": {
+    "clientReference": "something",
+     "email": "joe.blogs@intilery.com",
+     "firstName": "Joe",
+     "phone": "123456789",
+      "car-policy": {
+  	     "policyType": "Private Car",
+    	   "policyNumber": "123"
+    	}
+	}
+}
+```
+
+Then to add a different policy
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+      "home-policy": {
+  	      "policyType": "Home",
+    	    "policyNumber": "456"
+    	}
+    });
+```
+
+.The resulting customer traits would be the following
+
+```javascript
+{
+  "traits": {
+    "clientReference": "something",
+     "email": "joe.blogs@intilery.com",
+     "firstName": "Joe",
+     "phone": "123456789",
+      "car-policy": {
+  	     "policyType": "Private Car",
+    	   "policyNumber": "123"
+    	},
+        "home-policy": {
+        "policyType": "Home",
+        "policyNumber": "456"
+    	}
+	}
+}
+```
+
+**Note:** Both policies cpould have been set in a single `indentify` call of course.
+
+**Note: ** It is advisable to keep the number of traits for multi value traits to under 20, if you require more values, then use an array, e.g. [products in cart](../schema/retail) which is an array of products
+
+#### Array based traits
+
+To set an array of properties for a triat, e.g. multiple policies
+
+```javascript
+analytics.identify("97980cfea0067", "traits": {
+      "policies": [
+       	{
+  	      "policyType": "Home",
+    	    "policyNumber": "456"
+    		},
+  			{
+  	      "policyType": "Private Car",
+    	    "policyNumber": "123"
+    		}
+    });
+```
+
+**Note:** You must pass in the complete array when setting an array based trait
+
 ### Asynchronous Processing
 
 The processing of all requests to the Intilery customer data platform is asynchronous,  each of the methods to call the CDP (Javascript tag or HTTP API) will return an eventID that represents the action requested, the format of the response is
@@ -306,3 +415,32 @@ The processing of all requests to the Intilery customer data platform is asynchr
 Due to the nature of asynchronous processing, you should leave 500ms between an `identify` call, and further calls that may need to access traits on the customer, for example email merge tags, this gives the asynchronous storage the time to sve the traits.
 
 If it is imperative that the data is available to the campaign asset at the time of the call (not withstanding a 500ms gap between identify and other calls) then we recommend passing the merge tag data as part of the event, as the event object is passed to the downstream processor.
+
+### Should I use Traits or Event Data?
+
+If the data belongs to the customer, and is a semi-immuttable value, then this should be stored in the customer traits, e.g. custome policies. These values change less frequently, than say an order conformation email, where the data for the email/letter is transient and only needed for that communication, e.g.
+
+To send an asset that has tranisent data, for example a renewal quote, you may decide to send this data as part of the event/command to send the asset, rather than implicitly setting it as a trait on the customer.
+
+**Note:** Be aware of [Asynchronous Processing](#asynchronous-processing)
+
+The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Actions](../api/actions)
+
+For example: -
+
+POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/track
+
+```javascript
+{
+    "userId": "ABC/123",  
+    "event": "SEND_PRINT",  
+    "assetId": "renewal",  
+    "timestamp": "2019-11-18T13:30:12.984Z",
+     "renewal" : {
+       "price": "123.44",
+       "currency": "GBP"
+     }
+}
+```
+
+The value for `renewal` is a transient value that is used for the sending of that asset, if you require to set this on the customer trait first, then see above

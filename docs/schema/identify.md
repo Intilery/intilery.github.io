@@ -424,7 +424,7 @@ To send an asset that has tranisent data, for example a renewal quote, you may d
 
 **Note:** Be aware of [Asynchronous Processing](#asynchronous-processing)
 
-The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Actions](../api/actions)
+The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Actions](../apis/actions)
 
 For example: -
 

@@ -8,6 +8,10 @@ module.exports = {
   organizationName: 'intilery', // Usually your GitHub org/user name.
   projectName: 'developer-docs', // Usually your repo name.
   themeConfig: {
+  	algolia: {
+    	  apiKey: "c5e1cd13947d1b0e5910f70a6fdab529",
+	      indexName: "intilery",
+    	},
     colorMode: {
       disableSwitch: true,
     },

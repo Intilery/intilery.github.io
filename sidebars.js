@@ -1,6 +1,6 @@
 module.exports = {
     guides: {
-        'Getting Started': ["guides/contents", "guides/faq", "guides/style"],
+        'Getting Started': ["guides/contents", "guides/simple",  "guides/full","guides/trackingplan", "guides/fullimp", "guides/faq"],
     },
     apis: {
         'Getting Started': [

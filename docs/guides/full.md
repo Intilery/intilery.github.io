@@ -140,7 +140,7 @@ For an Ecommerce company, however, the main events might be something like:
 - **Product Added**
 - **Order Completed**
 
-**Tip**: As we mentioned [above](shortcut-check-if-a-business-spec-meets-your-needs), Intilery has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](../schema/retail). Check it out to see which events we cover and how they are used in our downstream destinations.
+**Tip**: As we mentioned Intilery has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](../schema/retail). Check it out to see which events we cover and how they are used in our downstream destinations.
 
 An online community, on the other hand, has an entirely different set of actions that indicate engagement, as listed below. For example, a community might want to track actions like:
 

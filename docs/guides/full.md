@@ -174,7 +174,7 @@ Here is Intilery’s `Lead Captured` Track call:
 analytics.track(userId, 'Lead Captured', {
   email: 'email',
   location: 'header navbar'
-  url: 'https://Intilery.com/'
+  url: 'https://intilery.com/'
 });
 ```
 

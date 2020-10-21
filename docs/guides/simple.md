@@ -60,7 +60,7 @@ The `identify` method is how you tell Intilery who the current user is. It inclu
 
 Here’s what a basic call to `identify` might look like:
 
-```
+```javascript
 analytics.identify('f4ca124298', {
   name: 'Michael Brown',
   email: 'mbrown@example.com'
@@ -75,7 +75,7 @@ To do that, we recommend that you use a backend template to inject an `identify`
 
 Depending on your templating language, your actual identify call might look something like this:
 
-```
+```javascript
 analytics.identify(' {{user.id}} ', {
   name: '{{user.fullname}}',
   email: '{{user.email}}'
@@ -90,7 +90,7 @@ The `track` method is how you tell Intilery about the actions your users are per
 
 Here’s what a call to `track` might look like when a user signs up:
 
-```
+```javascript
 analytics.track('Signed Up', {
   plan: 'Enterprise'
 });
@@ -98,7 +98,7 @@ analytics.track('Signed Up', {
 
 That’s just telling us that your user just triggered the **Signed Up** event and chose your hypothetical `'Enterprise'` plan. Properties can be anything you want to record, for example:
 
-```
+```javascript
 analytics.track('Article Bookmarked', {
   title: 'Snow Fall',
   subtitle: 'The Avalanche at Tunnel Creek',

@@ -108,7 +108,7 @@ You can always [override the auto-collected Page/Screen properties](../tag/refer
 
 You can schemaify a page “Name” at the start of the page or screen call, which is eschemaially useful to make list of page names into something more succinct for analytics. For example, on an ecommerce site you might want to call `analytics.page( "Product" )` and then provide properties for that product:
 
-```
+```javascript
 analytics.page("Product", {
   "category": "Smartwatches",
   "sku": "13d31"

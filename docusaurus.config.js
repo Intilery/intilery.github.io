@@ -72,22 +72,18 @@ module.exports = {
               label: 'JavaScript Tag',
               to: 'docs/tag/tag1',
             },
+            {
+              label: 'User Guides',
+              to: 'http://support.intilery.com/',
+            },
           ],
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/intilery',
             },
           ],
         },

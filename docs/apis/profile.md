@@ -189,7 +189,7 @@ Intilery uses conventional HTTP response codes to indicate the success or failur
 | **not_found**             | The customer could not be found                              |
 | **internal_server_error** | Something went wrong internal to Intilery                    |
 
-## Limits
+### Limits
 
 The API is set to 100 requests per second with a burst of 500, limit and burst explained [here](https://en.wikipedia.org/wiki/Token_bucket)
 
@@ -216,7 +216,7 @@ x-amzn-RequestId: 1111-2222-3333-4444
 | Get a Profile’s Events    | /email:joe.bloggs@intilery.com/events                        |
 | Get a Profile’s Audiences | /email:joe.bloggs@intilery.com/audiences                     |
 
-#### Get a Profile’s Traits
+### Get a Profile’s Traits
 
 Get a single customer's traits using an `external_id`.
 
@@ -255,7 +255,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
 
 **200 OK** (single response)
 
-```
+```json
 {
     "lastName": "Bloggs",
     "website": "www.intilery.com",
@@ -298,7 +298,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
 
 **200 OK** (multiple response)
 
-```
+```json
 {
 	"data" : [
     {
@@ -346,7 +346,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
 
 ***Note***: if you request a customer using userId or Id, the response will be a single customer's traits. For searching by email, as multiple customer records can have the same email (unless you use their email as their userId) an array of results in the data field are returned
 
-#### Get a Customer's Events
+### Get a Customer's Events
 
 Get a single profile’s events within a collection using an `external_id`.
 
@@ -461,7 +461,7 @@ Get a single profile’s events within a collection using an `external_id`.
 | `end`        | Returns all the events that end before `end` (in ISO 8601).  | 2018-01-02                    |
 | `sort`       | Determines whether the result is ascending or descending. Defaults to descending. | asc,desc                      |
 
-#### Get a Customer's Metadata
+### Get a Customer's Metadata
 
 Get a single profile’s metadata within a collection using an `external_id`.
 
@@ -607,7 +607,7 @@ Get a single profile’s metadata within a collection using an `external_id`.
 }
 ```
 
-#### Get a Customer's Audiences
+### Get a Customer's Audiences
 
 Get a single profile’s metadata within a collection using an `external_id`.
 

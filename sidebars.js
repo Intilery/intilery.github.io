@@ -5,7 +5,8 @@ module.exports = {
     apis: {
         'Getting Started': [
         'apis/api1',
-        'apis/actions'
+        'apis/actions',
+        'apis/profile'
         ],
     },
     tag: {

@@ -68,6 +68,8 @@ If limits are exceeded you will receive a 429 Error (limit exceeded) response.
 
 The maximum size of any request is 1mb, exceeding this will return a 413 Error.
 
+The event endpoint will return a maximum of 100 events per request, along with a scrollId to scroll through the remainder of the events
+
 ## Quickstart
 
 ### Set up Access
@@ -194,6 +196,8 @@ Intilery uses conventional HTTP response codes to indicate the success or failur
 The API is set to 100 requests per second with a burst of 500, limit and burst explained [here](https://en.wikipedia.org/wiki/Token_bucket)
 
 If limits are exceeded you will receive a 429 Error (limit exceeded) response.
+
+The event endpoint will return a maximum of 100 events per request, along with a scrollId to scroll through the remainder of the events
 
 #### Request IDs
 
@@ -375,6 +379,7 @@ Get a single profile’s events within a collection using an `external_id`.
 
 ```json
 {
+  	"scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAMzh3FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4ehZjSS1MbWxmMlRVeVlVNVJPU3JzOTVRAAAAAAAzOHgWY0ktTG1sZjJUVXlZVTVST1Nyczk1UQAAAAAAMzh7FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4eRZjSS1MbWxmMlRVeVlVNVJPU3JzOTVR",
     "data": [
         {
             "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
@@ -460,6 +465,141 @@ Get a single profile’s events within a collection using an `external_id`.
 | `start`      | Returns all the events that start after `start` (in ISO 8601). | 2006-01-02                    |
 | `end`        | Returns all the events that end before `end` (in ISO 8601).  | 2018-01-02                    |
 | `sort`       | Determines whether the result is ascending or descending. Defaults to descending. | asc,desc                      |
+| `limit`      | The number of results to return, accepts an integer between 1 and 100 inclusive, default is 100 | 50                            |
+
+
+
+### Pagination
+
+The events endpoint supports pagination using a scrollId (cursor), to fetch the next "page" of results, replace the query parameters with the scrollId parameter
+
+#### Request Arguments
+
+| **Argument** | **Description**                                    |
+| ------------ | -------------------------------------------------- |
+| scrollId     | The id of the "cursor" to the next page of results |
+
+#### Example
+
+Given the event request example above, the response included a "scrollId" that can be used to get the next page of results.
+
+***Note:*** a scrollId is always included regardless of whether there are any more results, a request including the scrollId whioch returns an a response with an empty array for the data indicates no more results, or a response with less results than the limit supplied indicates that this is the last page of results
+
+Get a single profile’s events within a collection using an `external_id`.
+
+```http
+    GET /track/v1/profiles/userId:123-rty/events
+```
+
+**Request**
+
+```bash
+   curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/events?scrollId={scrollId}" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
+```
+
+***Note:*** it is not required to pass in any of the event parameters again, such as include, exclude, limit, start, end, sort. The scrollId is a cursor to the original request
+
+**400 Invalid Request**
+
+```json
+{
+    "error": {
+        "code": "invalid_request_error",
+        "message": "scrollId is invalid or has timed out"
+    }
+}
+```
+
+**200 OK**
+
+```json
+{
+  	"scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAMzh3FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4ehZjSS1MbWxmMlRVeVlVNVJPU3JzOTVRAAAAAAAzOHgWY0ktTG1sZjJUVXlZVTVST1Nyczk1UQAAAAAAMzh7FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4eRZjSS1MbWxmMlRVeVlVNVJPU3JzOTVR",
+    "data": [
+        {
+            "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+            "externalId": "joe.bloggs@intilery.com",
+            "email": "joe.bloggs@intilery.com",
+            "eventId": "ec717144-924c-4826-981b-848459c39176",
+            "eventTime": "2020-11-19T13:39:17.380Z",
+            "receivedTime": "2020-11-19T13:39:17.912Z",
+            "eventAction": "email_opened",
+            "clientId": "intilery",
+            "accountId": "marketing",
+            "brandId": "MARKETING",
+            "customerId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+            "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+            "source": "SEGMENT_API",
+            "rawData": {
+                "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+                "action": "track",
+                "event": "Email Opened",
+                "context": {
+                    "ip": "217.42.6.253",
+                    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15",
+                    "traits": {
+                        "email": "joe.bloggs@intilery.com"
+                    }
+                },
+                "properties": {
+                    "email_id": "41937e92-b472-46ae-94e3-f29cc05cda5d",
+                    "email_subject": "Thanks for requesting an Intilery trial",
+                    "campaign_id": "TRIAL_WELCOME"
+                },
+                "timestamp": "2020-11-19T13:39:17.380Z",
+                "sendType": "email"
+            }
+        },
+        {
+            "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+            "externalId": "joe.bloggs@intilery.com",
+            "email": "joe.bloggs@intilery.com",
+            "eventId": "4b7c99d4-0714-41e0-b285-1ef300634984",
+            "clientId": "intilery",
+            "source": "SEGMENT_API",
+            "rawData": {
+                "context": {
+                    "traits": {
+                        "email": "joe.bloggs@intilery.com"
+                    },
+                    "ip": "217.42.6.253",
+                    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15"
+                },
+                "sendType": "email",
+                "action": "track",
+                "event": "Email Opened",
+                "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+                "properties": {
+                    "email_id": "41937e92-b472-46ae-94e3-f29cc05cda5d",
+                    "email_subject": "Thanks for requesting an Intilery trial",
+                    "campaign_id": "TRIAL_WELCOME"
+                },
+                "timestamp": "2020-11-19T13:37:50.929Z"
+            },
+            "eventAction": "email_opened",
+            "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
+            "accountId": "marketing",
+            "receivedTime": "2020-11-19T13:37:51.407Z",
+            "brandId": "MARKETING",
+            "eventTime": "2020-11-19T13:37:50.929Z",
+            "customerId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe"
+        }
+			]
+		}
+	}
+```
+
+200 OK**
+
+```json
+{
+  	"scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAMzh3FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4ehZjSS1MbWxmMlRVeVlVNVJPU3JzOTVRAAAAAAAzOHgWY0ktTG1sZjJUVXlZVTVST1Nyczk1UQAAAAAAMzh7FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4eRZjSS1MbWxmMlRVeVlVNVJPU3JzOTVR",
+    "data": []
+		}
+	}
+```
+
+***Note:*** The data property will contain an empty array if there are no more results
 
 ### Get a Customer's Metadata
 

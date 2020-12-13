@@ -1,5 +1,5 @@
 ---
-id: simple
+aid: simple
 title: Simple Integration
 sidebar_label: Simple Integration
 ---
@@ -110,7 +110,89 @@ If you’re just getting started, some of the events you should track are events
 
 To get started, we recommend that you track just a few important events. You can always add more later!
 
-Once you add a few `track` calls, **you’re done with this tutorial!** You successfully installed Analytics.js tracking. Now you’re ready to turn on any destination you like from the Intilery App.
+Once you add a few `track` calls, **you’re done with this tutorial!** You successfully installed Analytics.js tracking. Check that all is ok wth the [Test that it's working](#test-that-its-working) section below
+
+### iOS Mobile Quickstart
+
+### Step 1: Install the SDK
+
+The recommended way to install Intilery for iOS is using [Cocoapods](http://cocoapods.org/), since it means you can create a build with specific bundled destinations, and because it makes it simple to install and upgrade.
+
+First, add the `Intilery` dependency to your `Podfile` by adding the following line:
+
+```
+pod 'Intilery', '~> 3.0'
+```
+
+Then in your application delegate’s `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
+
+```objective-c
+SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+configuration.trackApplicationLifecycleEvents = YES; // Enable this to record certain application events automatically!
+configuration.recordScreenViews = YES; // Enable this to record screen views automatically!
+[SEGAnalytics setupWithConfiguration:configuration];
+```
+
+**Note**: YOUR_WRITE_KEY canbe found in the JavaScript tag in the `annalytics.load('YOUR_WRITE_KEY')` line
+
+**Tip**: You don’t *need* to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events.
+
+And of course, import the SDK in the files that you use it by adding the following line:
+
+```objective-c
+#import <Intilery/SEGAnalytics.h>
+```
+
+### Step 2: Identify Users
+
+The `identify` method is how you tell Intilery who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](../sdk/ios#identify).
+
+Here’s what a basic call to `identify` might look like:
+
+```objective-c
+[[SEGAnalytics sharedAnalytics] identify:@"f4ca124298"
+                                  traits:@{ @"name": @"Michael Brown",
+                                    @"email": @"mbrown@example.com" }];
+```
+
+That call identifies Michael by his unique User ID (`f4ca124298`, which is the one you know him by in your database) and labels him with `name` and `email` traits.
+
+**Hold up though!** When you actually put that code in your iOS app, you need to replace those hard-coded trait values with the variables that represent the details of the currently logged-in user.
+
+Once you’ve added an `identify` call, you’re ready to move on to tracking!
+
+### Step 3: Track Actions
+
+The `track` method is how you tell Intilery about the actions your users are performing in your app. Every action triggers what we call an “event”, which can also have associated properties. You can read more about `track` in the [track method reference](../sdk/ios#track).
+
+To get started, the Intilery iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines.
+
+```swift
+SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:@"YOUR_WRITE_KEY"];
+configuration.trackApplicationLifecycleEvents = YES;
+[SEGAnalytics setupWithConfiguration:configuration];
+```
+
+You should also track events that indicate success in your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. We recommend tracking just a few important events. You can always add more later!
+
+Here’s what a `track` call might look like when a user signs up:
+
+```swift
+[[SEGAnalytics sharedAnalytics] track:@"Signed Up"
+                           properties:@{ @"plan": @"Enterprise" }];
+```
+
+That tells us that your user triggered the **Signed Up** event, and chose your hypothetical `'Enterprise'` plan. Properties can be anything you want to record, for example:
+
+```swift
+[[SEGAnalytics sharedAnalytics] track:@"Article Bookmarked"
+                           properties:@{
+                               @"title": @"Snow Fall",
+                               @"subtitle": @"The Avalanche at Tunnel Creek",
+                               @"author": @"John Branch" }];
+```
+
+Once you’ve added a few `track` calls, **you’re set up!** You successfully instrumented your app, and can enable destinations from your Segment workspace.
 
 ## Test that it’s working
 

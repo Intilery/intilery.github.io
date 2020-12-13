@@ -1,36 +1,36 @@
 ---
-id: profile
-title: Profile API
-sidebar_label: Profile
+id: events
+title: Events API
+sidebar_label: Events
 ---
 
-The Intilery Profile API provides a single API to read user-level customer data. Intilery now allows you to query the entire user object programmatically, including the `external_ids` , `traits` , and `events` that make up a user’s journey through your product.
+The Intilery Events API provides a single API to read account-level event data. This API enables you to access in real-time all events that your customers are doing, where the event is sent to the Intilery CDP. By default all events are accessed most recent first (data desc) and cam be paged to access all events in a polling mechanism.
+
+The API supports filtering of event types, filtering based on event properties, sorting and unique eventIDs.
 
 You can use this API to…
 
-- **Build an in-app recommendation engine** to show users or accounts the last 5 products they viewed but didn’t purchase
-- **Train user-level machine learning prediction models** to determine a users next purchase or likelihood to churn
-- **Empower your** **sales and** **support associates with the complete customer context** by embedding the user profile in third-party tools like Zendesk or Desk.com
-- **Qualify leads faster** by embedding the user event timeline in Pipedrive
+- **Access when a user has clicked on an email** to perform a workflow in an integration tool like zapier (it may make sense to use an Intilery Jpurney if you do not want to integrate other tools)
+- **React to an event raised in a Journey to trigger something in another tool** to connect an agen in a call centre to a customer
+- **To send a push message with your chose push message provider** by querying for specific events and wiring up your push provider
+- **New Customers** access new customer records and send them to another system (identify event)
 
 This document has four parts…
 
 1. [**Product Highlights**](#product-highlights)
-2. [**Quickstart**](#quickstart): Walks you through how to get started querying your user profile in <1 min
-3. [**API Reference**](#api-reference): Retrieve a list of users sorted by recent activity or find a particular user
-4. [**Personalization**](#recommended-implementation): Example personalization solution built on Personas using server-side personalization
+2. [**Quickstart**](#quickstart): Walks you through how to get started querying your customer events in <1 min
+3. [**API Reference**](#api-reference): Retrieve a list of events sorted by recent activity or filter on specific events and their properties
+4. [**Integration**](#integrationr): Example of adding a customer to a facebook audience using zapier
 
 ## Product Highlights
 
-1. **Realtime Access** - fetch your entire user profile
-2. **Realtime Data** — query streaming data on the user profile that just happened
-3. **One Identity** — query an end user’s interactions across web, mobile, server, and third party touch-points
-4. **Rich Data** — query any amount of custom events or user traits
-5. **Any External ID** — the API supports query from any external ID: email, user_id or intilery ID
+1. **Realtime Access** - fetch your entire customer events
+2. **Realtime Data** — query streaming data on events that just happened
+4. **Rich Data** — receive the complete data associated with events
 
 ## Endpoint
 
-https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}
+https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/events/
 
 You will be given you clientId, accountIds and brandIDs.
 
@@ -53,7 +53,7 @@ Authentication to handled by a shared secret that must be passed in a header
 ### Example Request
 
 ```bash
-curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
+curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/events" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
 ```
 
 ## Permissions
@@ -74,37 +74,26 @@ The event endpoint will return a maximum of 100 events per request, along with a
 
 ### Set up Access
 
-To access the profile API, you will need you clientID, accountID and brandID, along with the authentication token, these are provided by your account manager (and will shortly be available in the UI).
+To access the events API, you will need you clientID, accountID and brandID, along with the authentication token, these are provided by your account manager (and will shortly be available in the UI).
 
-The profile API expects the authentication token to be supplied in the request headers.
+The events API expects the authentication token to be supplied in the request headers.
 
-### Find a user’s external id
-
-1. Head over to customers > customer details: `https://{clientID}.{accountID}.intilery.com/customers` (replace clientID and accountID with your details)
-2. And press on any interesting custoimer in the list.
-3. Copy their `external_id` (ex: `joe.bloggs@intilery.com`) Note: a userID (extneralD) does not have to be an email address, this is your unique id for your customer.
-
-![externalID](/img/externalid.png)
-
-### Query the user’s event history
+### Access the event stream
 
 1. Download and open [Postman](https://www.getpostman.com/), a nice app for exploring HTTP APIs
 
-2. Create your Postman GET request to query the user’s event’s history: i. The URL is: https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/events`
+2. Create your Postman GET request to query the user’s event’s history: i. The URL is: https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/events`
 
-   ii. Replace `clientID, accountID and BRANDID` with your own values along with the id of your customer (Joe.bloggs@intilery.com in this case)
+   ii. Replace `clientID, accountID and BRANDID` with your own values
 
-   iii. Replace `{idType}:{ext_id}>` with your external id type (userId) and id pair from the customer detils page
 
-   
-
-![postman](/img/postman1.png)
+![postman](/img/postman-events-1.png)
 
 1. Press the Send button in Postman.
 
-### Explore the user’s event history in the response
+### Explore the events returned in date desc order (default)
 
-![postman](/img/postman2.png)
+![postman](/img/postman-events-2.png)
 
 **E. Explore more of the API**
 

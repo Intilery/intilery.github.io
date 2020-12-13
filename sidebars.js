@@ -6,11 +6,21 @@ module.exports = {
         'Getting Started': [
         'apis/api1',
         'apis/actions',
+        'apis/events',
         'apis/profile'
         ],
     },
     tag: {
         'Getting Started': ['tag/tag1', 'tag/reference'],
+    },
+    sdk: {
+    	'ios': [
+    		'sdk/ios',
+    		'sdk/ios-quickstart',
+    		'sdk/ios14',
+    		'sdk/ios-trouble',
+    		'sdk/ios-faq'
+    	]
     },
     schema: ["schema/contents",
         {

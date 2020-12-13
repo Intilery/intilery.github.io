@@ -8,6 +8,9 @@ module.exports = {
   organizationName: 'intilery', // Usually your GitHub org/user name.
   projectName: 'developer-docs', // Usually your repo name.
   themeConfig: {
+  	prism: {
+      additionalLanguages: ['swift'],
+    },
   	googleAnalytics: {
   		trackingID: 'G-9T47KP3LPV',
   	},
@@ -45,6 +48,11 @@ module.exports = {
         {
           to: 'docs/tag/tag1',
           label: 'Tag',
+          position: 'left',
+        },
+        {
+          to: 'docs/sdk/ios',
+          label: 'SDK',
           position: 'left',
         },
         {
@@ -112,9 +120,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/Intilery/intilery.github.io/edit/master/website/',
+          sidebarPath: require.resolve('./sidebars.js')
         },
         blog: {
           showReadingTime: true,

@@ -61,6 +61,12 @@ module.exports = {
           label: 'Schema',
           position: 'left',
         },
+        {
+          to: 'docs/customers/overview',
+          activeBasePath: 'docs/customers/overview',
+          label: 'Customers',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/Intilery/intilery.github.io',

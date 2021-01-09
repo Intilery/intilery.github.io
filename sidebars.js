@@ -44,4 +44,12 @@ module.exports = {
         "schema/retail",
         "schema/gaming"
     ],
+    customers: {
+    	'Customers Overview': [
+    		'customers/overview',
+    		'customers/computed-traits',
+    		'customers/sql-traits',
+    		'customers/audiences',
+    	],
+    },
 };

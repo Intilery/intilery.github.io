@@ -1,10 +1,10 @@
 ---
 id: overview
-title: Customers Overview
+title: Customer Data Platform
 sidebar_label: Customers
 ---
 
-Customers is a powerful personalization platform that enables you to create unified customer profiles in Intilery, to build and enrich audiences, and to activate audiences in Intilery.
+Intielry is a powerful Customer Data Platform that enables you to create unified customer profiles in Intilery, to build and enrich audiences, and to activate audiences in Intilery.
 
 ### What can you do with Customers?
 

@@ -1,7 +1,7 @@
 ---
-id: ios-quickstart
-title: Quickstart iOS
-sidebar_label: iOS Quickstart tutorial
+id: android-quickstart
+title: Quickstart android
+sidebar_label: android Quickstart tutorial
 ---
 
 This tutorial gets you started sending data from your iOS app to Intilery.
@@ -25,7 +25,7 @@ The recommended way to install Analytics for iOS is using [Cocoapods](http://coc
 First, add the `Analytics` dependency to your `Podfile` by adding the following line:
 
 ```
-pod 'IntileryAnalytics', '~> 4.1'
+pod 'Analytics', '~> 4.1'
 ```
 
 Then in your application delegate’s `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:

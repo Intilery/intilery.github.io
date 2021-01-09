@@ -1,7 +1,7 @@
 ---
-id: ios-faq
-title: Intilery-iOS Frequently Asked Questions
-sidebar_label: Intilery iOS FAQs
+id: android-faq
+title: Intilery-android Frequently Asked Questions
+sidebar_label: Intilery android FAQs
 ---
 
 ## How big is the Intilery SDK?
@@ -16,7 +16,7 @@ However, if you cannot use Swift Package Manager or Cocoapods, you can manually 
 
 To install manually:
 
-1. Download the [latest built SDK](https://github.com/Intilery/intilery-analytics-ios/releases/), and unzip the zip file
+1. Download the [latest built SDK](https://github.com/Intilery/analytics-ios/releases/), and unzip the zip file
 2. Drag the unzipped `Segment.framework` folder into your XCode project
 3. In the **General Tab** for your project, search for `Embedded Binaries` and add the `Segment.framework`
 

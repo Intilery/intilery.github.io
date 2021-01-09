@@ -43,7 +43,7 @@ The recommended way to install Intilery for iOS is using [Cocoapods](http://coco
 First, add the `Analytics` dependency to your `Podfile`, like so:
 
 ```
-pod 'Intilery', '~> 4.1'
+pod 'IntileryAnalytics', '~> 4.1'
 ```
 
 Then in your application delegate’s `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
@@ -484,6 +484,6 @@ If your use cases don’t require the need for IDFA collection you can skip this
 Add this line in your `Podfile`:
 
 ```bash
-pod 'Intilery', :git => 'https://github.com/Intilery/analytics-ios.git', :branch => 'master'
+pod 'IntileryAnalytics', :git => 'https://github.com/Intilery/intilery-analytics-ios', :branch => 'master'
 ```
 

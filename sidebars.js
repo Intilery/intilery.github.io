@@ -20,6 +20,12 @@ module.exports = {
     		'sdk/ios14',
     		'sdk/ios-trouble',
     		'sdk/ios-faq'
+    	],
+    	'android': [
+    		'sdk/android',
+    		'sdk/android-quickstart',
+    		'sdk/android-trouble',
+    		'sdk/android-faq'
     	]
     },
     schema: ["schema/contents",

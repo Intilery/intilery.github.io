@@ -1,7 +1,7 @@
 ---
-id: ios-trouble
-title: Troubleshooting Intilery-iOS
-sidebar_label: Troubleshooting Intilery-iOS
+id: android-trouble
+title: Troubleshooting Intilery-android
+sidebar_label: Troubleshooting Intilery-android
 ---
 
 ## Target has transitive dependencies that include static binaries
@@ -17,7 +17,7 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
     1.5.3
    ```
 
-3. Verify you are using the latest Intilery pods
+3. Verify you are using the latest Segment pods
 
    ```
     $ pod outdated 
@@ -35,7 +35,7 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
 
 ## Still having issues?
 
-Contact [Intilery Product Support](email:support@intilery.com) with the following information:
+Contact [Segment Product Support](email:support@intilery.com) with the following information:
 
 - The version of our SDK you are using
 - Logs of the call in question

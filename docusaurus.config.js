@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Intilery Developer Documentation',
-  tagline: 'Customers Engaged',
+  title: 'Intilery Documentation',
+  tagline: 'Making marketeers the best they can be',
   url: 'https://intilery.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',

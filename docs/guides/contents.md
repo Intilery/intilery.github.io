@@ -20,7 +20,7 @@ In its very simplest form, Intilery generates messages about what’s happening 
 
 ## How does Intilery work?
 
-Intielry's libraries generate and send messages to our tracking API in JSON format. We provide a standard structure for the basic API calls, along with a recommended JSON structure (also known as the ‘Schema’) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
+Intilery's libraries generate and send messages to our tracking API in JSON format. We provide a standard structure for the basic API calls, along with a recommended JSON structure (also known as the ‘Schema’) that helps keep the most important parts of your data consistent, while allowing great flexibility in what other information you collect and where.
 
 ### Intilery Messages
 

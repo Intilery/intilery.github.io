@@ -32,7 +32,7 @@ Batches are sent either:
 - on a scheduled timer, every 30 seconds
 - when the app goes to the background
 
-To limit memory and disk usage, Intilery only queues up to 1000 events. When the app is terminated, Intielry saves the queue to disk, and loads that data again at app launch so there is no data loss.
+To limit memory and disk usage, Intilery only queues up to 1000 events. When the app is terminated, Intilery saves the queue to disk, and loads that data again at app launch so there is no data loss.
 
 ## Getting Started
 
@@ -226,7 +226,7 @@ Now that the Intilery SDK and is installed, you’re ready to collect some data!
 
 ### Identify
 
-Intielry's Identify method lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
+Intilery's Identify method lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
 Intilery recommends that you call Identify once when you first create the user’s account, and only call it again later when they update their traits or you change them.
 
@@ -259,7 +259,7 @@ Find details on the identify method payload in the [Identify Schema documentatio
 
 ### Track
 
-Intielry's Track method lets you record the actions your users perform. Every action triggers what we call an “event”, which can also have associated properties.
+Intilery's Track method lets you record the actions your users perform. Every action triggers what we call an “event”, which can also have associated properties.
 
 To get started, the Intilery iOS SDK can automatically track a few key common events with the [Intilery Native Mobile Schema](../schema/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Enable this option during initialization.
 

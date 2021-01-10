@@ -196,9 +196,9 @@ Every API call has four timestamps, `originalTimestamp`, `timestamp`, `sentAt` a
 
 | **Timestamp**       | **Calculated**                                               | **Description**                                              |
 | ------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `originalTimestamp` | Time on the client device when call was invoked **OR** The `timestamp` value manually passed in through server-side libraries. | Used by Intielry to calculate `timestamp`.  **Note:** `originalTimestamp` is not useful for analysis since it’s not always trustworthy as it can be easily adjusted and affected by clock skew. |
+| `originalTimestamp` | Time on the client device when call was invoked **OR** The `timestamp` value manually passed in through server-side libraries. | Used by Intilery to calculate `timestamp`.  **Note:** `originalTimestamp` is not useful for analysis since it’s not always trustworthy as it can be easily adjusted and affected by clock skew. |
 | `sentAt`            | Time on client device when call was sent **OR** `sentAt` value manually passed in. | Used by Intilery to calculate `timestamp`.  **Note:** `sentAt` is not useful for analysis since it’s not always trustworthy as it can be easily adjusted and affected by clock skew. |
-| `receivedAt`        | time on Intilery server clock when call was received          | Used by Intilery to calculate `timestamp`, and used as sort key in Warehouses.  **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured. |
+| `receivedAt`        | time on Intilery server clock when call was received         | Used by Intilery to calculate `timestamp`, and used as sort key in Warehouses.  **Note:** For max query speed, `receivedAt` is the recommended timestamp for analysis when chronology does not matter as chronology is not ensured. |
 | `timestamp`         | Calculated by Intilery to correct client-device clock skew using the following formula: `receivedAt` - (`sentAt` - `originalTimestamp`) | **Note:** Recommended timestamp for analysis when chronology does matter. |
 
 ### originalTimestamp

@@ -4,7 +4,7 @@ title: Protocols Overview
 sidebar_label: Protocols Overview
 ---
 
-Intielry helps customers collect and integrate customer data from a wide range of Sources, and to use that data to power personalised marketing campaigns. To do so reliably, the data Intilery receives must be clean, consistent and adhere to a well thought out tracking plan.
+Intilery helps customers collect and integrate customer data from a wide range of Sources, and to use that data to power personalised marketing campaigns. To do so reliably, the data Intilery receives must be clean, consistent and adhere to a well thought out tracking plan.
 
 Protocols was built to automate and scale the [data quality best practices](../guides/data-collection) developed over years of helping customers implement Intilery. Investing in data quality will improve trust in your data, reduce time spent by your engineering and business teams navigating and validating data, and ultimately allow your business to grow faster.
 

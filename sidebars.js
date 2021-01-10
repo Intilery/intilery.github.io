@@ -1,6 +1,19 @@
 module.exports = {
     guides: {
-        'Getting Started': ["guides/contents", "guides/simple",  "guides/full","guides/trackingplan", "guides/fullimp", "guides/faq"],
+        'Getting Started': 
+        [
+        	"guides/contents", 
+        	"guides/simple",  
+        	"guides/full", 
+        	"guides/fullimp", 
+        	"guides/faq"
+        ],
+        'Tracking Events': [
+        	"guides/protocols",
+        	"guides/trackingplan",
+        	"guides/data-collection",
+        	"guides/validate",
+        ]
     },
     apis: {
         'Getting Started': [
@@ -38,7 +51,9 @@ module.exports = {
                 "schema/track",
                 "schema/screen",
                 "schema/page",
-                "schema/mobile"
+                "schema/mobile",
+                "schema/b2b",
+                "schema/video",
             ]
         },
         "schema/retail",

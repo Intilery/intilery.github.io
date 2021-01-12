@@ -27,7 +27,7 @@ To view a specific violation, simply mouseover on the violation icon to see deta
 
 ### Schema Details
 
-In this example we are validating a "Product Removed" event from the [ecommerce schema](../schema/retail). Note even though the events are part of the standard Intilery ecommerce schema, you still need to validate them to ensure that they match what you expect.
+In this example we are validating a "Product Removed" event from the [ecommerce schema](/docs/schema/retail). Note even though the events are part of the standard Intilery ecommerce schema, you still need to validate them to ensure that they match what you expect.
 
 To crrect a violation, click on the event in the event stream. Details of the event will be displayed in the right hand pane.
 
@@ -45,7 +45,7 @@ This is the schema that Intilery has extracted from the data sent for the event.
 
 #### Analytics
 
-This shows the data as it was sent from the [analytics.js](../tag/tag1) tag
+This shows the data as it was sent from the [analytics.js](/docs/tag/tag1) tag
 
 ![analytics](/img/analytics.png)
 
@@ -109,7 +109,7 @@ There are no options to validate booleans, you must pass in true or false (no qu
 
 ![arrays](/img/arrays.png)
 
-***Note:*** It is not currently possible to apply validation to objects within an array, Intielry will recognise the properties of objects within an array and make them available in [audiences](../customers/audiences) and [computed traits](../customers/computed-traits)
+***Note:*** It is not currently possible to apply validation to objects within an array, Intielry will recognise the properties of objects within an array and make them available in [audiences](/docs/customers/audiences) and [computed traits](/docs/customers/computed-traits)
 
 ## Schema
 

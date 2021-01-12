@@ -28,9 +28,9 @@ identify method definition:
 
 The identify call has the following fields:
 
-| userId   | optional | String   | The database ID for the customer. If you don’t know who the customer is yet, you can omit the userId and just record traits. You can read more about identities in the [identify reference](../schema/identify). |
+| userId   | optional | String   | The database ID for the customer. If you don’t know who the customer is yet, you can omit the userId and just record traits. You can read more about identities in the [identify reference](/docs/schema/identify). |
 | -------- | -------- | -------- | ------------------------------------------------------------ |
-| traits   | optional | Object   | A dictionary of traits you know about the customer, like their email or name. You can read more about traits in the [identify reference](../schema/identify). |
+| traits   | optional | Object   | A dictionary of traits you know about the customer, like their email or name. You can read more about traits in the [identify reference](/docs/schema/identify). |
 | options  | optional | Object   | {}Mostly not required, though see anonymous ID below         |
 | callback | optional | Function | A function executed after a short timeout, giving the browser time to make outbound requests first. |
 
@@ -88,13 +88,13 @@ track method definition:
 
 The track call has the following fields:
 
-| event      | required | String   | The name of the event you’re tracking. You can read more about the [track method](../schema/track) and what event names we recommend. |
+| event      | required | String   | The name of the event you’re tracking. You can read more about the [track method](/docs/schema/track) and what event names we recommend. |
 | ---------- | -------- | -------- | ------------------------------------------------------------ |
-| properties | optional | Object   | A dictionary of [properties](../schema/track#properties) for the event. If the event was 'Added to Cart', it might have properties like price and productType. |
+| properties | optional | Object   | A dictionary of [properties](/docs/schema/track#properties) for the event. If the event was 'Added to Cart', it might have properties like price and productType. |
 | options    | optional | Object   | {}Mostly not required, though see anonymous ID below         |
 | callback   | optional | Function | A function that is executed after a short timeout, giving the browser time to make outbound requests first. |
 
-The only required argument to track in analytics.js is an event name string. You can read more about [how we recommend naming your events](../schema/track#event).
+The only required argument to track in analytics.js is an event name string. You can read more about [how we recommend naming your events](/docs/schema/track#event).
 
 Example track call:
 
@@ -105,13 +105,13 @@ analytics.track('Article Completed', {
 });
 ```
 
-The only required argument to track in analytics.js is an event name string. Read more about how we recommend [naming your events](../schema/track#event).
+The only required argument to track in analytics.js is an event name string. Read more about how we recommend [naming your events](/docs/schema/track#event).
 
 ## Page
 
 The page method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-A page call is included by default as the final line in the analytics.js [snippet](../tag/tag1#installing-intilery). You may modify this page call within the guidelines below.
+A page call is included by default as the final line in the analytics.js [snippet](/docs/tag/tag1#installing-intilery). You may modify this page call within the guidelines below.
 
 page method definition:
 
@@ -455,7 +455,7 @@ analytics.track("Order Completed", {}, { context: { ip: "0.0.0.0" }});
 
 ## Context & Traits
 
-Within the options dictionary, a sub-dictionary, context, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](../schema/common/#context). Within context is an optional traits dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
+Within the options dictionary, a sub-dictionary, context, exists. The context dictionary captures various data automatically depending on the event type and what your source type is. You can read more about the context dictionary [here](/docs/schema/common/#context). Within context is an optional traits dictionary that contains traits about the current user. This is useful for associating information about a user from previous identify calls to a track or page event.
 
 Consider this identify event:
 
@@ -498,7 +498,7 @@ The object means that you are successfully loading analytics.js onto your websit
 
 ![img](/img/console-b.gif)
 
-Solution: Follow the analytics.js [Quickstart Guide](../tag/tag1)
+Solution: Follow the analytics.js [Quickstart Guide](/docs/tag/tag1)
 
 ### Are you loading two instances of analytics.js?
 

@@ -34,7 +34,7 @@ Add the code provided to your site, see [Installing Intilery](#installing-intile
 
 ## REST API
 
-Your account manager will be provided a REST API key at the time of your account setup. See [API](../apis/api1) for more details on the REST API.
+Your account manager will be provided a REST API key at the time of your account setup. See [API](/docs/apis/api1) for more details on the REST API.
 
 ## Installing Intilery
 
@@ -54,7 +54,7 @@ That snippet loads Analytics.js onto the page *asynchronously*, so it won’t af
 
 ### Step 2: Identify Users
 
-The `identify` method is how you tell Intilery who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](../tag/tag1#step-2-identify-customers).
+The `identify` method is how you tell Intilery who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/tag/tag1#step-2-identify-customers).
 
 **Note:** You don’t need to call `identify` for anonymous visitors to your site. Intilery automatically assigns them an `anonymousId`, so just calling `page` and `track` works just fine without `identify`.
 
@@ -86,7 +86,7 @@ With that call in your page footer, you successfully identify every user that vi
 
 ### Step 3: Track Actions
 
-The `track` method is how you tell Intilery about the actions your users are performing on your site. Every action triggers what we call an “event”, which can also have associated properties. You can read more about `track` in the [track method reference](../tag/tag1#step-3-track-actions).
+The `track` method is how you tell Intilery about the actions your users are performing on your site. Every action triggers what we call an “event”, which can also have associated properties. You can read more about `track` in the [track method reference](/docs/tag/tag1#step-3-track-actions).
 
 Here’s what a call to `track` might look like when a user signs up:
 
@@ -145,7 +145,7 @@ And of course, import the SDK in the files that you use it by adding the followi
 
 ### Step 2: Identify Users
 
-The `identify` method is how you tell Intilery who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](../sdk/ios#identify).
+The `identify` method is how you tell Intilery who the current user is. It takes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify reference](/docs/sdk/ios#identify).
 
 Here’s what a basic call to `identify` might look like:
 
@@ -163,7 +163,7 @@ Once you’ve added an `identify` call, you’re ready to move on to tracking!
 
 ### Step 3: Track Actions
 
-The `track` method is how you tell Intilery about the actions your users are performing in your app. Every action triggers what we call an “event”, which can also have associated properties. You can read more about `track` in the [track method reference](../sdk/ios#track).
+The `track` method is how you tell Intilery about the actions your users are performing in your app. Every action triggers what we call an “event”, which can also have associated properties. You can read more about `track` in the [track method reference](/docs/sdk/ios#track).
 
 To get started, the Intilery iOS SDK can automatically track a few important common events, such as **Application Installed**, **Application Updated** and **Application Opened**. You can enable this option during initialization by adding the following lines.
 
@@ -210,7 +210,7 @@ You can filter for spectic events that you know are sent to Intiery.
 
 Three views are available when viewing a payload:
 
-- The **Raw view** is the complete JSON object Intilery received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Intilery automatically collects](../schema/common/#context-fields-automatically-collected) the moment the data is sent.
+- The **Raw view** is the complete JSON object Intilery received from the calls you sent. These calls include all the details about what is being tracked: timestamps, properties, traits, ids, and [contextual information Intilery automatically collects](/docs/schema/common/#context-fields-automatically-collected) the moment the data is sent.
 - The **Schema view** is a recreation of the API call you made that was sent to Intilery.
 - The **Analytics view** is a recreation of the JavaScript call that was called **Note:** the analytics tab is shown even if the call was made from a non JavaScript source, such as REST or iOS (coming soon).
 

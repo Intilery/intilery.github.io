@@ -25,7 +25,7 @@ The recommended way to install Analytics for iOS is using [Cocoapods](http://coc
 First, add the `Analytics` dependency to your `Podfile` by adding the following line:
 
 ```
-pod 'IntileryAnalytics', '~> 4.1'
+pod 'IntileryAnalytics', '~> 1.0'
 ```
 
 Then in your application delegate’s `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
@@ -191,4 +191,4 @@ Analytics.shared().flush()
 
 ## What’s Next?
 
-We just walked through the quickest way to get started with Intilery using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](./ios) to see what else is possible, or read about the [Tracking API methods](../apis/api1) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Intilery using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](./ios) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api1) to get a sense for the bigger picture.

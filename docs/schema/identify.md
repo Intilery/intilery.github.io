@@ -13,11 +13,11 @@ Our recommendation for when and how often you should call `identify` is as follo
 - When a user updates their info (eg changes or adds a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
 
-***Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](../tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.* (coming soon)
+***Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](/docs/tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.* (coming soon)
 
-Calling `identify` in the [Website Tag](../tag/tag1) or [HTTP API](../apis/api1) is the first step to integrating and using Intilery.
+Calling `identify` in the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api1) is the first step to integrating and using Intilery.
 
-Here’s the payload of a typical `identify` call with most [common fields](../schema/common) removed:
+Here’s the payload of a typical `identify` call with most [common fields](/docs/schema/common) removed:
 
 ```javascript
 {
@@ -98,7 +98,7 @@ In these cases, you should use an Anonymous ID.
 
 The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don’t have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-**Note:** Our [Website Tag](../tag/tag1) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
+**Note:** Our [Website Tag](/docs/tag/tag1) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
 
 Here’s an example of a Javascript event for an anonymous user:
 
@@ -150,7 +150,7 @@ Reserved traits we’ve standardized:
 
 ### Trait Updates
 
-Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](../tag/reference#identify) or the [HTTP API identify](../apis/api1#identify-action) will result in the value of the trait being updating for the customer.
+Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](/docs/tag/reference#identify) or the [HTTP API identify](/docs/apis/api1#identify-action) will result in the value of the trait being updating for the customer.
 
 Changeable/transient values or multi-value traits should not be set as a single trait.
 
@@ -375,7 +375,7 @@ analytics.identify("97980cfea0067", "traits": {
 
 **Note:** Both policies cpould have been set in a single `indentify` call of course.
 
-**Note: ** It is advisable to keep the number of traits for multi value traits to under 20, if you require more values, then use an array, e.g. [products in cart](../schema/retail) which is an array of products
+**Note: ** It is advisable to keep the number of traits for multi value traits to under 20, if you require more values, then use an array, e.g. [products in cart](/docs/schema/retail) which is an array of products
 
 #### Array based traits
 
@@ -424,7 +424,7 @@ To send an asset that has tranisent data, for example a renewal quote, you may d
 
 **Note:** Be aware of [Asynchronous Processing](#asynchronous-processing)
 
-The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Actions](../apis/actions)
+The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Actions](/docs/apis/actions)
 
 For example: -
 

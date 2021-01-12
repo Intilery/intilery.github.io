@@ -4,7 +4,7 @@ title: Audiences
 sidebar_label: Audiences
 ---
 
-Audiences allow you to define cohorts of customers based on their event behavior and traits that Intilery then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be used to target and personalise marketing campaigns as well as audience membership being availavle in the [Profile API](../apis/profile)
+Audiences allow you to define cohorts of customers based on their event behavior and traits that Intilery then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be used to target and personalise marketing campaigns as well as audience membership being availavle in the [Profile API](/docs/apis/profile)
 
 ## Building an Audience
 
@@ -14,7 +14,7 @@ When building an audience you can use existing events, traits, or computed trait
 
 ### Events
 
-You can build an audience from any of the events that are sent to Intilery. This includes any [track](../schema/track), [page](../schema/page), or [screen](../schema/screen) calls. You can use select fields of the event to refine the audience on specific event properties as well. Select either `required`, `Not Required` or `Optional` to indicate customers that `have`, `have not` or `have optionally` performed an event. For example, you might want to look at all customers that have viewed a product above a certain price point, but not completed the order.
+You can build an audience from any of the events that are sent to Intilery. This includes any [track](/docs/schema/track), [page](/docs/schema/page), or [screen](/docs/schema/screen) calls. You can use select fields of the event to refine the audience on specific event properties as well. Select either `required`, `Not Required` or `Optional` to indicate customers that `have`, `have not` or `have optionally` performed an event. For example, you might want to look at all customers that have viewed a product above a certain price point, but not completed the order.
 
 ![Audience Builder](/img/audience3.png)
 
@@ -22,7 +22,7 @@ You can also specify time-windows, `in range (quick)`, `in range (realative)`, `
 
 ### Custom Traits
 
-You can also build audiences based on custom traits. These traits can be collected from your apps when a customer completes a form, or signs up, using an [identify](../schema/identify) call. You can also check out the Customer Activity Viewer to see examples of these traits.
+You can also build audiences based on custom traits. These traits can be collected from your apps when a customer completes a form, or signs up, using an [identify](/docs/schema/identify) call. You can also check out the Customer Activity Viewer to see examples of these traits.
 
 ### Computed Traits
 
@@ -57,4 +57,4 @@ returns:
 }
 ```
 
-You can read the [full Profile API docs](../apis/profile) to learn more.
+You can read the [full Profile API docs](/docs/apis/profile) to learn more.

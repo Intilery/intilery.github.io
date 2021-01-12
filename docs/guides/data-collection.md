@@ -41,7 +41,7 @@ With your business objectives documented, it’s time to build a set of standard
 Regardless of approach, here are some important notes to keep in mind:
 
 - **Pick a casing convention:** We recommend *Title Case* for event names and *snake_case* for property names. Make sure you pick a casing standard and enforce it across your events and properties.
-- **Pick an event name structure:** As you may have noticed from our [schemas](../schema/contents), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
+- **Pick an event name structure:** As you may have noticed from our [schemas](/docs/schema/contents), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
 - **Don’t create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (ex. `User Signed Up (11-01-2019)`)
 - **Don’t create events to track properties:** Avoid adding values to event names that could be a property. Instead, add values a property (ex. `"blog_post_title":"Best Tracking Plans Ever"`)
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
@@ -50,19 +50,19 @@ Regardless of approach, here are some important notes to keep in mind:
 
 ## Create a Tracking Plan
 
-A [tracking plan](../guides/trackingplan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
+A [tracking plan](/docs/guides/trackingplan) clarifies what events to track, where those events live in the code base, and why those events are necessary from a business perspective. The tracking plan served as a project management tool to align an entire organization around data as the basis on which to make decisions. The tracking plan helps marketers, product managers, engineers, analysts, etc. get on the same page. It represents the single source of truth for what data to collect and why.
 
-The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](../guides/protocols).
+The tracking plan has been so instrumental in helping organizations reclaim their own data efforts that we invested years of product development to create [Protocols](/docs/guides/protocols).
 
 In the following, we share how to build a tracking plan from the ground up using a Google Sheet template. Note that you can use any tool to create the tracking plan!
 
 ## Tracking Plan Google Sheets Template
 
-To help you get started, we developed a Tracking Plan template in [Google Sheets]() (coming soon). The template includes all of our semantic schemas including [eCommerce](../schema/retail), [B2B SaaS](../schema/b2b), [Mobile](../schema/mobile) and [Video](../schema/video), and a collection of common properties.
+To help you get started, we developed a Tracking Plan template in [Google Sheets]() (coming soon). The template includes all of our semantic schemas including [eCommerce](/docs/schema/retail), [B2B SaaS](/docs/schema/b2b), [Mobile](/docs/schema/mobile) and [Video](/docs/schema/video), and a collection of common properties.
 
 We highly recommend you start by [defining your business objectives](#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 
-With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](../tag/reference#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](../tag/reference#identify).
+With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/tag/reference#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/tag/reference#identify).
 
 From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
@@ -72,7 +72,7 @@ Once completed, the Google Sheet tracking plan can be shared with your stakehold
 
 The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
-Here is a sample `.identify()` call (with [analytics.js](../tag/tag1)) for Intilery:
+Here is a sample `.identify()` call (with [analytics.js](/docs/tag/tag1)) for Intilery:
 
 ```javascript
 analytics.identify({
@@ -108,7 +108,7 @@ For an ecommerce company, however, the main events might be something like:
 - **Product Added**
 - **Order Completed**
 
-Note that Intilery has a set of “reserved” event names specifically for ecommerce, called our [ecommerce schema](../schema/retail). Check it out to see which events we cover and how they are used in our downstream destinations.
+Note that Intilery has a set of “reserved” event names specifically for ecommerce, called our [ecommerce schema](/docs/schema/retail). Check it out to see which events we cover and how they are used in our downstream destinations.
 
 For a community, on the other hand, there is an entirely different set of actions that indicate engagement, listed in the below pyramid. For example, a community like [GrowthHackers](https://growthhackers.com/) may want to track actions like:
 

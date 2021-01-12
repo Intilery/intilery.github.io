@@ -14,9 +14,13 @@ This tag is based on the Segment javascript analytics tag it has been extended t
 
 The full reference of analytics.js (the tag) can be found here [Analytics.js](./reference) 
 
-## Client Key(s)
+## Client Key(s) / Write Key(s)
 
 Client Key(s) are unique to each Client and Account, the client key for your account(s) are included in the tag snippet within the application. in the tag section.
+
+Client Key(s) are referred to as Write Key(s) in the mobile SDK.
+
+Your Client Key (Write Key) can be found in the tag snippet on the `analytics.load('xxxx')` line, the value in the quotes is your Client Key / Write Key
 
 **Note:** If you have multiple accounts with Intilery, each tag has a seperate client key, obtain the tag snippet for each account by switching between accounts when you log in to Intilery.
 

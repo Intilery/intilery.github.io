@@ -10,8 +10,8 @@ Now that we’ve shown you Intilery in action, let’s step back and think throu
 - Decide what to collect
   - Shortcut! Check if a Business Spec meets your needs
     - [B2B Schema] (coming soon)
-    - [Ecommerce Schema](../schema/retail)
-    - [Mobile Spec](../schema/mobile)
+    - [Ecommerce Schema](/docs/schema/retail)
+    - [Mobile Spec](/docs/schema/mobile)
     - [Video Spec] (coming soon)
 - [Create naming conventions](#create-naming-conventions)
 - Develop a Tracking Plan
@@ -72,18 +72,18 @@ If your organization sells a product or services to other businesses, you might 
 
 #### Ecommerce Spec
 
-If your organization sells products online, the E-commerce Spec covers the customer’s journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. read more about our [Ecommerce Schema](../schema/retail)
+If your organization sells products online, the E-commerce Spec covers the customer’s journey as they browse your store, click on promotions, view products, add those products to a cart, and complete a purchase. It also provides recommendations about off-page interactions, including interactions with email promotions, coupons, and other systems. read more about our [Ecommerce Schema](/docs/schema/retail)
 
 #### Mobile Spec
 
-The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Intilery Android and iOS SDKs] (coming soon). Read more about [the Native Mobile Spec](../schema/mobile)
+The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Intilery Android and iOS SDKs] (coming soon). Read more about [the Native Mobile Spec](/docs/schema/mobile)
 
 ## Create naming conventions
 
 Regardless of approach, here are some important best practices to keep in mind:
 
 - **Pick a casing convention:** We recommend *Title Case* for event names and *snake_case* for property names. Make sure you pick a casing standard and enforce it across your events and properties.
-- **Pick an event name structure:** As you may have noticed from our [schemas](../schema/contents), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
+- **Pick an event name structure:** As you may have noticed from our [schemas](/docs/schema/contents), we’re big fans of the Object (`Blog Post`) + Action (`Read`) framework for event names. Pick a convention and stick to it!
 - **Don’t create event names dynamically:** Avoid creating events that pull a dynamic value into the event name (for example, `User Signed Up (11-01-2019)`).
 - **Don’t create events to track properties:** Avoid adding values to event names when they could be a property. Instead, add values as a property. For example, rather than having an event called “Read Blog Post - Best Tracking Plans Ever”, create a “Blog Post Read” event and with a property like `"blog_post_title":"Best Tracking Plans Ever"`.
 - **Don’t create property keys dynamically:** Avoid creating property names like `"feature_1":"true"`,`"feature_2":"false"` as these are ambiguous and very difficult to analyze
@@ -100,7 +100,7 @@ Your tracking plan is probably maintained in a spreadsheet and serves as a proje
 
 ### Plan your Identify calls
 
-The Identify call updates all records of the user with a set of traits, and so is extremely important for building your understanding of your users. But how do you choose which traits to include? The example below shows an Identify call using [analytics.js](../tag/tag1)) for Intilery:
+The Identify call updates all records of the user with a set of traits, and so is extremely important for building your understanding of your users. But how do you choose which traits to include? The example below shows an Identify call using [analytics.js](/docs/tag/tag1)) for Intilery:
 
 ```javascript
 analytics.identify({
@@ -140,7 +140,7 @@ For an Ecommerce company, however, the main events might be something like:
 - **Product Added**
 - **Order Completed**
 
-**Tip**: As we mentioned Intilery has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](../schema/retail). Check it out to see which events we cover and how they are used in our downstream destinations.
+**Tip**: As we mentioned Intilery has a set of “reserved” event names specifically for ecommerce, called our [Ecommerce Spec](/docs/schema/retail). Check it out to see which events we cover and how they are used in our downstream destinations.
 
 An online community, on the other hand, has an entirely different set of actions that indicate engagement, as listed below. For example, a community might want to track actions like:
 

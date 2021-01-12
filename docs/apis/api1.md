@@ -209,7 +209,7 @@ Example page call:
 
 ## Screen
 
-The [screen](../schema/screen) method let you record whenever a user sees a screen of your mobile app.
+The [screen](/docs/schema/screen) method let you record whenever a user sees a screen of your mobile app.
 
 You’ll want to send the `screen` message whenever a user requests a page of your app.
 
@@ -229,14 +229,14 @@ The `screen` call has the following fields:
 
 | Field         |                                          | Type   | Description                                                  |
 | ------------- | ---------------------------------------- | ------ | ------------------------------------------------------------ |
-| `anonymousId` | *optional if userID is set instead*      | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
-| `context`     | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](../schema/common#context) for more details. |
-| `name`        | *optional*                               | String | Name of the screen See the [Name field docs](../schema/screen#name) for more details. |
-| `properties`  | *optional*                               | Object | Free-form dictionary of properties of the screen, like `name` See the [Properties field docs](../schema/screen#properties) for a list of reserved property names. |
-| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Intilery Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](../schema/common#timestamps) for more detail. |
-| `userId`      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](../schema/identify#identities) for more details. |
+| `anonymousId` | *optional if userID is set instead*      | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required. See the [Identities docs](/docs/schema/identify#identities) for more details. |
+| `context`     | *optional*                               | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like `ip` address or `locale` See the [Context field docs](/docs/schema/common#context) for more details. |
+| `name`        | *optional*                               | String | Name of the screen See the [Name field docs](/docs/schema/screen#name) for more details. |
+| `properties`  | *optional*                               | Object | Free-form dictionary of properties of the screen, like `name` See the [Properties field docs](/docs/schema/screen#properties) for a list of reserved property names. |
+| `timestamp`   | *optional*                               | Date   | Timestamp when the message itself took place, defaulted to the current time by the Intilery Tracking API, as a [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) format date string. If the event just happened, leave it out and we’ll use the server’s time. If you’re importing data from the past, make sure you to provide a `timestamp`.See the [Timestamps fields docs](/docs/schema/common#timestamps) for more detail. |
+| `userId`      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](/docs/schema/identify#identities) for more details. |
 
-Find details on the **`screen` payload** in our [Spec](../schema/screen).
+Find details on the **`screen` payload** in our [Spec](/docs/schema/screen).
 
 ## Historical Import
 
@@ -311,7 +311,7 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
 | Field                        |                                                              | Type | Description |
 | ---------------------------- | ------------------------------------------------------------ | ---- | ----------- |
 | `batch` *Array*              | An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `type` property with a valid method name. |      |             |
-| `context` *Object, optional* | The same as [Context](../schema/common#context) for other calls, but it will be merged with any context inside each of the items in the batch. |      |             |
+| `context` *Object, optional* | The same as [Context](/docs/schema/common#context) for other calls, but it will be merged with any context inside each of the items in the batch. |      |             |
 
 ## Collecting IP Address
 

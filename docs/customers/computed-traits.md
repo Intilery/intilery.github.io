@@ -4,7 +4,7 @@ title: Computed Traits
 sidebar_label: Computed Traits
 ---
 
-Computed Traits allow you to quickly create customer-level calculations that Intilery keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_category` to determine which category the customer most frequently pruchases. These computations are based on your events and event properties that you are sending through Intilery on the [page](../schema/page) and [track](../schema/track) calls.
+Computed Traits allow you to quickly create customer-level calculations that Intilery keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_category` to determine which category the customer most frequently pruchases. These computations are based on your events and event properties that you are sending through Intilery on the [page](/docs/schema/page) and [track](/docs/schema/track) calls.
 
 ## Types of Computed Traits
 
@@ -154,4 +154,4 @@ returns:
 }
 ```
 
-You can read the [full Profile API docs](../apis/profile) to learn more.
+You can read the [full Profile API docs](/docs/apis/profile) to learn more.

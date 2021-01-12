@@ -43,7 +43,7 @@ The recommended way to install Intilery for iOS is using [Cocoapods](http://coco
 First, add the `Analytics` dependency to your `Podfile`, like so:
 
 ```
-pod 'IntileryAnalytics', '~> 4.1'
+pod 'IntileryAnalytics', '~> 1.0'
 ```
 
 Then in your application delegate’s `- application:didFinishLaunchingWithOptions:` method, set up the SDK like so:
@@ -104,7 +104,7 @@ Analytics.setup(with: AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY"))
 
 ### Application Lifecycle Tracking
 
-The Intilery-iOS SDK can automatically instrument [common application lifecycle events](../schema/mobile/) such as “Application Installed”, “Application Updated” and “Application Opened”. Simply enable this option when you initialize the SDK.
+The Intilery-iOS SDK can automatically instrument [common application lifecycle events](/docs/schema/mobile/) such as “Application Installed”, “Application Updated” and “Application Opened”. Simply enable this option when you initialize the SDK.
 
 #### Swift
 
@@ -247,21 +247,21 @@ Analytics.shared().identify("a user's id", traits: ["email": "a user's email add
                                 traits:@{ @"email": @"a user's email address" }];
 ```
 
-| `userId` *NSString \*, optional*     | The database ID for this user. If you don’t know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](../schema/identify). |
+| `userId` *NSString \*, optional*     | The database ID for this user. If you don’t know who the user is yet, you can omit the `userId` and just record `traits`. You can read more in the [identify reference](/docs/schema/identify). |
 | ------------------------------------ | ------------------------------------------------------------ |
-| `traits` *NSDictionary \*, optional* | A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](../schema/identify). |
+| `traits` *NSDictionary \*, optional* | A dictionary of traits you know about the user, like their `email` or `name`. You can read more about traits in the [identify reference](/docs/schema/identify). |
 
 Intilery for iOS works on its own background thread, so it will never block the main thread for the UI or the calling thread.
 
 Calling `- identify:` with a `userId` will write that ID to disk to be used in subsequent calls. That ID can be removed either by uninstalling the app or by calling [`reset`](#reset).
 
-Find details on the identify method payload in the [Identify Schema documentation](../schema/identify/).
+Find details on the identify method payload in the [Identify Schema documentation](/docs/schema/identify/).
 
 ### Track
 
 Intilery's Track method lets you record the actions your users perform. Every action triggers what we call an “event”, which can also have associated properties.
 
-To get started, the Intilery iOS SDK can automatically track a few key common events with the [Intilery Native Mobile Schema](../schema/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Enable this option during initialization.
+To get started, the Intilery iOS SDK can automatically track a few key common events with the [Intilery Native Mobile Schema](/docs/schema/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Enable this option during initialization.
 
 You might also want to track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Intilery recommends tracking just a few important events to start out. You can always add more later! An example Track call might look like this:
 
@@ -290,7 +290,7 @@ The Track call has the following fields:
 
 ### Screen
 
-The [Screen](../schema/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
+The [Screen](/docs/schema/screen/) method lets you you record whenever a user sees a screen of your mobile app, along with optional extra information about the page being viewed.
 
 You’ll want to record a screen event an event whenever the user opens a screen in your app. This could be a view, fragment, dialog or activity depending on your app.
 
@@ -315,7 +315,7 @@ The `screen` call has the following fields:
 | ------------------------------------------------------------ |
 | A dictionary of properties for the screen. A screen **Photo Feed** might have properties like `Feed Type` or `Sort Order`. |
 
-Find details on the Screen payload in the [Screen Schema documentation](../schema/screen/).
+Find details on the Screen payload in the [Screen Schema documentation](/docs/schema/screen/).
 
 ### AnonymousId
 

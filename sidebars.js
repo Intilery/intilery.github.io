@@ -32,13 +32,15 @@ module.exports = {
     		'sdk/ios-quickstart',
     		'sdk/ios14',
     		'sdk/ios-trouble',
-    		'sdk/ios-faq'
+    		'sdk/ios-faq',
+    		'sdk/ios-push'
     	],
     	'android': [
     		'sdk/android',
     		'sdk/android-quickstart',
     		'sdk/android-trouble',
-    		'sdk/android-faq'
+    		'sdk/android-faq',
+    		'sdk/android-push'
     	]
     },
     schema: ["schema/contents",

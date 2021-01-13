@@ -1,7 +1,7 @@
 ---
 id: android-quickstart
-title: Quickstart android
-sidebar_label: android Quickstart tutorial
+title: Quickstart Android
+sidebar_label: Android Quickstart tutorial
 ---
 
 This tutorial will help you start sending analytics data from your Android app to Intilery.

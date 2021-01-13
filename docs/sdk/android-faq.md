@@ -1,7 +1,7 @@
 ---
 id: android-faq
-title: Intilery-android Frequently Asked Questions
-sidebar_label: Intilery android FAQs
+title: Android Frequently Asked Questions
+sidebar_label: Android FAQs
 ---
 
 ## What is the latest version of the library?

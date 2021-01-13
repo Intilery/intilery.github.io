@@ -1,7 +1,7 @@
 ---
 id: ios-faq
-title: Intilery-iOS Frequently Asked Questions
-sidebar_label: Intilery iOS FAQs
+title: iOS Frequently Asked Questions
+sidebar_label: iOS FAQs
 ---
 
 ## How big is the Intilery SDK?

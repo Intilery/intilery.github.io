@@ -1,24 +1,26 @@
+---
 id: android-push
-title: android Push Notifications
-sidebar_label: android Push Notifications
+title: Android Push Notifications
+sidebar_label: Android Push Notifications
+---
 
 ## Setup
 
 To send push notifictions to your app, we use [Google Firebase](https://firebase.google.com/) as the messaging SDKs. Google Firebase is the number 1 mobile platform.
 
-In order to send messages from Intilery to your app you should follow the instructions for android
+In order to send messages from Intilery to your app you should follow the instructions for Android
 
-[setting up android iOS notifications](https://firebase.google.com/docs/cloud-messaging/ios/client)
+[setting up android Android notifications](https://firebase.google.com/docs/cloud-messaging/android/client)
 
-For both iOS you will need to register your app(s) with google firebase and supply Intilery with one of your FCM Keys for each app.
+For Android you will need to register your app(s) with google firebase and supply Intilery with one of your FCM Keys for each app.
 
 ## Registering devices
 
 For each customer device you will need to send the FCM token and optional deviceId to Intilery as part of an identify event, this registers the device to the customers' profile at Intilery.
 
-### Registering android
+### Registering Android
 
-Once you have completed the steps at [setting up andoid notifications](https://firebase.google.com/docs/cloud-messaging/android/client) you can implement the firebase code and Intielry identify code to register the device to the customer.
+Once you have completed the steps at [setting up Andoid notifications](https://firebase.google.com/docs/cloud-messaging/android/client) you can implement the firebase code and Intielry identify code to register the device to the customer.
 
 #### Java
 

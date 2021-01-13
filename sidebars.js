@@ -27,7 +27,7 @@ module.exports = {
         'Getting Started': ['tag/tag1', 'tag/reference'],
     },
     sdk: {
-    	'ios': [
+    	'iOS': [
     		'sdk/ios',
     		'sdk/ios-quickstart',
     		'sdk/ios14',
@@ -35,7 +35,7 @@ module.exports = {
     		'sdk/ios-faq',
     		'sdk/ios-push'
     	],
-    	'android': [
+    	'Android': [
     		'sdk/android',
     		'sdk/android-quickstart',
     		'sdk/android-trouble',

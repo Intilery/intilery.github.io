@@ -1,7 +1,7 @@
 ---
 id: android-trouble
-title: Troubleshooting Intilery-android
-sidebar_label: Troubleshooting Intilery-android
+title: Troubleshooting Aandroid
+sidebar_label: Troubleshooting Android
 ---
 
 ## No events in my debugger

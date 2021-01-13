@@ -1,7 +1,7 @@
 ---
 id: android
-title: Intilery android Mobile SDK
-sidebar_label: android Mobile SDK
+title: Android Mobile SDK
+sidebar_label: Android Mobile SDK
 ---
 
 Analytics for Android makes it simple to send your data to Intilery.

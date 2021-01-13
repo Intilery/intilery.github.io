@@ -1,7 +1,7 @@
 ---
 id: ios-trouble
-title: Troubleshooting Intilery-iOS
-sidebar_label: Troubleshooting Intilery-iOS
+title: Troubleshooting iOS
+sidebar_label: Troubleshooting iOS
 ---
 
 ## Target has transitive dependencies that include static binaries

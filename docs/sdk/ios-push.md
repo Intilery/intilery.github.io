@@ -1,16 +1,16 @@
+---
 id: ios-push
 title: iOS Push Notifications
 sidebar_label: iOS Push Notifications
+---
 
 ## Setup
 
 To send push notifictions to your app, we use [Google Firebase](https://firebase.google.com/) as the messaging SDKs. Google Firebase is the number 1 mobile platform.
 
-In order to send messages from Intilery to your app you should follow the instructions for iOS and android
+In order to send messages from Intilery to your app you should follow the instructions for iOS [setting up iOS notifications](https://firebase.google.com/docs/cloud-messaging/ios/client)
 
-[setting up andoid notifications](https://firebase.google.com/docs/cloud-messaging/android/client)
-
-For android you will need to register your app(s) with google firebase and supply Intilery with one of your FCM Keys for each app.
+iOS you will need to register your app(s) with google firebase and supply Intilery with one of your FCM Keys for each app.
 
 ## Registering devices
 
@@ -18,7 +18,7 @@ For each customer device you will need to send the FCM token and optional device
 
 ### Registering iOS
 
-Once you have completed the steps at [setting up android iOS notifications](https://firebase.google.com/docs/cloud-messaging/ios/client) you can implement the firebase code and Intielry identify code to register the device to the customer.
+Once you have completed the steps at [setting up iOS notifications](https://firebase.google.com/docs/cloud-messaging/ios/client) you can implement the firebase code and Intielry identify code to register the device to the customer.
 
 #### Swift
 

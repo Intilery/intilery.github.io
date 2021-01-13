@@ -13,6 +13,7 @@ module.exports = {
         	"guides/trackingplan",
         	"guides/data-collection",
         	"guides/validate",
+        	"guides/validate-schema",
         ]
     },
     apis: {

@@ -9,16 +9,15 @@ Now that we’ve shown you Intilery in action, let’s step back and think throu
 - [Define Business Objectives](#define-business-objectives)
 - Decide what to collect
   - Shortcut! Check if a Business Spec meets your needs
-    - [B2B Schema] (coming soon)
+    - [B2B Schema](/docs/schema/b2b)
     - [Ecommerce Schema](/docs/schema/retail)
     - [Mobile Spec](/docs/schema/mobile)
-    - [Video Spec] (coming soon)
+    - [Video Spec](/docs/schema/video)
 - [Create naming conventions](#create-naming-conventions)
 - Develop a Tracking Plan
   - [Plan your Identify and Group calls](#plan-your-identify-and-group-calls)
   - [Plan your Track events](#plan-your-track-events)
   - [Define your Track event properties](#define-your-track-event-properties)
-- [Plan for destination tools](https://Intilery.com/docs/getting-started/03-planning-full-install/#plan-for-destination-tools)
 
 Be prepared to invest time deciding with stakeholders how to track your data, and planning how you’ll utilise it. The time you spend here will save you lots of time in the future, as following Intilery’s best practices allows you to easily change your tracking later.
 

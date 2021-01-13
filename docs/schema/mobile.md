@@ -192,7 +192,7 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 ### Push Notification Received
 
-This event can be sent when a push notification is received in the app. It can be automatically enabled on iOS (coming soon)
+This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS SDK](/docs/sdk/ios/)
 
 ```javascript
 {
@@ -219,7 +219,7 @@ This event can be sent when a push notification is received in the app. It can b
 
 ### Push Notification Tapped
 
-This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on iOS (coming soon)
+This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS SDK](/docs/sdk/ios/)
 
 ```javascript
 {
@@ -281,7 +281,7 @@ When your application is opened using a referring link, Intilery or your package
 
 This event is fired *in addition* to the associated `Application Opened` event.
 
-Our iOS (coming soon) SDK can collect this event automatically if configured to do so.
+Our [iOS SDK](/docs/sdk/ios/) SDK can collect this event automatically if configured to do so.
 
 ```javascript
 {

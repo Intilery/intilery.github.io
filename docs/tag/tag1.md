@@ -158,6 +158,14 @@ analytics.identify(' {{user.id}} ', {  name: '{{user.fullname}}',  email: '{{use
 
 With that call in your page footer, you successfully identify every user that visits your site.
 
+### Customer Campaign
+
+The identify method automatically sends the campaign data for the current session, as set via UTM parameters in the URL, as detailed here [common fields](/docs/schema/common#context) (see field campaign).
+
+If the campaign is set on the current context, by including UTM paramters (utm_medium, utm_campaign etc.). a customer trait "campaign" will be created with these details.
+
+The campaign trait is only set on the customer when the customer is initially recognised, either as a known customer or an anonymous visitor, in which case the campaign value is copied over from the visitor to the customer
+
 ## Step 3: Track Actions
 
 The track method is how you tell Intilery about the actions your users are performing on your site. Every action triggers what we call an “event”, which can also have associated properties. You can read more about track in the [track method reference](https://intilery.atlassian.net/wiki/spaces/HEA/pages/1868169259/Analytics.js#Track).

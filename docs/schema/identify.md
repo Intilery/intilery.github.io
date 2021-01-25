@@ -60,6 +60,11 @@ Here’s a complete example of an `identify` call:
   "channel": "browser",
   "context": {
     "ip": "8.8.8.8",
+    "campaign" : {
+      "name" : "campaign name",
+      "source" : "Google",
+      "medium" : "ppc"
+    }
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
   },
   "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
@@ -136,6 +141,7 @@ Reserved traits we’ve standardized:
 | `birthday`    | Date     | User’s birthday                                              |
 | `company`     | Object   | Company the user represents, optionally containing: `name` (a String), `id` (a String or Number), `industry` (a String), `employee_count` (a Number) or `plan` (a String) |
 | `createdAt`   | Date     | Date the user’s account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings. |
+| `campaign`    | Object   | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. This maps directly to the common UTM campaign parameters. This is set when the customer is initially created and not updated on subsequent identify calls |
 | `description` | String   | Description of the user                                      |
 | `email`       | String   | Email address of a user                                      |
 | `firstName`   | String   | First name of a user                                         |
@@ -396,6 +402,14 @@ analytics.identify("97980cfea0067", "traits": {
 ```
 
 **Note:** You must pass in the complete array when setting an array based trait
+
+#### Customer Campaign
+
+The identify method automatically sends the campaign data for the current session, as set via UTM parameters in the URL, as detailed here [common fields](/docs/schema/common#context) (see field campaign).
+
+If the campaign is set on the current context, by including UTM paramters (utm_medium, utm_campaign etc.). a customer trait "campaign" will be created with these details.
+
+The campaign trait is only set on the customer when the customer is initially recognised, either as a known customer or an anonymous visitor, in which case the campaign value is copied over from the visitor to the customer
 
 ### Asynchronous Processing
 

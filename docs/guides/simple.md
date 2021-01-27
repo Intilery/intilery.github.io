@@ -12,7 +12,7 @@ The best way to learn about how Intilery works is to see it in action. This tuto
 
 ## Before you begin
 
-Before you start, you need a Intilery user account and a with the required role/permissions to access the tag and event setup. If you’re not already part of an organization with a Intilery account, you can [sign up for a free account](https://wwwintilery.com/trial?source=docs).
+Before you start, you need a Intilery user account and a with the required role/permissions to access the tag and event setup. If you’re not already part of an organization with a Intilery account, you can [sign up for a free account](https://www.intilery.com/?utm_source=docs).
 
 For the quickstart portion below, you also need access to the code for a basic website, PHP website, or an iOS app.
 

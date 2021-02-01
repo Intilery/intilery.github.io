@@ -12,7 +12,9 @@ Intilery has native for most use cases (Javascript, iOS and Android comming soon
 
 ## Endpoint
 
+```http
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/{action}
+```
 
 You will be given you clientId, accountIds and brandIDs.
 
@@ -80,7 +82,9 @@ identify lets you tie a user to their actions and record traits about them. It i
 
 We recommend calling identify a single time when the user’s account is first created, and only identifying again later when their traits change.
 
+```http
 POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/identify
+```
 
 ```json
 {
@@ -126,7 +130,9 @@ You’ll want to track events that are indicators of success for your site, like
 
 To get started, we recommend tracking just a few important events. You can always add more later!
 
+```http
 POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/track
+```
 
 Example added to basket event
 
@@ -171,7 +177,9 @@ The track endpoint can also be used to pass specific [Track Action Commands](./a
 
 The page action lets you record page views on your website, along with optional extra information about the page being viewed. The JavaScript tag will raise a page event whenever a new page is loaded.
 
+```http
 POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/page
+```
 
 Example page call:
 
@@ -215,7 +223,9 @@ You’ll want to send the `screen` message whenever a user requests a page of yo
 
 Example `screen` call:
 
+```http
 POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/screen
+```
 
 ```json
 {
@@ -241,8 +251,6 @@ Find details on the **`screen` payload** in our [Spec](/docs/schema/screen).
 ## Historical Import
 
 You can import historical data by adding the `timestamp` argument to any of your method calls. This can be helpful if you’ve just switched to Intilery.
-
-
 
 **Note:** If you’re tracking things that are happening right now, leave out the `timestamp` and our servers will timestamp the requests for you.
 
@@ -316,6 +324,247 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
 ## Collecting IP Address
 
 When sending a HTTP call from a user’s device, you can collect the IP address by setting `context.direct` to `true`.
+
+## Deletion and Suppression
+
+In keeping with our commitment to support GDPR and future privacy regulations such as the CCPA, we offer the ability to delete and suppress data about end users if they are identified by a `userId`, should they revoke or alter their consent to data collection. For instance, if an end user in the EU invokes their Right to Object or Right to Erasure under the GDPR, you can use the following features in Intilery to block ongoing data collection about the user, and additionally to delete all historical data across Intilery's systems, connected S3 buckets and warehouses.
+
+All deletion and suppression actions within Intilery are asynchronous, and fall under the umbrella of what we call “Regulations.” Regulations are requests to Intilery to impart control over your data flow.
+
+Regulations enable you to issue a single request to delete and suppress data about a user by `userId`.
+
+## Regulation types
+
+| Type                 | Description                                           |
+| :------------------- | :---------------------------------------------------- |
+| Suppress_With_Delete | Suppress new data and delete existing data            |
+| Delete               | Delete existing data without suppressing any new data |
+| Unsuppress           | Stop an ongoing suppression                           |
+| Suppress             | Suppress new data without deleting existing data      |
+| Delete_Internal      | Delete data from Intilery internals only              |
+
+## Regulation States
+
+| State       | Description                                                  |
+| :---------- | :----------------------------------------------------------- |
+| initialized | Request is queued and is scheduled for execution             |
+| running     | Request is currently being processed by the backend          |
+| finished    | Request has finished successfully                            |
+| failed      | Request has failed with one or more errors. Use the GET endpoint to get specific errors. |
+
+You will be modifying/querying the regulations resource to submit new GDPR requests for deletion and suppression.
+
+## Permissions
+
+Before interacting with the regulation endpoints, make sure you have requested your access tokens for authentication. Actions which do not modify the state like listing regulations, getting the status of a regulation require read access to the API, where as creating new regulations, deleting existing ones require API owner permissions.
+
+## Batching and Rate limits
+
+### BATCHING
+
+User submitted requests will first be batched and then executed. The requests are guaranteed to be picked up and batched within a few days of submission while adhering to the Intilery level limits on the concurrently running requests. The time to complete a request is dependent on the amount of data we have stored, and most requests finish within 7 days of submission.
+
+### PER REQUEST LIMITS
+
+Each regulate request can have at most 5,000 attribute values (either `userId` or `objectId`). Irrespective of the number of attribute values, each request can have a payload size of at most 4MB. Submitting requests with size greater than 4MB would result in an error. There is no limit on the number of regulate requests that users can submit, although all submissions may not immediately be queued for processing. If you experience backlogs of more than 7 days, please reach out to us at [support@intilery.com](mailto:support@intilery.com).
+
+### Create Regulation
+
+ ```http
+POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/regulations
+ ```
+
+The create regulation endpoint will be used to create new regulations on the particular workspace. You can set the regulation type and the attributes to regulate.
+
+Example Body:
+
+```json
+{
+    "regulation_type": "Suppress_With_Delete",
+    "attributes": {
+        "name": "userId",
+        "values": [
+            "foo-user",
+            "bar-user"
+        ]
+    }
+}
+```
+
+Example Response:
+
+```json
+{
+  "regulate_id": "REDACTED"
+}
+```
+
+### Get Regulation
+
+```http
+GET https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/regulations/1KQVncbOPeRGjRcpuOHdnhDwPn7
+```
+
+Get regulation fetches the information about a previously submitted regulation. You supply the regultion id you got back when you created the regulation request. You get back the status of the regulation, when it was created, when it was finished and the attributes being regulated.
+
+Example Response:
+
+```json
+{
+  "workspace_id": "REDACTED",
+  "overall_status": "finished",
+  "stream_status": [
+    {
+      "id": "REDACTED",
+      "destination_status": [
+        {
+          "name": "Intilery",
+          "id": "Intilery",
+          "status": "finished",
+          "err_string": "",
+          "finished_at": "0001-01-01T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "REDACTED",
+      "destination_status": [
+        {
+          "name": "Intilery",
+          "id": "Intilery",
+          "status": "finished",
+          "err_string": "",
+          "finished_at": "0001-01-01T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "created_at": "2019-04-27T00:12:56Z",
+  "finished_at": "2019-04-28T22:50:07Z"
+}
+```
+
+
+
+### Delete Regulation
+
+ ```http
+DELETE https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/regulations/1KQVncbOPeRGjRcpuOHdnhDwPn7
+ ```
+
+Regulations that are still in the initialized state can be deleted using this endpoint
+
+### List Regulations
+
+```http
+GET https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/regulations
+```
+
+This endpoint can list regulations present and their status, times of creation and finishing.
+
+```json
+{
+  "entries": [
+    {
+      "regulate_id": "REDACTED",
+      "attributes": {
+        "name": "userId",
+        "values": [
+          "REDACTED"
+        ]
+      },
+      "status": "initialized",
+      "created_at": "2019-04-29T19:02:27Z"
+    },
+    {
+      "regulate_id": "REDACTED",
+      "attributes": {
+        "name": "userId",
+        "values": [
+          "REDACTED"
+        ]
+      },
+      "status": "initialized",
+      "created_at": "2019-04-29T19:02:27Z"
+    }
+  ],
+  "next_page_token": "REDACTED"
+}
+```
+
+### List Regulations based on status
+
+```http
+GET https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/regulations?status=failed&regulation_types=Suppress_With_Delete&regulation_types=Suppress
+```
+
+The list regulations endpoint also takes in a query parameter for status and regulation type using which you can narrow down the regulations which satisfy the query parameters
+
+| Param                | Description                                                  |
+| :------------------- | :----------------------------------------------------------- |
+| **status**           | status filter can be set to `failed`, `finished`, `running` and `initialized` |
+| **regulation_types** | Suppress_With_Delete<br />regulations_types can be specified multiple times as a query parameter with all the regulation types you are interested in. |
+| **regulation_types** | Suppress                                                     |
+
+Example Response:
+
+```json
+{
+  "entries": [
+    {
+      "regulate_id": "REDACTED",
+      "attributes": {
+        "name": "userId",
+        "values": [
+          "REDACTED"
+        ]
+      },
+      "status": "failed",
+      "created_at": "2019-04-26T20:02:55Z",
+      "finished_at": "2019-04-28T09:48:52Z"
+    },
+    {
+      "regulate_id": "REDACTED",
+      "attributes": {
+        "name": "userId",
+        "values": [
+          "REDACTED"
+        ]
+      },
+      "status": "failed",
+      "created_at": "2019-04-26T18:18:46Z",
+      "finished_at": "2019-04-28T07:58:51Z"
+    },
+    {
+      "regulate_id": "REDACTED",
+      "attributes": {
+        "name": "userId",
+        "values": [
+          "REDACTED"
+        ]
+      },
+      "status": "failed",
+      "created_at": "2019-04-26T18:18:46Z",
+      "finished_at": "2019-04-28T07:58:51Z"
+    },
+    {
+      "regulate_id": "REDACTED",
+      "attributes": {
+        "name": "userId",
+        "values": [
+          "REDACTED"
+        ]
+      },
+      "status": "failed",
+      "created_at": "2019-04-26T18:18:46Z",
+      "finished_at": "2019-04-28T07:58:51Z"
+    }
+  ],
+  "next_page_token": "2019-04-25T23:54:08.149538Z"
+}
+```
+
+
 
 ## Troubleshooting
 

@@ -25,7 +25,11 @@ module.exports = {
         ],
     },
     tag: {
-        'Getting Started': ['tag/tag1', 'tag/reference'],
+        'Getting Started': [
+        	'tag/tag1', 
+        	'tag/reference',
+        	'tag/gtm',
+        ],
     },
     sdk: {
     	'iOS': [

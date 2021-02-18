@@ -8,6 +8,18 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 yarn
 ```
 
+### Updating Packages
+
+
+```shell
+yarn upgrade-interactive
+```
+
+To update package.json 
+```shell
+yarn upgrade --latest
+```
+
 ### Local Development
 
 ```shell

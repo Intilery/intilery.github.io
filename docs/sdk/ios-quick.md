@@ -191,4 +191,4 @@ Analytics.shared().flush()
 
 ## What’s Next?
 
-We just walked through the quickest way to get started with Intilery using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](./ios) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api1) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Intilery using Analytics for iOS. You might also want to check out our full [Analytics for iOS reference](./ios) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api) to get a sense for the bigger picture.

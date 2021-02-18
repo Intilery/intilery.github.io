@@ -41,18 +41,18 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/apis/api1',
+          to: 'docs/apis/api',
           label: 'APIs',
           position: 'left',
         },
         {
           to: 'docs/tag/tag1',
-          label: 'Tag',
+          label: 'JavaScript Tag',
           position: 'left',
         },
         {
           to: 'docs/sdk/ios',
-          label: 'SDK',
+          label: 'Mobile SDKs',
           position: 'left',
         },
         {
@@ -82,16 +82,24 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'API Guide',
-              to: 'docs/apis/api1',
+              label: 'User Guides',
+              to: 'http://support.intilery.com/',
+            },
+            {
+              label: 'API',
+              to: 'docs/apis/api',
             },
             {
               label: 'JavaScript Tag',
               to: 'docs/tag/tag1',
             },
             {
-              label: 'User Guides',
-              to: 'http://support.intilery.com/',
+              label: 'Mobile SDKs',
+              to: 'docs/sdk/ios',
+            },
+            {
+              label: 'Schema',
+              to: 'docs/schema/contents',
             },
           ],
         },
@@ -102,11 +110,27 @@ module.exports = {
               label: 'Twitter',
               href: 'https://twitter.com/intilery',
             },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/intilery-com/',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/intilery/',
+            },
+            {
+              label: 'Instagram',
+              href: 'https://www.instagram.com/intilery/',
+            },
           ],
         },
         {
           title: 'More',
           items: [
+            {
+              label: 'Marketing Blog',
+              href: 'https://www.intilery.com/category/blog/',
+            },
             {
               label: 'Blog',
               to: 'blog',

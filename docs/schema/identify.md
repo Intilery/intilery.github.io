@@ -15,11 +15,11 @@ Our recommendation for when and how often you should call `identify` is as follo
 
 ***Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](/docs/tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.* (coming soon)
 
-Calling `identify` in the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api1) is the first step to integrating and using Intilery.
+Calling `identify` in the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api) is the first step to integrating and using Intilery.
 
 Here’s the payload of a typical `identify` call with most [common fields](/docs/schema/common) removed:
 
-```javascript
+```json
 {
   "type": "identify",
   "traits": {
@@ -54,7 +54,7 @@ Beyond the common fields, an `identify` call has the following fields:
 
 Here’s a complete example of an `identify` call:
 
-```javascript
+```json
 {
   "anonymousId": "507f191e810c19729de860ea",
   "channel": "browser",
@@ -156,14 +156,14 @@ Reserved traits we’ve standardized:
 
 ### Trait Updates
 
-Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](/docs/tag/reference#identify) or the [HTTP API identify](/docs/apis/api1#identify-action) will result in the value of the trait being updating for the customer.
+Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](/docs/tag/reference#identify) or the [HTTP API identify](/docs/apis/api#identify-action) will result in the value of the trait being updating for the customer.
 
 Changeable/transient values or multi-value traits should not be set as a single trait.
 
 Consider the following example: -
 
 ```javascript
-analytics.identify("97980cfea0067", "traits": {
+analytics.identify("97980cfea0067", {
         "email": "joe.blogs@intilery.com",
         "firstName": "Joe",
         "phone": "123456789",
@@ -176,7 +176,7 @@ analytics.identify("97980cfea0067", "traits": {
 
 The resulting traits of the customer would be 
 
-```javascript
+```json
 {
   "traits": {
     "clientReference": "something",
@@ -191,23 +191,23 @@ The resulting traits of the customer would be
 }
 ```
 
-If another identify reques is made, but it omits traits, then only the traits supplied are updated/set, e.g. calling identify with
+If another identify request is made, but it omits traits, then only the traits supplied are updated/set, e.g. calling identify with
 
 ```javascript
-analytics.identify("97980cfea0067", "traits": {
-   "lastName": "Bloggs",
+analytics.identify("97980cfea0067", {
+   "lastName": "Bloggs"
 });
 ```
 
 Would result in the `lastName` trait being added to the customer's traits, e.g. resulting in
 
-```javascript
+```json
 {
   "traits": {
   	  "clientReference": "something",
     	"email": "joe.blogs@intilery.com",
 	    "firstName": "Joe",
-      "lastName" : "Bloggs"
+      "lastName" : "Bloggs",
   	  "phone": "123456789",
 	    "policy": {
   	      "policyType": "Private Car",
@@ -220,20 +220,20 @@ Would result in the `lastName` trait being added to the customer's traits, e.g. 
 If you pass in a different value for a trait, the value of the trait is updated, i.e. calling identify with
 
 ```javascript
-analytics.identify("97980cfea0067", "traits": {
-   "firstName": "Josephh",
+analytics.identify("97980cfea0067", {
+   "firstName": "Josephh"
 });
 ```
 
 Would result in the fistName trait being updated in the customer's traits, e.g. resulting in
 
-```javascript
+```json
 {
   "traits": {
   	  "clientReference": "something",
     	"email": "joe.blogs@intilery.com",
 	    "firstName": "Joseph",
-      "lastName" : "Bloggs"
+      "lastName" : "Bloggs",
   	  "phone": "123456789",
 	    "policy": {
   	      "policyType": "Private Car",
@@ -247,13 +247,13 @@ Would result in the fistName trait being updated in the customer's traits, e.g. 
 
 Starting with a customer that has traits previously set, e.g. resulting in
 
-```javascript
+```json
 {
   "traits": {
   	  "clientReference": "something",
     	"email": "joe.blogs@intilery.com",
 	    "firstName": "Joe",
-      "lastName" : "Bloggs"
+      "lastName" : "Bloggs",
   	  "phone": "123456789",
 	    "policy": {
   	      "policyType": "Private Car",
@@ -265,7 +265,7 @@ Starting with a customer that has traits previously set, e.g. resulting in
 
 You then call `identify` with the following
 
-```javascript
+```json
 {
   "traits": {
 	    "policy": {
@@ -277,7 +277,7 @@ You then call `identify` with the following
 
 The resulting customer traits would be the following
 
-```javascript
+```json
 {
   "traits": {
   	  "clientReference": "something",
@@ -385,19 +385,20 @@ analytics.identify("97980cfea0067", "traits": {
 
 #### Array based traits
 
-To set an array of properties for a triat, e.g. multiple policies
+To set an array of properties for a trait, e.g. multiple policies
 
 ```javascript
-analytics.identify("97980cfea0067", "traits": {
+analytics.identify("97980cfea0067", {
       "policies": [
        	{
-  	      "policyType": "Home",
+  	        "policyType": "Home",
     	    "policyNumber": "456"
-    		},
-  			{
-  	      "policyType": "Private Car",
+        },
+  		{
+  	        "policyType": "Private Car",
     	    "policyNumber": "123"
-    		}
+    	}
+    ]	
     });
 ```
 
@@ -415,7 +416,7 @@ The campaign trait is only set on the customer when the customer is initially re
 
 The processing of all requests to the Intilery customer data platform is asynchronous,  each of the methods to call the CDP (Javascript tag or HTTP API) will return an eventID that represents the action requested, the format of the response is
 
-```javascript
+```json
 { 
   "success": true, 
   "eventId": "3e112aa5-2bed-49a9-b1db-ead2b807066d" 
@@ -438,13 +439,13 @@ To send an asset that has tranisent data, for example a renewal quote, you may d
 
 **Note:** Be aware of [Asynchronous Processing](#asynchronous-processing)
 
-The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Actions](/docs/apis/actions)
+The send an asset with data for that send, which is attached to the event itself and passed down stream to the sending of the asset [API Commands](/docs/apis/commands)
 
 For example: -
 
 POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/track
 
-```javascript
+```json
 {
     "userId": "ABC/123",  
     "event": "SEND_PRINT",  

@@ -1,11 +1,11 @@
 module.exports = {
     guides: {
-        'Getting Started': 
+        'Getting Started':
         [
-        	"guides/contents", 
-        	"guides/simple",  
-        	"guides/full", 
-        	"guides/fullimp", 
+        	"guides/contents",
+        	"guides/simple",
+        	"guides/full",
+        	"guides/fullimp",
         	"guides/faq"
         ],
         'Tracking Events': [
@@ -18,15 +18,15 @@ module.exports = {
     },
     apis: {
         'Getting Started': [
-        'apis/api1',
-        'apis/actions',
+        'apis/api',
+        'apis/commands',
         'apis/events',
         'apis/profile'
         ],
     },
     tag: {
         'Getting Started': [
-        	'tag/tag1', 
+        	'tag/tag1',
         	'tag/reference',
         	'tag/gtm',
         ],

@@ -108,5 +108,5 @@ Once you’ve added a few `track` calls, **you’re done!** You successfully ins
 
 ## What’s Next?
 
-We just walked through the quickest way to get started with Intilery using Analytics for Android. You might also want to check out our full [Analytics for Android reference](/docs/sdk/android) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api1) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Intilery using Analytics for Android. You might also want to check out our full [Analytics for Android reference](/docs/sdk/android) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api) to get a sense for the bigger picture.
 

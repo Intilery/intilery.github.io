@@ -6,7 +6,7 @@ sidebar_label: Track
 
 The `track` API call is how you record any actions your users perform, along with any properties that describe the action.
 
-Each action is known as an event. Each event has a name, like **User Registered**, and properties, for example a **User Registered** event might have properties like `plan` or `accountType`. Calling `track` in the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api1) is the first step to integrating and using Intilery.
+Each action is known as an event. Each event has a name, like **User Registered**, and properties, for example a **User Registered** event might have properties like `plan` or `accountType`. Calling `track` in the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api) is the first step to integrating and using Intilery.
 
 Here’s the payload of a typical `track` call with most [common fields](/docs/schema/common) removed:
 

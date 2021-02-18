@@ -4,7 +4,7 @@ title: Page Schema
 sidebar_label: Page
 ---
 
-The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](./screen/) the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api1) is the first step to integrating and using Intilery.
+The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](./screen/) the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api) is the first step to integrating and using Intilery.
 
 **Note: In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. We do that because you **must** call this method at least once per page load. However, you can choose to add an optional `name` or `properties` to the default call, or call it multiple times if you have a single-page application.
 

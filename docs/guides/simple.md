@@ -34,7 +34,7 @@ Add the code provided to your site, see [Installing Intilery](#installing-intile
 
 ## REST API
 
-Your account manager will be provided a REST API key at the time of your account setup. See [API](/docs/apis/api1) for more details on the REST API.
+Your account manager will be provided a REST API key at the time of your account setup. See [API](/docs/apis/api) for more details on the REST API.
 
 ## Installing Intilery
 

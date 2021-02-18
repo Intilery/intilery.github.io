@@ -26,7 +26,7 @@ Intilery's libraries generate and send messages to our tracking API in JSON form
 
 When you implement Intilery, you add our code to your website, app, or server, which generates messages based on specific triggers you define. At its very simplest, this code can be a snippet that you copy and paste into the HTML of a website to track page views. It can also be as complex as Intilery calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example “ticket reservation expired” or “cart abandoned after 2 hours”).
 
-Messages can be sent using the [Website Tag](/docs/tag/tag1) or [REST API](/docs/apis/api1)
+Messages can be sent using the [Website Tag](/docs/tag/tag1) or [REST API](/docs/apis/api)
 
 ### Anatomy of an Intilery message
 

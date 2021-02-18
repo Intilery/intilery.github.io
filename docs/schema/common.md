@@ -4,7 +4,7 @@ title: Common Fields
 sidebar_label: Common
 ---
 
-In the Intilery [Schema](contents) all the [API calls](/docs/apis/api1) have a common structure, and a few common fields.
+In the Intilery [Schema](contents) all the [API calls](/docs/apis/api) have a common structure, and a few common fields.
 
 Not all fields are required for all events, the required fields for each event are detailed in the corrisponding event schema
 

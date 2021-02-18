@@ -10,7 +10,6 @@ yarn
 
 ### Updating Packages
 
-
 ```shell
 yarn upgrade-interactive
 ```

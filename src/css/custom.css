@@ -6,7 +6,11 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 :root {
+   --ifm-font-family-base: 'Mulish', sans-serif;
+
   --ifm-color-primary: hsl(192, 100%, 39%);
   --ifm-color-primary-dark: hsl(192, 100%, 33%);
   --ifm-color-primary-darker: hsl(192, 100%, 28%);
@@ -30,5 +34,17 @@
 }
 
 .navbar__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   font-size: x-large;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.hero__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }

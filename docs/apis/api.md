@@ -1,16 +1,17 @@
 ---
 id: api
-title: API Guide
+title: Event Tracking API Guide
 sidebar_label: API Guide
 ---
 
-# Intilery Event Tracking API
+The Intilery HTTP Tracking API lets you record analytics data from
+any website or application. The requests hit our servers, and we action
+this in the Intilery CDP and Customer Engagement Platform
 
-The Intilery HTTP Tracking API lets you record analytics data from any website or application. 
-The requests hit our servers, and we action this in the Intilery CDP and Customer Engagement Platform
-
-Intilery has native for most use cases (Javascript, iOS and Android coming soon)  that are all 
-built for high-performance. But sometimes you may want to send to the HTTP API directly—that’s what this reference is for.
+Intilery has native libraries for integration for [websites with JavaScript](../tag/tag1), 
+and mobile devices running [iOS](../sdk/ios) and [Android](../sdk/android) that are all 
+built for high-performance. But sometimes you may want to send to the 
+HTTP API directly — that’s what this reference is for.
 
 ## Endpoint
 

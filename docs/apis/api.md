@@ -18,7 +18,19 @@ built for high-performance. But sometimes you may want to send to the HTTP API d
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/{action}
 ```
 
-You will be given you clientId, accountIds and brandIDs.
+You can determine the values of your clientId, accountId and BRANDID from the URL
+of your login to the Intilery platform:
+
+If you have only a single account this will be: `clientId.intilery.com` and your `accountid`
+will be the same as your `clientId`.
+
+If you have multiple accounts this will be: `accountid.clientid.intilery.com`.
+
+| Field | |
+| --- | --- |
+| **clientId** |  The value in your login URL before `intilery.com`. It will be lower case. |
+| **accountId** | The value in your login URL before your clientId, or the same as your clientId. It will be lower case |
+| **BRANDID** | Unless you have multiple brands configured, this will be your accountId in upper case |
 
 The endpoint expects a POST of JSON data.
 

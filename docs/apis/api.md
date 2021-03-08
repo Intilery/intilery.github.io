@@ -139,7 +139,7 @@ Traits can be any valid JSON.
 | **userId**    | **required** | String | Unique identifier for the user in your database              |
 | **event**     | **required** | String |  must be “**identify**”                                       |
 | **traits**    | **required** | Object | Free-form dictionary of traits of the user, like email or firstName or an object like address |
-| **timestamp** | **required** | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) |
+| **timestamp** | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z), if not provided, it will be set at the time the event arrives at the server |
 | **context**   | optional     | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like ip address or locale |
 
 # Track Action
@@ -188,7 +188,7 @@ Example added to basket event
 | -------------- | ------------ | ------------------------------------------------------------ |--|
 | **userId**     | **required** | String | Unique identifier for the user in your database              |
 | **event**      | **required** | String | Name of the action that a user has performed.                |
-| **timestamp**  | **required** | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) for then the event happened |
+| **timestamp**  | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) for then the event happened, if not set, it is set by the server at the time the event is received |
 | **properties** | optional     | Object | Free-form dictionary of properties of the event, like price or sku |
 | **context**    | optional     | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like page or userAgent |
 
@@ -235,7 +235,7 @@ Example page call:
 | **userId**      | optional*    | String | Unique identifier for the user in your database. If not known, you must pass anonymousId |
 | **anonymousId** | optional*    | String | A pseudo-unique substitute for a userId, for cases when you don't know who the customer is at present. |
 | **event**       | **required** | String | must be “**page**”                                           |
-| **timestamp**   | **required** | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) for then the event happened |
+| **timestamp**   | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) for then the event happened, set on receipt if not provided |
 | **properties**  | optional     | Object | Free-form dictionary of properties of the event, like price or sku |
 | **context**     | optional     | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like page or userAgent |
 

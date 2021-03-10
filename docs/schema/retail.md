@@ -91,13 +91,19 @@ This event supports the following semantic properties:
 
 | **Property** | **Type**         | **Description**              |
 | ------------ | ---------------- | ---------------------------- |
-| query        | String \| Object | Query the user searched with |
+| query        | Object | Query the user searched with, populate with appropriate filters you define |
+| query.string | String | The text entered by the customer for the search |
 
 Example:
 
 ```javascript
 analytics.track('Products Searched', {
-  query: 'blue roses'
+  query: {
+      "string": "blue rose",
+      "filters": {
+          "category":"flowers"
+      }
+  }
 });
 ```
 

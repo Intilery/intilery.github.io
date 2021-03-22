@@ -18,6 +18,7 @@ When an email is [delivered](#email-delivered), a recipient can take one or many
 
 The email category has the following semantic events:
 
+- [Email Sent](#email-sent)
 - [Email Bounced](#email-bounced)
 - [Email Delivered](#email-delivered)
 - [Email Link Clicked](#email-link-clicked)
@@ -26,6 +27,53 @@ The email category has the following semantic events:
 - [Unsubscribed](#unsubscribed)
 
 **Note:** All events below are automatically sent to the Intilery CDP by the Intilery Customer Engagement platform if Intilery sends the email
+
+### Email Sent
+
+This event should be fired when the mail server sends the email.
+
+#### Properties
+
+This event supports the following semantic properties:
+
+| Property        | Type   | Description                        |
+| --------------- | ------ | ---------------------------------- |
+| `email_id`      | String | An ID used to identify the email.  |
+| `email_subject` | String | The email’s subject line.          |
+| `campaign_id`   | String | An id used to identify a campaign  |
+| `campaign_name` | String | A name used to identify a campaign |
+
+#### Context
+
+This event supports the following semantic context properties:
+
+| Property               | Type   | Description                                                |
+| ---------------------- | ------ | ---------------------------------------------------------- |
+| `context.traits`       | Object | An associative array about the email’s intended recipient. |
+| `context.traits.email` | String | The intended recipient’s email address.                    |
+
+##### Example
+
+```javascript
+{
+  "user_id": "019mr8mf4r",
+  "action": "track",
+  "event": "Email Sent",
+  "context": {
+    "traits": {
+      "email": "pgibbons@example.com"
+    }
+  },
+  "properties": {
+    "email_id": "18vzF7u3z",
+    "email_subject": "First shirt on us!",
+    "campaign_id": "123",
+    "campaign_name": "New Customer Discount"
+  }
+}
+```
+
+
 
 ### Email Bounced
 

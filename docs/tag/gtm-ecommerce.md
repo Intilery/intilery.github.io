@@ -10,7 +10,7 @@ Intilery supports [GTM Enhanced Ecommerce](https://developers.google.com/tag-man
 
 ***Note: if you have installed the Intilery tag via GTM or any other way, you must remove it before following these instructions, as this setup also adds the Intilery tag***
 
-1. Download the [Intilery Container JSON](/json/GTM-ecommerce.json) file and save to your computer
+1. Download the [Intilery Container JSON](/img/GTM-ecommerce.json) file and save to your computer (right click and save link as)
 2. Login to your GTM account
 3. Navigate to your account and container - the contaioner needs to be on every page of your ecommerce site
 4. Go to Admin, for your container, click "Import Container" (this will import the Intilery integration for commerce)

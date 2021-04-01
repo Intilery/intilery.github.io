@@ -6,7 +6,7 @@ sidebar_label: Google Tag Manager
 
 To Install the Intilery website tracking tag, follow these steps.
 
-## Tag Snipper
+## Tag Snippet
 
 1. Log in to your Intilery account, navigate to "Tag"
 

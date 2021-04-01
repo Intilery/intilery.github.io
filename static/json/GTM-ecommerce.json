@@ -1,0 +1,1240 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-04-01 12:42:36",
+    "containerVersion": {
+        "path": "accounts/6003573411/containers/42874767/versions/0",
+        "accountId": "6003573411",
+        "containerId": "42874767",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6003573411/containers/42874767",
+            "accountId": "6003573411",
+            "containerId": "42874767",
+            "name": "E-Commerce",
+            "publicId": "GTM-P9ZTJRG",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1617216233611",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6003573411/containers/42874767/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "8",
+                "name": "Intilery - Tag",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  //add tag from your intilery account here\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617278460346",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_LOAD",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "20",
+                "name": "Intilery - event - Product Viewed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var array = {{Intilery.detail.products}};\n  console.log(array);\n  array.forEach(function(product){\n    analytics.track('Product Viewed', {\n  \t\tproduct_id: product.id,\n\t\tcategory:  product.category,\n  \t\tname:  product.name,\n  \t\tbrand:  product.brand,\n  \t\tvariant:  product.variant_id,\n  \t\tprice: product.price,\n  \t\turl: '{{Page URL}}',\n\t});\n   });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280587522",
+                "firingTriggerId": [
+                    "19"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "25",
+                "name": "Intilery - event - Promotion Clicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var array = {{Intilery.promotionClick.promotions}};\n  array.forEach(function(promotion){\n    analytics.track('Promotion Clicked', {\n  \t\tpromotion_id: promotion.id,\n  \t\tcreative: promotion.creative,\n  \t\tname: promotion.name,\n  \t\tposition: promotion.pos\n\t});\n  })\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280597159",
+                "firingTriggerId": [
+                    "12"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "28",
+                "name": "Intilery - event - Checkout",
+                "type": "html",
+                "priority": {
+                    "type": "INTEGER",
+                    "value": "2"
+                },
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var step = {{Intilery.checkout_option.step}};\n    if(!step) {\n    \tstep = 1;\n    }\n    var array = {{Intilery.checkout.products}};\n    var products = [];\n\tarray.forEach(function(product){\n\t\tproducts.push({\n  \t\t\tproduct_id: product.id,\n\t\t\tcategory:  product.category,\n  \t\t\tname:  product.name,\n  \t\t\tbrand:  product.brand,\n\t  \t\tvariant:  product.variant_id,\n  \t\t\tprice: product.price,\n\t\t});\n\t});\n\t\n\tif(step == 1) {\n\t\tanalytics.track('Checkout Started', {\n \t\t\tproducts: products\n\t\t});\n\t} else {\n\t\tanalytics.track('Checkout Step Viewed', {\n  \t\t\tstep: step\n\t\t});\n\t}\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280542261",
+                "firingTriggerId": [
+                    "26"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "33",
+                "name": "Intilery - event - Product Clicked",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var array = {{Intilery.click.products}};\n  array.forEach(function(product){\n    analytics.track('Product Clicked', {\n  \t\tproduct_id: product.id,\n\t\tcategory:  product.category,\n  \t\tname:  product.name,\n  \t\tbrand:  product.brand,\n  \t\tvariant:  product.variant_id,\n  \t\tprice: product.price,\n  \t\tposition: product.position,\n  \t\turl: '{{Page URL}}',\n  \t\tposition: product.position\n\t});\n  })\n  \n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280575021",
+                "firingTriggerId": [
+                    "32"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "35",
+                "name": "Intilery- event - Product Removed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  var array = {{Intilery.remove.products}};\n  array.forEach(function(product){\n    analytics.track('Product Removed', {\n      product_id: product.id,\n      category:  product.category,\n      name:  product.name,\n      brand:  product.brand,\n      variant:  product.variant_id,\n      price: product.price,\n      position: product.position,\n      quantity: product.quantity,\n    });\n  })\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280623557",
+                "firingTriggerId": [
+                    "34"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "41",
+                "name": "Intilery - event - Order Completed",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>  \n  var array = {{Intilery.purchase.products}};\n  var products = [];\n  array.forEach(function(product){\n\t\tproducts.push({\n  \t\t\tproduct_id: product.id,\n\t\t\tcategory:  product.category,\n  \t\t\tname:  product.name,\n  \t\t\tbrand:  product.brand,\n\t  \t\tvariant:  product.variant_id,\n  \t\t\tprice: product.price,\n  \t\t\tquantity: product.quantity\n\t\t});\n\t});\n    var purchase = {{Intilery.purchase.id}};\n    analytics.track('Order Completed', {\n      checkout_id: pruchase.id,\n      order_id: purchase.id,\n      affiliation: purchase.affiliation,\n      total: purchase.revenue,\n      shipping: purchase.shipping,\n      tax: purchase.tax,\n      coupon: purchase.coupon,\n      products: products\n    });\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280560115",
+                "firingTriggerId": [
+                    "36"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "tagId": "42",
+                "name": "Intilery- event - Product Added",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>  \n  var array = {{Intilery.add.products}};\n  array.forEach(function(product){\n    analytics.track('Product Added', {\n      product_id: product.id,\n      category:  product.category,\n      name:  product.name,\n      brand:  product.brand,\n      variant:  product.variant_id,\n      price: product.price,\n      position: product.position,\n      url: '{{Page URL}}',\n      quantity: product.quantity,\n  });\n  })\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1617280613795",
+                "firingTriggerId": [
+                    "3"
+                ],
+                "setupTag": [
+                    {
+                        "tagName": "Intilery - Tag"
+                    }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "3",
+                "name": "Intilery.addToCart",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "addToCart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280452918"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "9",
+                "name": "Intilery.refund",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "refund"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280499058"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "10",
+                "name": "Intilery.checkout_option",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "checkoutOption"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280467653"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "12",
+                "name": "Intilery.promotionClick",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "promotionClick"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280490872"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "19",
+                "name": "Intilery.detail",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "detail"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280477519"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "26",
+                "name": "Intilery.checkout",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "checkout"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280461628"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "32",
+                "name": "Intilery.productClick",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "productClick"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280484134"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "34",
+                "name": "Intilery.removeFromCart",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "removeFromCart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280503746"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "triggerId": "36",
+                "name": "Intilery.purchase",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "transaction"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1617280494955"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "4",
+                "name": "Intilery.purchase.affiliation",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.purchase.actionField.affiliation"
+                    }
+                ],
+                "fingerprint": "1617280688670",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "5",
+                "name": "Intilery.remove.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.remove.products"
+                    }
+                ],
+                "fingerprint": "1617280738888",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "11",
+                "name": "Intilery.checkout.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.checkout.products"
+                    }
+                ],
+                "fingerprint": "1617280639555",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "13",
+                "name": "Intilery.checkout_option.step",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.checkout_option.actionField.step"
+                    }
+                ],
+                "fingerprint": "1617280656732",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "14",
+                "name": "Intilery.detail.name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.detail.products.0.name"
+                    }
+                ],
+                "fingerprint": "1617280665968",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "15",
+                "name": "Intilery.refund.transactionID",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.refund.actionField.id"
+                    }
+                ],
+                "fingerprint": "1617280724491",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "16",
+                "name": "Intilery.checkout_option.option",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.checkout_option.actionField.option"
+                    }
+                ],
+                "fingerprint": "1617280652564",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "18",
+                "name": "Intilery.detail.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.detail.products"
+                    }
+                ],
+                "fingerprint": "1617280670380",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "21",
+                "name": "Intilery.purchase.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.purchase.products"
+                    }
+                ],
+                "fingerprint": "1617280699136",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "22",
+                "name": "Intilery.refund.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.refund.products"
+                    }
+                ],
+                "fingerprint": "1617280718835",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "24",
+                "name": "Intilery.promotionClick.promotions",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.promoClick.promotions"
+                    }
+                ],
+                "fingerprint": "1617280682019",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "27",
+                "name": "Intilery.checkout.step",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.checkout.actionField.step"
+                    }
+                ],
+                "fingerprint": "1617280647208",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "29",
+                "name": "Intilery.add.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.add.products"
+                    }
+                ],
+                "fingerprint": "1617280634324",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "30",
+                "name": "Intilery.click.products",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.click.products"
+                    }
+                ],
+                "fingerprint": "1617280661077",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "31",
+                "name": "Intilery.purchase.tax",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.purchase.actionField.tax"
+                    }
+                ],
+                "fingerprint": "1617280714189",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "37",
+                "name": "Intilery.purchase.shipping",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.purchase.actionField.shipping"
+                    }
+                ],
+                "fingerprint": "1617280708465",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "38",
+                "name": "Intilery.remove.price",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.remove.products.0.price"
+                    }
+                ],
+                "fingerprint": "1617280734719",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "39",
+                "name": "Intilery.purchase.id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.purchase.actionField.id"
+                    }
+                ],
+                "fingerprint": "1617280692977",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "40",
+                "name": "Intilery.purchase.revenue",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.purchase.actionField.revenue"
+                    }
+                ],
+                "fingerprint": "1617280703697",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "43",
+                "name": "Intilery.remove.id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.remove.products.0.id"
+                    }
+                ],
+                "fingerprint": "1617280729213",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "variableId": "44",
+                "name": "Intilery.ecommerce",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce"
+                    }
+                ],
+                "fingerprint": "1617280674783",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "CLICK_ID",
+                "name": "Click ID"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "CLICK_TARGET",
+                "name": "Click Target"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "FORM_ELEMENT",
+                "name": "Form Element"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "FORM_CLASSES",
+                "name": "Form Classes"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "FORM_ID",
+                "name": "Form ID"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "FORM_TARGET",
+                "name": "Form Target"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "FORM_URL",
+                "name": "Form URL"
+            },
+            {
+                "accountId": "6003573411",
+                "containerId": "42874767",
+                "type": "FORM_TEXT",
+                "name": "Form Text"
+            }
+        ],
+        "fingerprint": "1617280956190",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6003573411/containers/42874767/versions/0?apiLink=version"
+    }
+}

@@ -8,17 +8,17 @@
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","G-9T47KP3LPV","auto"),ga("send","pageview")</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
 <link rel="search" type="application/opensearchdescription+xml" title="Intilery Documentation" href="/opensearch.xml"><title data-react-helmet="true">Data Collection Best Practices | Intilery Documentation</title><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="Data Collection Best Practices | Intilery Documentation"><meta data-react-helmet="true" name="description" content="Let’s face it, figuring out what events to track in Intilery can feel overwhelming."><meta data-react-helmet="true" property="og:description" content="Let’s face it, figuring out what events to track in Intilery can feel overwhelming."><meta data-react-helmet="true" property="og:url" content="https://intilery.com/docs/guides/data-collection"><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.ico"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="true"><link data-react-helmet="true" rel="canonical" href="https://intilery.com/docs/guides/data-collection"><link rel="stylesheet" href="/styles.7b434fb9.css">
-<link rel="preload" href="/styles.a2026a3f.js" as="script">
-<link rel="preload" href="/runtime~main.1109fb24.js" as="script">
-<link rel="preload" href="/main.32b57e3c.js" as="script">
-<link rel="preload" href="/1.1e26093a.js" as="script">
-<link rel="preload" href="/2.aa1a43ec.js" as="script">
-<link rel="preload" href="/3.a9fff940.js" as="script">
-<link rel="preload" href="/1be78505.39779dcc.js" as="script">
-<link rel="preload" href="/70.63c33add.js" as="script">
-<link rel="preload" href="/20ac7829.083e0712.js" as="script">
-<link rel="preload" href="/17896441.4731a5e4.js" as="script">
-<link rel="preload" href="/d883dbf3.16ebf164.js" as="script">
+<link rel="preload" href="/styles.5b3c67ed.js" as="script">
+<link rel="preload" href="/runtime~main.8726c48e.js" as="script">
+<link rel="preload" href="/main.8368a51a.js" as="script">
+<link rel="preload" href="/1.89690f33.js" as="script">
+<link rel="preload" href="/2.faacdfbe.js" as="script">
+<link rel="preload" href="/3.4c8f3079.js" as="script">
+<link rel="preload" href="/1be78505.4851ef38.js" as="script">
+<link rel="preload" href="/71.0bf440b5.js" as="script">
+<link rel="preload" href="/20ac7829.86709812.js" as="script">
+<link rel="preload" href="/17896441.22484c41.js" as="script">
+<link rel="preload" href="/d883dbf3.90c273a9.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -102,16 +102,16 @@ Dynamically generated <code>key</code>’s will clutter your tools with tons of 
 make it difficult and confusing to use later.</p><p>Here is Intilery&#x27;’s <code>Lead Captured</code> <code>.track()</code> call:</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div tabindex="0" class="prism-code language-javascript codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">analytics</span><span class="token punctuation" style="color:rgb(199, 146, 234)">.</span><span class="token method function property-access" style="color:rgb(130, 170, 255)">track</span><span class="token punctuation" style="color:rgb(199, 146, 234)">(</span><span class="token plain">userId</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;Lead Captured&#x27;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"> </span><span class="token punctuation" style="color:rgb(199, 146, 234)">{</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  email</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;email&#x27;</span><span class="token punctuation" style="color:rgb(199, 146, 234)">,</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  </span><span class="token dom variable" style="color:rgb(191, 199, 213)">location</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;header navbar&#x27;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain">  url</span><span class="token punctuation" style="color:rgb(199, 146, 234)">:</span><span class="token plain"> </span><span class="token string" style="color:rgb(195, 232, 141)">&#x27;https://intilery.com/&#x27;</span><span class="token plain"></span></div><div class="token-line" style="color:#bfc7d5"><span class="token plain"></span><span class="token punctuation" style="color:rgb(199, 146, 234)">}</span><span class="token punctuation" style="color:rgb(199, 146, 234)">)</span><span class="token punctuation" style="color:rgb(199, 146, 234)">;</span></div></div></div></div></div><p>The high level event is <strong>Lead Captured</strong> and all of the details are tucked into
 the <code>properties</code> dictionary. In our downstream tools, we’ll be able to easily look at
 how many leads were captured in different locations on our site.</p></div></article><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/guides/trackingplan"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« What is a tracking plan?</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/guides/validate"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Review And Validate Events And violations »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3klQ"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#data-tracking-philosophy" class="table-of-contents__link">Data Tracking Philosophy</a></li><li><a href="#define-business-objectives" class="table-of-contents__link">Define Business Objectives</a></li><li><a href="#formalize-your-naming-and-collection-standards" class="table-of-contents__link">Formalize Your Naming and Collection Standards</a></li><li><a href="#create-a-tracking-plan" class="table-of-contents__link">Create a Tracking Plan</a></li><li><a href="#tracking-plan-google-sheets-template" class="table-of-contents__link">Tracking Plan Google Sheets Template</a></li><li><a href="#identify-your-users" class="table-of-contents__link">Identify your users</a></li><li><a href="#define-your-track-events" class="table-of-contents__link">Define your Track events</a></li><li><a href="#define-your-track-event-properties" class="table-of-contents__link">Define your Track event properties</a></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a href="http://support.intilery.com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">User Guides</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/apis/api">API</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/tag/tag1">JavaScript Tag</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/sdk/ios">Mobile SDKs</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/schema/contents">Schema</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a href="https://twitter.com/intilery" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter</a></li><li class="footer__item"><a href="https://www.linkedin.com/company/intilery-com/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn</a></li><li class="footer__item"><a href="https://www.facebook.com/intilery/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook</a></li><li class="footer__item"><a href="https://www.instagram.com/intilery/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Instagram</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">More</h4><ul class="footer__items"><li class="footer__item"><a href="https://www.intilery.com/category/blog/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Marketing Blog</a></li><li class="footer__item"><a class="footer__link-item" href="/blog">Blog</a></li><li class="footer__item"><a href="https://github.com/Intilery/intilery.github.io" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub</a></li></ul></div></div><div class="text--center"><div>Copyright © 2021 Intilery.com Ltd.</div></div></div></footer></div>
-<script src="/styles.a2026a3f.js"></script>
-<script src="/runtime~main.1109fb24.js"></script>
-<script src="/main.32b57e3c.js"></script>
-<script src="/1.1e26093a.js"></script>
-<script src="/2.aa1a43ec.js"></script>
-<script src="/3.a9fff940.js"></script>
-<script src="/1be78505.39779dcc.js"></script>
-<script src="/70.63c33add.js"></script>
-<script src="/20ac7829.083e0712.js"></script>
-<script src="/17896441.4731a5e4.js"></script>
-<script src="/d883dbf3.16ebf164.js"></script>
+<script src="/styles.5b3c67ed.js"></script>
+<script src="/runtime~main.8726c48e.js"></script>
+<script src="/main.8368a51a.js"></script>
+<script src="/1.89690f33.js"></script>
+<script src="/2.faacdfbe.js"></script>
+<script src="/3.4c8f3079.js"></script>
+<script src="/1be78505.4851ef38.js"></script>
+<script src="/71.0bf440b5.js"></script>
+<script src="/20ac7829.86709812.js"></script>
+<script src="/17896441.22484c41.js"></script>
+<script src="/d883dbf3.90c273a9.js"></script>
 </body>
 </html>

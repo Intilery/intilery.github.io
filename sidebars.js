@@ -62,6 +62,7 @@ module.exports = {
                 "schema/mobile",
                 "schema/b2b",
                 "schema/video",
+                "schema/subscription"
             ]
         },
         "schema/retail",

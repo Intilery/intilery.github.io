@@ -49,6 +49,10 @@ These Events can be founf in the Intilery app on the Schema page shown below
 - [Page](./page)
 - [Screen](./screen)
 
+## Subscription
+
+- [usubscribe from channel](./subscription)
+
 ## Industry
 
 The following industry schemas can be added to your account within the Intilery CDP, enabling default events to be automatically recognised

@@ -10,6 +10,8 @@ Computed Traits allow you to quickly create customer-level calculations that Int
 
 Computed traits are updated every 30 minutes. Therefore if you are using the value of a computed trait in a journey, in a split for example, add a wait step of 30 minutes proceeding the use of the computed trait to ensure the value is up to date
 
+***Note:*** It is not currently possible to trigger a journey from the change of a value of a computed trait
+
 ## Types of Computed Traits
 
 Customers currently supports the following types of computed traits:

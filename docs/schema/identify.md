@@ -26,7 +26,16 @@ Here’s the payload of a typical `identify` call with most [common fields](/doc
     "name": "Peter Gibbons",
     "email": "peter@example.com",
     "plan": "premium",
-    "logins": 5
+    "logins": 5,
+    "marketingPreferences": { 
+      "channels": [ 
+        { "channel": "email", "subscribed": true },
+        { "channel": "sms", "subscribed": true },
+        { "channel": "whatsapp", "subscribed": false },
+        { "channel": "facebook", "subscribed": false },
+        { "channel": "push", "subscribed": false }
+      ] 
+    }
   },
   "userId": "97980cfea0067"
 }
@@ -39,7 +48,16 @@ analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
   email: "peter@example.com",
   plan: "premium",
-  logins: 5
+  logins: 5,
+  "marketingPreferences": { 
+      "channels": [ 
+        { "channel": "email", "subscribed": true },
+        { "channel": "sms", "subscribed": true },
+        { "channel": "whatsapp", "subscribed": false },
+        { "channel": "facebook", "subscribed": false },
+        { "channel": "push", "subscribed": false }
+      ] 
+    }
 });
 ```
 
@@ -49,6 +67,10 @@ Beyond the common fields, an `identify` call has the following fields:
 | -------- | ---------------------------------------- | ------ | ------------------------------------------------------------ |
 | `traits` | *optional*                               | Object | Free-form dictionary of traits of the user, like `email` or `name`. See the [Traits field docs](#traits) for a list of reserved trait names. |
 | `userId` | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](#identities) for more details. |
+
+### Marketing Preferences
+
+***Note:*** The trait Marketing Preferences is a system trait for setting the channel level subscription to marketing channels
 
 ## Example
 
@@ -133,28 +155,43 @@ You should **only use reserved traits for their intended meaning**.
 
 Reserved traits we’ve standardized:
 
-| **Trait**     | **Type** | **Description**                                              |
-| ------------- | -------- | ------------------------------------------------------------ |
-| `address`     | Object   | Street address of a user optionally containing: `city`, `country`, `postalCode`, `state` or `street` |
-| `age`         | Number   | Age of a user                                                |
-| `avatar`      | String   | URL to an avatar image for the user                          |
-| `birthday`    | Date     | User’s birthday                                              |
-| `company`     | Object   | Company the user represents, optionally containing: `name` (a String), `id` (a String or Number), `industry` (a String), `employee_count` (a Number) or `plan` (a String) |
-| `createdAt`   | Date     | Date the user’s account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings. |
-| `campaign`    | Object   | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. This maps directly to the common UTM campaign parameters. This is set when the customer is initially created and not updated on subsequent identify calls |
-| `description` | String   | Description of the user                                      |
-| `email`       | String   | Email address of a user                                      |
-| `firstName`   | String   | First name of a user                                         |
-| `gender`      | String   | Gender of a user                                             |
-| `id`          | String   | Unique ID in your database for a user                        |
-| `lastName`    | String   | Last name of a user                                          |
-| `name`        | String   | Full name of a user. If you only pass a first and last name we’ll automatically fill in the full name for you. |
-| `phone`       | String   | Phone number of a user                                       |
-| `title`       | String   | Title of a user, usually related to their position at a specific company. Example: “Director of Engineering” |
-| `username`    | String   | User’s username. This should be unique to each user, like the usernames of Twitter or GitHub. |
-| `website`     | String   | Website of a user                                            |
+| **Trait**              | **Type** | **Description**                                              |
+| ---------------------- | -------- | ------------------------------------------------------------ |
+| `address`              | Object   | Street address of a user optionally containing: `city`, `country`, `postalCode`, `state` or `street` |
+| `age`                  | Number   | Age of a user                                                |
+| `avatar`               | String   | URL to an avatar image for the user                          |
+| `birthday`             | Date     | User’s birthday                                              |
+| `company`              | Object   | Company the user represents, optionally containing: `name` (a String), `id` (a String or Number), `industry` (a String), `employee_count` (a Number) or `plan` (a String) |
+| `createdAt`            | Date     | Date the user’s account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings. |
+| `campaign`             | Object   | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. This maps directly to the common UTM campaign parameters. This is set when the customer is initially created and not updated on subsequent identify calls |
+| `description`          | String   | Description of the user                                      |
+| `email`                | String   | Email address of a user                                      |
+| `firstName`            | String   | First name of a user                                         |
+| `gender`               | String   | Gender of a user                                             |
+| `id`                   | String   | Unique ID in your database for a user                        |
+| `lastName`             | String   | Last name of a user                                          |
+| `name`                 | String   | Full name of a user. If you only pass a first and last name we’ll automatically fill in the full name for you. |
+| `phone`                | String   | Phone number of a user                                       |
+| `title`                | String   | Title of a user, usually related to their position at a specific company. Example: “Director of Engineering” |
+| `username`             | String   | User’s username. This should be unique to each user, like the usernames of Twitter or GitHub. |
+| `website`              | String   | Website of a user                                            |
+| `marketingPreferences` | Object   | Array of channels with a channel name and boolean subscribed: - |
 
-### Trait Updates
+marketingPreferences: -
+
+```json
+{ 
+	"channels": [ 
+		{ "channel": "email", "subscribed": true },
+		{ "channel": "sms", "subscribed": true },
+		{ "channel": "whatsapp", "subscribed": false },
+		{ "channel": "facebook", "subscribed": false },
+		{ "channel": "push", "subscribed": false }
+	] 
+}
+```
+
+Trait Updates
 
 Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](/docs/tag/reference#identify) or the [HTTP API identify](/docs/apis/api#identify-action) will result in the value of the trait being updating for the customer.
 

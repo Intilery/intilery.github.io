@@ -6,6 +6,10 @@ sidebar_label: Computed Traits
 
 Computed Traits allow you to quickly create customer-level calculations that Intilery keeps up-to-date over time. These can be computations like the `total_num_orders` a customer has completed, the `lifetime_revenue` of a customer, the `most_frequent_category` to determine which category the customer most frequently pruchases. These computations are based on your events and event properties that you are sending through Intilery on the [page](/docs/schema/page) and [track](/docs/schema/track) calls.
 
+## Processing
+
+Computed traits are updated every 30 minutes. Therefore if you are triggering journeys based on the values of a computed trait, you should use the trigger type of "Start when a customer trait changes" or if using the value of a computed trait in a journey, in a split for example, add a wait step of 30 minutes proceeding the use of the computed trait to ensure the value is up to date
+
 ## Types of Computed Traits
 
 Customers currently supports the following types of computed traits:

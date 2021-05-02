@@ -29,6 +29,7 @@ module.exports = {
         	'tag/tag1',
         	'tag/reference',
         	'tag/gtm',
+        	'tag/gtm-datalayer',
         	'tag/gtm-ecommerce'
         ],
     },

@@ -49,12 +49,12 @@ We will pass it to the `dataLayer` as an object like this:
 
 ```json
 {
-  event: 'identify',
-  userId: '12091906-01011992',
-  traits: {
-  	firstName: 'Joe',
-  	lastName: 'Bloggs',
-  	email: 'joe.bloggs@example.com',
+  "event": "identify",
+  "userId": "12091906-01011992",
+  "traits": {
+  	"firstName": "Joe",
+  	"lastName": "Bloggs",
+  	"email": "joe.bloggs@example.com",
   	"marketingPreferences": { 
      	 "channels": [ 
        	{ "channel": "email", "subscribed": true },
@@ -76,11 +76,13 @@ visiting https://www.yoursite.com/?ajs_uid=1234-5678
 
 will result an identify event being sent to the dataLayer, e.g.
 
-```json
+```json5
 {
-  event: 'identify',
-  userId: '12091906-01011992',
-  traits: <if traits previously set, these are included>
+  "event": 'identify',
+  "userId": '12091906-01011992',
+  "traits": {
+    // <if traits previously set, these are included>
+  }
 }
 ```
 
@@ -112,9 +114,9 @@ We will pass it to the `dataLayer` as an object like this:
 
 ```json
 {
-  event: 'Played Video',
-  title: 'How to Dance the Tango',
-  location: 'Tango FAQ Page'
+  "event": "Played Video",
+  "title": "How to Dance the Tango",
+  "location": "Tango FAQ Page"
 }
 ```
 

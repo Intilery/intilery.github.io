@@ -54,7 +54,7 @@ This event supports the following semantic context properties:
 
 ##### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -101,7 +101,7 @@ This event supports the following semantic context properties:
 
 ##### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -148,7 +148,7 @@ This event supports the following semantic context properties:
 
 ##### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -199,7 +199,7 @@ This event supports the following semantic context properties:
 
 #### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -208,16 +208,16 @@ This event supports the following semantic context properties:
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "joanna@chotchkies.com"
+      "email": "joanna@example.com"
     }
   },
   "properties": {
     "email_id": "18vzF7u3z",
-    "email_subject": "First shirt on us!",
+    "email_subject": "First campaign on us!",
     "campaign_id": "123",
     "campaign_name": "New Customer Discount",
     "link_id": "101",
-    "link_url": "https://www.buymyshirts.com?promo=NEWCUSTOMER"
+    "link_url": "https://www.intilery.com?promo=NEWCUSTOMER"
   }
 }
 ```
@@ -250,7 +250,7 @@ This event supports the following semantic context properties:
 
 #### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -299,7 +299,7 @@ This event supports the following semantic context properties:
 
 #### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -350,7 +350,7 @@ This event supports the following semantic context properties:
 
 #### Example
 
-```javascript
+```json
 {
   "user_id": "019mr8mf4r",
   "action": "track",
@@ -372,4 +372,3 @@ This event supports the following semantic context properties:
   }
 }
 ```
-

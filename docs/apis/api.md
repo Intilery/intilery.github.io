@@ -374,7 +374,7 @@ Regulations enable you to issue a single request to delete and suppress data abo
 | Delete               | Delete existing data (only available when suppressed) |
 | Unsuppress           | Stop an ongoing suppression                           |
 | Suppress             | Suppress new data without deleting existing data      |
-| NoTrack              | Stops track events, but you can still send commands and identify via the API |
+| NoTrack              | Stops track events, but you can still messages (emails, SMS, etc...) and send commands and identify via the API, but not via the JS Tag |
 | Track                  | Undo the NoTrack | 
 | Access                | Request the data held on the user to be supplied as a zip file |
 

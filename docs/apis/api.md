@@ -87,6 +87,7 @@ The eventID is a unique ID that is passed to all systems within the platform, th
 
 | Code  | Reason                                            |
 | ---- | ------------------------------------------------------------ |
+| 400 | Client Error |
 | 403  | No Token Supplied                                            |
 | 403  | Token Not Authorised (for the Account/Brand you are trying to access) |
 | 429  | Rate limit exceeded (there is a limit of 100 request/second, with a burst to 500) |
@@ -94,6 +95,16 @@ The eventID is a unique ID that is passed to all systems within the platform, th
 | 502  | API returned an invalid response                             |
 | 503  | API Unavailable                                              |
 | 504  | API timed out                                                |
+
+A `400` error response will return a JSON object with additional information on the error:
+
+
+```json
+{
+	"success": false,
+	"message": "userId must not be empty"
+}
+```
 
 # Identify Action
 

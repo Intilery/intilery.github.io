@@ -158,7 +158,7 @@ curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/pr
 
 ### Errors
 
-Intilery uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the `2xx` range indicate success, codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, etc.), and codes in the `5xx`Intielry's servers.
+Intilery uses conventional HTTP response codes to indicate the success or failure of an API request. In general, codes in the `2xx` range indicate success, codes in the `4xx` range indicate an error that failed given the information provided (e.g., a required parameter was omitted, etc.), and codes in the `5xx` Intilery's servers.
 
 **HTTP Status**
 

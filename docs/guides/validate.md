@@ -109,20 +109,20 @@ There are no options to validate booleans, you must pass in true or false (no qu
 
 ![arrays](/img/arrays.png)
 
-***Note:*** It is not currently possible to apply validation to objects within an array, Intielry will recognise the properties of objects within an array and make them available in [audiences](/docs/customers/audiences) and [computed traits](/docs/customers/computed-traits)
+***Note:*** It is not currently possible to apply validation to objects within an array, Intilery will recognise the properties of objects within an array and make them available in [audiences](/docs/customers/audiences) and [computed traits](/docs/customers/computed-traits)
 
 ## Schema
 
 All events and their properties can be accessed in the schema section of Intilery, 
 
-### Default events
+### Core
 
-These are the defaul events that the Intilery tag, or SDKs record, these cannot be edited
+These are the core events recorded via the Intilery tag or SDKs.
 
 ![default](/img/default.png)
 
-### Validated Events
+### Custom
 
-These are the events thay you have added as validated schema's. Any recent new fields that require your action are detailed here
+These are the events thay you have added and approved. Any recent new fields that require your action will also be shown.
 
 ![your](/img/your.png)

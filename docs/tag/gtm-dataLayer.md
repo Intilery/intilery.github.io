@@ -10,11 +10,11 @@ Google Tag Manager functions best when deployed alongside a data layer, if enabl
 
 [Data Layer](https://support.google.com/tagmanager/answer/6164391)
 
-To enable publishing of events to the GTM dataLayer, go to the tag page in Intielry, enable GTM dataLayer integration and enter the container-ID of your GTM container.
+To enable publishing of events to the GTM dataLayer, go to the tag page in Intilery, enable GTM dataLayer integration and enter the container-ID of your GTM container.
 
 ## Identify
 
-If you’re not familiar with the Intielry Schema, take a look to understand what the [Identify method](/docs/schema/identify) does. An example call would look like:
+If you’re not familiar with the Intilery Schema, take a look to understand what the [Identify method](/docs/schema/identify) does. An example call would look like:
 
 ```javascript
 analytics.identify({
@@ -90,7 +90,7 @@ will result an identify event being sent to the dataLayer, e.g.
 
 ## Track
 
-If you’re not familiar with the Intielry Schema, take a look to understand what the [Track method](/docs/schema/track) does. An example call would look like:
+If you’re not familiar with the Intilery Schema, take a look to understand what the [Track method](/docs/schema/track) does. An example call would look like:
 
 ```javascript
 analytics.track('Article Completed', {

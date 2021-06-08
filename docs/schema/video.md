@@ -4,7 +4,7 @@ title: Video
 sidebar_label: Video
 ---
 
-Intielry’s video spec helps you define how a customer is engaging with your video and ad content. The below documentation covers the naming syntax and conventions for how you should send events when tracking video analytics.
+Intilery's video spec helps you define how a customer is engaging with your video and ad content. The below documentation covers the naming syntax and conventions for how you should send events when tracking video analytics.
 
 ## Getting Started
 
@@ -645,7 +645,7 @@ For video destinations that require content metadata to be sent with ad events, 
 
 #### Quartile: `Integer`
 
-For Video Ad Playing events, this property can be set to indicate when a specific ad quartile has been reached (1,2, or 3). If you are using a Intielry client-side library to track your video events you do not need to send this property as our libraries will automatically track quartiles.
+For Video Ad Playing events, this property can be set to indicate when a specific ad quartile has been reached (1,2, or 3). If you are using a Intilery client-side library to track your video events you do not need to send this property as our libraries will automatically track quartiles.
 
 **Note:** Since some video destinations require sending Content metadata along with Ad metadata, you may need to send your content properties also in all your ad events under `properties.content` depending on the video destination you are using.
 

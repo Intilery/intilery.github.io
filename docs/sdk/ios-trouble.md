@@ -30,7 +30,7 @@ This was due to an old [CocoaPods limitation](https://github.com/CocoaPods/Cocoa
 1. Verify you have followed all [Getting Started](./ios#getting-started) steps
 2. Verify you have entered the correct writeKey for your source
    - If the writeKey you have entered is something other than a string or an empty string your app may crash
-   - If the writeKey you have entered is a valid form but is not the correct value, Intielry will return an error
+   - If the writeKey you have entered is a valid form but is not the correct value, Intilery will return an error
 3. [Enable logging](./ios#logging) to confirm if call is being sent to Intilery
 
 ## Still having issues?
@@ -39,5 +39,5 @@ Contact [Intilery Product Support](email:support@intilery.com) with the followin
 
 - The version of our SDK you are using
 - Logs of the call in question
-- Screenshots of the event in the Intielry Events debugger
+- Screenshots of the event in the Intilery Events debugger
 

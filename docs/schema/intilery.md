@@ -4,9 +4,9 @@ title: Intilery Default Schema
 sidebar_label: Intilery Schema
 ---
 
-The following events are reserved events in the Intilery Default Schema, you should not use these Event names/types unless for their intended purpose.
+The following events are reserved events in the Intilery Core Schema, you should not use these Event names/types except for their intended purpose.
 
-These Events can be founf in the Intilery app on the Schema page shown below
+These events can be found in the Intilery app on the Schema page shown below
 
 ![Schema](/img/schema-default.png)
 

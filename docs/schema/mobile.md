@@ -16,21 +16,39 @@ The Intilery Native Mobile Spec includes the following semantic events:
 
 **Application Lifecycle Events**
 
-- [Application Installed](#application-installed)
-- [Application Opened](#application-opened)
-- [Application Updated](#application-updated)
-- [Application Backgrounded](#application-backgrounded)
-- [Application Crashed](#application-crashed)
-- [Application Uninstalled](#application-uninstalled)
+- [Overview of Events](#overview-of-events)
+- [Lifecycle Events](#lifecycle-events)
+  - [Application Installed](#application-installed)
+  - [Application Opened](#application-opened)
+  - [Application Backgrounded](#application-backgrounded)
+  - [Application Updated](#application-updated)
+  - [Application Uninstalled](#application-uninstalled)
+  - [Application Crashed](#application-crashed)
+- [Campaign Events](#campaign-events)
+  - [Install Attributed](#install-attributed)
+  - [Push Notification Received](#push-notification-received)
+  - [Push Notification Tapped](#push-notification-tapped)
+  - [Push Notification Bounced](#push-notification-bounced)
+  - [Deep Link Opened](#deep-link-opened)
+  - [Deep Link Clicked](#deep-link-clicked)
 
 **Campaign Events**
 
-- [Push Notification Received](#push-notification-received)
-- [Push Notification Tapped](#push-notification-tapped)
-- [Push Notification Bounced](#push-notification-bounced)
-- [Install Attributed](#install-attributed)
-- [Deep Link Clicked](#deep-link-clicked)
-- [Deep Link Opened](#deep-link-opened)
+- [Overview of Events](#overview-of-events)
+- [Lifecycle Events](#lifecycle-events)
+  - [Application Installed](#application-installed)
+  - [Application Opened](#application-opened)
+  - [Application Backgrounded](#application-backgrounded)
+  - [Application Updated](#application-updated)
+  - [Application Uninstalled](#application-uninstalled)
+  - [Application Crashed](#application-crashed)
+- [Campaign Events](#campaign-events)
+  - [Install Attributed](#install-attributed)
+  - [Push Notification Received](#push-notification-received)
+  - [Push Notification Tapped](#push-notification-tapped)
+  - [Push Notification Bounced](#push-notification-bounced)
+  - [Deep Link Opened](#deep-link-opened)
+  - [Deep Link Clicked](#deep-link-clicked)
 
 We recommend using the above event names if you’re going to be integrating the events yourself. This will ensure that they can be mapped effectively in the CDP and Customer Engagement Platform
 
@@ -248,7 +266,7 @@ This event can be sent when a user taps on a push notification associated with y
 
 ### Push Notification Bounced
 
-This event fires when a push notification from a provider bounces. If your push notification provider forwards push lifecycle events to Intielry, they should include this event in their suite.
+This event fires when a push notification from a provider bounces. If your push notification provider forwards push lifecycle events to Intilery, they should include this event in their suite.
 
 ```javascript
 {

@@ -14,16 +14,38 @@ Most B2B SaaS companies have a few common, core lifecycle events for users and a
 
 The B2B SaaS category has the following semantic events:
 
-- [Account Created](#account-created)
-- [Account Deleted](#account-deleted)
-- [Signed Up](#signed-up)
-- [Signed In](#signed-in)
-- [Signed Out](#signed-out)
-- [Invite Sent](#invite-sent)
-- [Account Added User](#account-added-user)
-- [Account Removed User](#account-removed-user)
-- [Trial Started](#trial-started)
-- [Trial Ended](#trial-ended)
+- [Overview](#overview)
+- [Events](#events)
+  - [Account Created](#account-created)
+    - [Properties](#properties)
+    - [Example](#example)
+  - [Account Deleted](#account-deleted)
+    - [Properties](#properties-1)
+    - [Example](#example-1)
+  - [Signed Up](#signed-up)
+    - [Properties](#properties-2)
+    - [Example](#example-2)
+  - [Signed In](#signed-in)
+    - [Properties](#properties-3)
+    - [Example](#example-3)
+  - [Signed Out](#signed-out)
+    - [Properties](#properties-4)
+    - [Example](#example-4)
+  - [Invite Sent](#invite-sent)
+    - [Properties](#properties-5)
+    - [Example](#example-5)
+  - [Account Added User](#account-added-user)
+    - [Properties](#properties-6)
+    - [Example](#example-6)
+  - [Account Removed User](#account-removed-user)
+    - [Properties](#properties-7)
+    - [Example](#example-7)
+  - [Trial Started](#trial-started)
+    - [Properties](#properties-8)
+    - [Example](#example-8)
+  - [Trial Ended](#trial-ended)
+    - [Properties](#properties-9)
+    - [Example](#example-9)
 
 ### Account Created
 
@@ -130,7 +152,7 @@ This event supports the following semantic properties:
 
 This event should be sent when a user signs in to your service.
 
-**Good to know**: Intielry’s best practice is to use an “Object-Action” naming convention, which in this case would be “User Signed In”. However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
+**Good to know**: Intilery best practice is to use an “Object-Action” naming convention, which in this case would be “User Signed In”. However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
 
 #### Properties
 
@@ -161,7 +183,7 @@ This event supports the following semantic properties:
 
 This event should be sent when a user signs out for your service. You should also call [`analytics.reset()`](/docs/tag/tag1#reset-or-logout) to refresh the cookie when a Signed Out event occurs.
 
-**Good to know**: Intielry’s best practice is to use an “Object-Action” naming convention, which in this case would be “User Signed Out”. However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
+**Good to know**: Intilery's best practice is to use an “Object-Action” naming convention, which in this case would be “User Signed Out”. However, because in the B2B case this may not be a specific user, we omit that noun in our example. You may include or omit it as needed for your implementation.
 
 #### Properties
 

@@ -24,9 +24,9 @@ Yes! You can use the Intilery library with Maven, or any other custom build syst
 </dependency>
 ```
 
-## How big is the Intielry SDK?
+## How big is the Intilery SDK?
 
-The core Intielry SDK is extremely lightweight! It contains just under 1k methods, the JAR weighs in at 123kb and the dex size is 113kb.
+The core Intilery SDK is extremely lightweight! It contains just under 1k methods, the JAR weighs in at 123kb and the dex size is 113kb.
 
 ## How can I swap out debugging and production keys?
 
@@ -72,4 +72,4 @@ Questions? Problems? Need more info? Contact us, and we can help!
 
 ## Why have you forked Segment?
 
-We forked the segment client libraries to give you the choice of using segment to send data to Intilery and a Segment destination, or if you do not use Segment you can send the data directly to Intielry with our forked libraries and SDKs. If in the future you decide to use Segment, the change should be as simple as using the Segment library/sdk instead of the Intilery library/sdk
+We forked the segment client libraries to give you the choice of using segment to send data to Intilery and a Segment destination, or if you do not use Segment you can send the data directly to Intilery with our forked libraries and SDKs. If in the future you decide to use Segment, the change should be as simple as using the Segment library/sdk instead of the Intilery library/sdk

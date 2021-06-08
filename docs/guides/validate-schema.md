@@ -11,11 +11,11 @@ Standard events, those detailed at [Intilery Default Schema](/docs/schema/intile
 
 Apart from the [default traits](/docs/schema/identify#traits) all additional traits will need to be validated before those traits are recognised.
 
-To access the schema for default events (schemas), and events (schemas) that you have validated, navigate to Schemas
+To access the schema for core events (schemas), and custom events (schemas) that you have validated, navigate to Schemas
 
 ![Schemas](/img/default-validate1.png)
 
-**Note:** The image above shows the schamas for default schemas and your validated schemas.
+**Note:** The image above shows the schamas for core schemas and your custom schemas.
 
 ### Adding traits
 
@@ -31,7 +31,7 @@ Schema viloation for the event are shown below in the event stream, clicking on 
 
 #### Schema View
 
-Schema viloation for the event are shown below in the schema view, clicking on the violation will show "new fields", where you can set the validation requirements and click "Add Field" to recognise this new trait
+Schema violation for the event are shown below in the schema view, clicking on the violation will show "new fields", where you can set the validation requirements and click the save button to recognise the new trait.
 
 **Note:** Don't forget to click "Save" at the bottom of the screen, new traits are not recorded until you validate and save them to the schema.
 

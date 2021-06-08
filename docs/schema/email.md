@@ -4,7 +4,7 @@ title: Email Schema
 sidebar_label: Email
 ---
 
-Emails sent using the Intilery platform will automatically capture all events described here, if you wish to use a different Email Service Provider, you should ensure that the ESP can send the required events to the Intielry CDP.
+Emails sent using the Intilery platform will automatically capture all events described here, if you wish to use a different Email Service Provider, you should ensure that the ESP can send the required events to the Intilery CDP.
 
 The semantic events detailed below represent the ideal for Email events and what Intilery provides by default; not every Email tool supports all of these events or all of their properties.
 

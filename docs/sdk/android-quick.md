@@ -23,7 +23,7 @@ dependencies {
 We recommend initializing the client in your `Application` subclass.
 
 ```java
-// Create an analytics client with the given context and Intielry write key.
+// Create an analytics client with the given context and Intilery write key.
 Analytics analytics = new Analytics.Builder(context, YOUR_WRITE_KEY)
   .trackApplicationLifecycleEvents() // Enable this to record certain application events automatically!
   .recordScreenViews() // Enable this to record screen views automatically!

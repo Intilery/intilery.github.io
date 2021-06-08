@@ -149,7 +149,7 @@ This focused effort helps avoid a situation where you become overwhelmed by endl
 number of possible actions to track. As you get more comfortable, you can add more
 events to your tracking plan that can answer peripheral questions.
 
-At Intielry, we started out tracking these events:
+At Intilery, we started out tracking these events:
 
 - **User Signed Up**
 - **Data Collected**

@@ -18,7 +18,7 @@ For each customer device you will need to send the FCM token and optional device
 
 ### Registering iOS
 
-Once you have completed the steps at [setting up iOS notifications](https://firebase.google.com/docs/cloud-messaging/ios/client) you can implement the firebase code and Intielry identify code to register the device to the customer.
+Once you have completed the steps at [setting up iOS notifications](https://firebase.google.com/docs/cloud-messaging/ios/client) you can implement the firebase code and Intilery identify code to register the device to the customer.
 
 #### Swift
 

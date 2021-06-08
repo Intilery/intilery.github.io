@@ -39,7 +39,7 @@ non-conforming events. Blocked events are displayed in the event stream.
 With your tracking plan living in Intilery, any event or property that does not 
 match the tracking plan will generate a violation. Violations are displayed in the
 event stream enabling you to validate or fix these. Non conforming events are not 
-recorded. All events (apart from the Intielry default events, page, screen etc) are
+recorded. All events (apart from the Intilery default events, page, screen etc) are
 not recorded until validated.
 
 [4. Resolve data issues with transformations](/docs/guides/protocols)

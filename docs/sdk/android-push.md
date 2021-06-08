@@ -20,7 +20,7 @@ For each customer device you will need to send the FCM token and optional device
 
 ### Registering Android
 
-Once you have completed the steps at [setting up Andoid notifications](https://firebase.google.com/docs/cloud-messaging/android/client) you can implement the firebase code and Intielry identify code to register the device to the customer.
+Once you have completed the steps at [setting up Andoid notifications](https://firebase.google.com/docs/cloud-messaging/android/client) you can implement the firebase code and Intilery identify code to register the device to the customer.
 
 #### Java
 

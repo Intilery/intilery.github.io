@@ -62,7 +62,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -91,7 +91,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -128,7 +128,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -165,7 +165,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -196,7 +196,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -227,7 +227,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -259,7 +259,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -287,7 +287,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -316,7 +316,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -349,7 +349,7 @@ This event supports the following semantic properties:
 
 #### Example
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",

@@ -12,7 +12,7 @@ In order to back populate your customers, you should first upload your existing 
 
 Once your customers have been uploaded, you can then [batch](/docs/apis/api#batch) upload the events with the [track api](/docs/apis/api#track-action) for your customers in the format matching the schema you created and validated, see [tracking events](/docs/guides/protocols)
 
-### What triats (fields/properties) can I add to my customer?
+### What traits (fields/properties) can I add to my customer?
 
 There are a set of reserved trait names that can be used, these are detailed at [common traits](/docs/schema/identify#traits), traits are set as using the [identify tag event](/docs/tag/reference#identify) or the [identify api event](/docs/apis/api#identify-action) or an identify event from one of our SDKs.
 

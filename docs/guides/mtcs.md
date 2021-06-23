@@ -1,10 +1,8 @@
 ---
-id: identify-best-practice
-title: Best practices for identifying users/customers
-sidebar_label: Best practices for identifying users
+id: mtcs
+title: MTCs, MTVs, Throughput and Billing
+sidebar_label: MTCs, MTVs, Throughput and Billing
 ---
-
-# MTCs, MTVs, Throughput and Billing
 
 ## What is an MTC?
 

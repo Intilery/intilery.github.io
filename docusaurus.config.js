@@ -7,6 +7,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'intilery', // Usually your GitHub org/user name.
   projectName: 'developer-docs', // Usually your repo name.
+  plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
   	prism: {
       additionalLanguages: ['swift'],

@@ -6,7 +6,9 @@ module.exports = {
         	"guides/simple",
         	"guides/full",
         	"guides/fullimp",
-        	"guides/faq"
+        	"guides/faq",
+        	"guides/identifying-customers",
+        	"guides/mtcs",
         ],
         'Tracking Events': [
         	"guides/protocols",

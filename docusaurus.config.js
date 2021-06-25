@@ -68,6 +68,12 @@ module.exports = {
           label: 'Customers',
           position: 'left',
         },
+        {
+          to: 'roadmap',
+          activeBasePath: 'roadmap',
+          label: 'Roadmap',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/Intilery/intilery.github.io',

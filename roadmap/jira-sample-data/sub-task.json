@@ -1,0 +1,260 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "19029",
+  "self": "https://intilery.atlassian.net/rest/api/2/issue/19029",
+  "key": "RM-111",
+  "fields": {
+    "statuscategorychangedate": "2021-06-24T16:27:36.997+0100",
+    "parent": {
+      "id": "18937",
+      "key": "RM-97",
+      "self": "https://intilery.atlassian.net/rest/api/2/issue/18937",
+      "fields": {
+        "summary": "Journeys",
+        "status": {
+          "self": "https://intilery.atlassian.net/rest/api/2/status/10108",
+          "description": "This issue is being actively worked on at the moment by the assignee.",
+          "iconUrl": "https://intilery.atlassian.net/",
+          "name": "In Progress",
+          "id": "10108",
+          "statusCategory": {
+            "self": "https://intilery.atlassian.net/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        },
+        "priority": {
+          "self": "https://intilery.atlassian.net/rest/api/2/priority/3",
+          "iconUrl": "https://intilery.atlassian.net/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://intilery.atlassian.net/rest/api/2/issuetype/10045",
+          "id": "10045",
+          "description": "Functionality or a feature expressed as a user goal.",
+          "iconUrl": "https://intilery.atlassian.net/secure/viewavatar?size=medium&avatarId=10315&avatarType=issuetype",
+          "name": "Story",
+          "subtask": false,
+          "avatarId": 10315,
+          "entityId": "48403e78-66c7-4cef-8c06-60f4ba8454e8",
+          "hierarchyLevel": 0
+        }
+      }
+    },
+    "customfield_10070": null,
+    "customfield_10071": null,
+    "customfield_10072": null,
+    "customfield_10073": null,
+    "customfield_10074": null,
+    "customfield_10075": null,
+    "customfield_10076": null,
+    "customfield_10077": null,
+    "fixVersions": [],
+    "customfield_10078": null,
+    "customfield_10079": null,
+    "resolution": null,
+    "lastViewed": null,
+    "customfield_10060": null,
+    "customfield_10063": null,
+    "customfield_10064": null,
+    "customfield_10065": null,
+    "customfield_10066": null,
+    "priority": {
+      "self": "https://intilery.atlassian.net/rest/api/2/priority/3",
+      "iconUrl": "https://intilery.atlassian.net/images/icons/priorities/medium.svg",
+      "name": "Medium",
+      "id": "3"
+    },
+    "customfield_10067": null,
+    "customfield_10068": null,
+    "customfield_10069": null,
+    "labels": [
+      "iGO4"
+    ],
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": [],
+    "issuelinks": [],
+    "assignee": null,
+    "status": {
+      "self": "https://intilery.atlassian.net/rest/api/2/status/10107",
+      "description": "",
+      "iconUrl": "https://intilery.atlassian.net/",
+      "name": "To Do",
+      "id": "10107",
+      "statusCategory": {
+        "self": "https://intilery.atlassian.net/rest/api/2/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "To Do"
+      }
+    },
+    "components": [],
+    "customfield_10050": null,
+    "customfield_10051": null,
+    "customfield_10055": null,
+    "customfield_10056": null,
+    "customfield_10057": null,
+    "customfield_10058": null,
+    "customfield_10059": null,
+    "customfield_10049": null,
+    "aggregatetimeestimate": null,
+    "creator": {
+      "self": "https://intilery.atlassian.net/rest/api/2/user?accountId=5a703e78909b6430cd9993a5",
+      "accountId": "5a703e78909b6430cd9993a5",
+      "avatarUrls": {
+        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/48",
+        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/24",
+        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/16",
+        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/32"
+      },
+      "displayName": "Tom McMillen",
+      "active": true,
+      "timeZone": "Europe/London",
+      "accountType": "atlassian"
+    },
+    "subtasks": [],
+    "customfield_10040": null,
+    "customfield_10041": null,
+    "customfield_10042": null,
+    "reporter": {
+      "self": "https://intilery.atlassian.net/rest/api/2/user?accountId=5a703e78909b6430cd9993a5",
+      "accountId": "5a703e78909b6430cd9993a5",
+      "avatarUrls": {
+        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/48",
+        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/24",
+        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/16",
+        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5a703e78909b6430cd9993a5/d5edf600-394c-4c3f-9f62-64d20eacab20/32"
+      },
+      "displayName": "Tom McMillen",
+      "active": true,
+      "timeZone": "Europe/London",
+      "accountType": "atlassian"
+    },
+    "customfield_10043": null,
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_10044": null,
+    "customfield_10045": null,
+    "customfield_10046": null,
+    "customfield_10047": null,
+    "customfield_10048": null,
+    "customfield_10038": null,
+    "customfield_10039": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "votes": {
+      "self": "https://intilery.atlassian.net/rest/api/2/issue/RM-111/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "issuetype": {
+      "self": "https://intilery.atlassian.net/rest/api/2/issuetype/10047",
+      "id": "10047",
+      "description": "Subtasks track small pieces of work.",
+      "iconUrl": "https://intilery.atlassian.net/secure/viewavatar?size=medium&avatarId=10316&avatarType=issuetype",
+      "name": "Subtask",
+      "subtask": true,
+      "avatarId": 10316,
+      "entityId": "7c89b937-d619-452f-bb98-24d87cb2e0fb",
+      "hierarchyLevel": -1
+    },
+    "timespent": null,
+    "project": {
+      "self": "https://intilery.atlassian.net/rest/api/2/project/10104",
+      "id": "10104",
+      "key": "RM",
+      "name": "Product Roadmap",
+      "projectTypeKey": "software",
+      "simplified": true,
+      "avatarUrls": {
+        "48x48": "https://intilery.atlassian.net/secure/projectavatar?pid=10104&avatarId=10419",
+        "24x24": "https://intilery.atlassian.net/secure/projectavatar?size=small&s=small&pid=10104&avatarId=10419",
+        "16x16": "https://intilery.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10104&avatarId=10419",
+        "32x32": "https://intilery.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10104&avatarId=10419"
+      }
+    },
+    "customfield_10032": null,
+    "customfield_10033": null,
+    "customfield_10034": null,
+    "aggregatetimespent": null,
+    "customfield_10035": null,
+    "customfield_10036": null,
+    "customfield_10037": null,
+    "resolutiondate": null,
+    "workratio": -1,
+    "issuerestriction": {
+      "issuerestrictions": {},
+      "shouldDisplay": true
+    },
+    "watches": {
+      "self": "https://intilery.atlassian.net/rest/api/2/issue/RM-111/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2021-06-24T16:27:36.553+0100",
+    "customfield_10020": null,
+    "customfield_10021": null,
+    "customfield_10022": null,
+    "customfield_10023": null,
+    "customfield_10025": null,
+    "customfield_10016": null,
+    "customfield_10017": null,
+    "customfield_10018": [],
+    "customfield_10019": null,
+    "updated": "2021-06-24T16:29:54.777+0100",
+    "timeoriginalestimate": null,
+    "description": null,
+    "customfield_10010": null,
+    "customfield_10098": "45",
+    "customfield_10011": "0|i0158j:",
+    "customfield_10012": null,
+    "customfield_10013": null,
+    "timetracking": {},
+    "security": null,
+    "customfield_10008": null,
+    "attachment": [],
+    "customfield_10009": {
+      "hasEpicLinkFieldDependency": false,
+      "showField": false,
+      "nonEditableReason": {
+        "reason": "PLUGIN_LICENSE_ERROR",
+        "message": "The Parent Link is only available to Jira Premium users."
+      }
+    },
+    "summary": "Terminate Journey on Event",
+    "customfield_10080": null,
+    "customfield_10081": null,
+    "customfield_10082": null,
+    "customfield_10083": null,
+    "customfield_10084": null,
+    "customfield_10085": null,
+    "customfield_10086": null,
+    "customfield_10000": "{}",
+    "customfield_10001": null,
+    "customfield_10004": null,
+    "environment": null,
+    "duedate": null,
+    "comment": {
+      "comments": [],
+      "self": "https://intilery.atlassian.net/rest/api/2/issue/19029/comment",
+      "maxResults": 0,
+      "total": 0,
+      "startAt": 0
+    }
+  }
+}

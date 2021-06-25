@@ -6,7 +6,7 @@ sidebar_label: iOS Mobile SDK
 
 Intilery for iOS makes it simple to send your data to Intilery.
 
-All of Intilery;s libraries are open-source, so you can [view Intilery for iOS on GitHub](https://github.com/Intilery/analytics-ios)
+All of Intilery's libraries are open-source, so you can [view Intilery for iOS on GitHub](https://github.com/Intilery/analytics-ios)
 
 Want to stay updated on releases? Subscribe to the [release feed](https://github.com/Intilery/analytics-ios/tags.atom).
 

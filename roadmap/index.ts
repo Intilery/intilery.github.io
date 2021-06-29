@@ -1,4 +1,6 @@
 const roadmap = require('./src/roadmap')
+const fs = require('fs')
+const Handlebars = require('handlebars')
 import {TimeScale} from './src/timescale'
 
 const timescale = new TimeScale(new Date())
@@ -10,17 +12,6 @@ interface DeliveryPeriod {
 
 interface Schedule {
     schedule: Array<DeliveryPeriod>
-}
-
-let printSubtask  = x => {console.log(`  * ${x.status}: ${x.summary}  (for ${x.client}, Use Case ID: ${x.clientReference}, Client Priority: ${x.priority.name})`)};
-let printSubtasks = x => { x.subtasks.forEach(i => printSubtask(i)); }
-let printStory = x => { console.log(`\n### ${x.key}: ${x.summary}\n${x.description}\n`); printSubtasks(x);}
-
-let printSchedule = (s: Schedule) => {
-    s.schedule.forEach(t => {
-        console.log(`\n\n## ${t.name}\n`)
-        t.items.forEach(story => printStory(story))
-    })
 }
 
 function getScheduledPeriod(s: Schedule, t: string) {
@@ -45,9 +36,15 @@ let generateRoadmap = x => {
     return schedule;
 };
 
+let myArgs = process.argv.slice(2);
+if (myArgs.length == 0) {
+    console.log('provide the name of the template to generate the roadmap with:')
+    fs.readdirSync('./templates').forEach(f => console.log(` * ${f.split('.')[0]}`))
+}
+
 roadmap.getRoadmap()
     .then(data => {
         let schedule = generateRoadmap(data);
-        console.log(`# Product Roadmap`)
-        printSchedule(schedule);
+        let template = Handlebars.compile(fs.readFileSync(`./templates/${myArgs[0]}.hbs`).toString())
+        console.log(template(schedule))
     });

@@ -8,3 +8,8 @@ jspm_packages
 # tsc output
 .build
 .webpack
+
+index.js
+
+roadmap.md
+roadmap.html

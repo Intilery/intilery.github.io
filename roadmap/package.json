@@ -19,6 +19,7 @@
     "@types/node": "^13.1.7",
     "csv-parser": "^3.0.0",
     "date-fns": "^2.22.1",
+    "handlebars": "^4.7.7",
     "jest": "^24.9.0",
     "showdown": "^1.9.1",
     "ts-jest": "^27.0.3",

@@ -3,6 +3,7 @@ const JiraClient = require('jira-connector');
 
 export const client = new JiraClient({
     host: "intilery.atlassian.net",
+});
 
 });
 

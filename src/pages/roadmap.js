@@ -9,7 +9,7 @@ function Roadmap() {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: '85vh',
+                    height: '110vh',
                 }}>
                 <iframe height="100%" width="100%" src="/static/assets/roadmap/index.html"></iframe>
             </div>

@@ -46,5 +46,10 @@ roadmap.getRoadmap()
     .then(data => {
         let schedule = generateRoadmap(data);
         let template = Handlebars.compile(fs.readFileSync(`./templates/${myArgs[0]}.hbs`).toString())
+        Handlebars.registerHelper("inc", function(value, {})
+        {
+            return parseInt(value) + 1;
+        });
+
         console.log(template(schedule))
     });

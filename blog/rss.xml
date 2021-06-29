@@ -9,8 +9,8 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://intilery.com/blog/2020/09/28/welcome</link>
-            <guid>Welcome</guid>
+            <link>https://intilery.com/blog/welcome</link>
+            <guid>welcome</guid>
             <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></description>
         </item>

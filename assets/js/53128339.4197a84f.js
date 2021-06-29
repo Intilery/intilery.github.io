@@ -1,1 +1,0 @@
-(self.webpackChunkintilery=self.webpackChunkintilery||[]).push([[4051],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/2020/09/28/welcome"}]}')}}]);

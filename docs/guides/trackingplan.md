@@ -66,3 +66,57 @@ These events provided answers to our questions around who was signing up, how ma
 Fair warning: Creating a tracking plan is a lot of work, but it’s well worth it in the end. As we’ve outlined here, start by approaching analytics as a learning process. With this approach, your customer data collection will center around finding answers to important questions.
 
 Once you’re in that mindset, you’re ready to start forming your plan. Here are a few resources to get things rolling:
+
+Use the [Intilery Tracking Plan Template](https://docs.google.com/spreadsheets/d/13D0nG-_5RmEmUj8LHraH4Ndv0oQunXHzdN9NRJNFqsM/edit?usp=sharing) to create your tracking plan
+
+### Tracking Plan Columns
+
+The Tracking Plan editor is organized as a spreadsheet to help you add new events and properties, and edit the relevant fields for each. Like a spreadsheet, you can navigate across cells in a single event with your arrow keys and press enter to edit a cell.
+
+| COLUMN NAME      | DETAILS                                                      |
+| ---------------- | ------------------------------------------------------------ |
+| Name             | Specify the name of your event or property.                  |
+| Description      | Enter a description for your event or property. These descriptions are helpful for both engineers instrumenting Intilery and consumers of the data. |
+| Status           | Specify whether a property is required or optional. You can’t require a `.track()` call because Intilery is unable to verify when a `.track()` call should be fired. |
+| Data Type        | Specify the data type of the property. Data type options include `any, array, object, boolean, integer, number, string`. |
+| Permitted Values | Enter simple regular expressions to validate property values. This works when a property data type is set to `string`. For example, you can add pipe delimited strings to the regex column to generate violations when a property value does not match fall, winter or spring. |
+
+The Status, Data Type, and Permitted Values columns appear as you add a track call property.
+
+### Add a new track call
+
+To add a new track call:
+
+1. Click **Add Event** to add a new row.
+2. Click into the row to add an event name and description. The event name strictly validates the name passed in your `.track()` calls. Casing, spacing and spelling matter!
+
+### Add a track call property
+
+To add a track call property:
+
+1. Click on the **(+)** next to the event name to add a new row below the event name.
+2. Click into the row to add the property name and also specify the description, status, data type and permitted values when applicable.
+   - You can use your keyboard arrow and enter keys to navigate across the cells, or use your mouse.
+
+### Add a track call object or array property
+
+Intilery supports object and array data types in the Tracking Plan editor. These complex data structures have limited use cases and should be used sparingly as some destinations aren’t able to ingest the data structures. To add an object or array:
+
+1. Create a new property row and set the Data Type to `Object` or `Array`.
+2. Click the **(+)** next to the property name to add key value pairs in the object, or objects to an array of objects.
+
+### Add a label
+
+You can apply `key:value` labels to each event to help organize your tracking plan. These labels are helpful when multiple teams are managing a single tracking plan, or if you want to specify a priority, platform, product, or similar meta-data for each event. You can filter by label from the Tracking Plan, Schema, Data Validation and Violations Summary views.
+
+For consistency purposes, it’s best that you create a standard way of labeling events and share it with all parts of your organization that will use Intilery.
+
+![img](https://intilery.com/docs/protocols/tracking-plan/images/labels.png)
+
+### Filter track calls in the Tracking Plan
+
+You can filter the Tracking Plan events by keyword or by label. The applied filter generates a permanent link so you can share specific events with teammates. Label filters also persist after you leave the Tracking Plan.
+
+### Extend the Tracking Plan
+
+Some customers prefer to manage the Tracking Plan with outside tools and resources. See the [APIs and extensions](https://intilery.com/docs/protocols/apis-and-extensions/) section to learn more.

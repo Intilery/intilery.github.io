@@ -84,7 +84,6 @@ data as the basis on which to make decisions. The tracking plan helps marketers,
 product managers, engineers, analysts, etc. get on the same page. It represents the
 single source of truth for what data to collect and why.
 
-
 The tracking plan has been so instrumental in helping organizations reclaim their own
 data efforts that we invested years of product development to create [Protocols](/docs/guides/protocols).
 
@@ -94,35 +93,20 @@ Google Sheet template. Note that you can use any tool to create the tracking pla
 ## Tracking Plan Google Sheets Template
 
 To help you get started, we developed a Tracking Plan template in
-[Google Sheets](https://sheets.google.com/) (coming soon). The template includes all
-of our semantic schemas including [eCommerce](/docs/schema/retail),
-[B2B SaaS](/docs/schema/b2b), [Mobile](/docs/schema/mobile)
-and [Video](/docs/schema/video), and a collection of common properties.
+[Google Sheets](https://docs.google.com/spreadsheets/d/13D0nG-_5RmEmUj8LHraH4Ndv0oQunXHzdN9NRJNFqsM/edit?usp=sharing) . The template includes all of our semantic schemas including [eCommerce](/docs/schema/retail),
+[B2B SaaS](/docs/schema/b2b), [Mobile](/docs/schema/mobile) and [Video](/docs/schema/video), and a collection of common properties.
 
-We highly recommend you start by 
-[defining your business objectives](#define-business-objectives), and have included
-a template in the **Goals** tab to guide that process.
+We highly recommend you start by [defining your business objectives](#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 
-With your business goals defined, start by defining how you want to track Page/Screen,
-Identify and Group events. Most customers use
-[default page tracking](/docs/tag/reference#page) and skip over that tab.
-The identify tab is where you specify which user traits you intend to collect like
-`first_name`, `last_name`, `email`, etc. Read more about the
-[identify call below](/docs/tag/reference#identify).
+With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/tag/reference#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/tag/reference#identify).
 
-From there, we recommend you specify Track events in the
-**Track (Custom)** tab. Note that we pre-created events with
-varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc).
-While more challenging to manage at first, this structure allows you to use
-the **Minimize Rows** button at the top to organize and view all events.
+From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
-Once completed, the Google Sheet tracking plan can be shared with your
-stakeholders to either review, comment, edit or simply reference for implementation.
+Once completed, the Google Sheet tracking plan can be shared with your stakeholders to either review, comment, edit or simply reference for implementation.
 
 ## Identify your users
 
-The `.identify()` call is important, because it updates all records of the
-user with a set of traits. But how do you choose which traits to include?
+The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
 Here is a sample `.identify()` call (with [analytics.js](/docs/tag/tag1)) for Intilery:
 
@@ -136,18 +120,11 @@ analytics.identify({
 });
 ```
 
-The traits represent dimensions in your data that you can group or pivot on.
-For example, in the above, you can easily create cohorts of all types that are
-`users` or accounts created within a time window of your choosing.
+The traits represent dimensions in your data that you can group or pivot on. For example, in the above, you can easily create cohorts of all types that are `users` or accounts created within a time window of your choosing.
 
 ## Define your Track events
 
-After you’ve documented your [event naming and collection standards](#formalize-your-naming-and-collection-standards) 
-it’s time to add events to your tracking plan. We recommend starting with fewer events
-that are directly tied to one of your [business objectives](#define-business-objectives).
-This focused effort helps avoid a situation where you become overwhelmed by endless 
-number of possible actions to track. As you get more comfortable, you can add more
-events to your tracking plan that can answer peripheral questions.
+After you’ve documented your [event naming and collection standards](#formalize-your-naming-and-collection-standards)  it’s time to add events to your tracking plan. We recommend starting with fewer events that are directly tied to one of your [business objectives](#define-business-objectives). This focused effort helps avoid a situation where you become overwhelmed by endless  number of possible actions to track. As you get more comfortable, you can add more events to your tracking plan that can answer peripheral questions.
 
 At Intilery, we started out tracking these events:
 
@@ -170,8 +147,7 @@ For an ecommerce company, however, the main events might be something like:
 - **Product Added**
 - **Order Completed**
 
-Note that Intilery has a set of “reserved” event names specifically for ecommerce,
-called our [ecommerce schema](/docs/schema/retail). Check it out to see which events
+Note that Intilery has a set of “reserved” event names specifically for ecommerce, called our [ecommerce schema](/docs/schema/retail). Check it out to see which events
 we cover and how they are used in our downstream destinations.
 
 For a community, on the other hand, there is an entirely different set of actions that

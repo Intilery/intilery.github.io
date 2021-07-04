@@ -7,6 +7,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'intilery', // Usually your GitHub org/user name.
   projectName: 'developer-docs', // Usually your repo name.
+  plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
   	prism: {
       additionalLanguages: ['swift'],
@@ -65,6 +66,12 @@ module.exports = {
           to: 'docs/customers/overview',
           activeBasePath: 'docs/customers/overview',
           label: 'Customers',
+          position: 'left',
+        },
+        {
+          to: 'docs/roadmap/roadmap',
+          activeBasePath: 'docs/roadmap/roadmap',
+          label: 'Roadmap',
           position: 'left',
         },
         {to: 'blog', label: 'Blog', position: 'right'},

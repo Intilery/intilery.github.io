@@ -9,8 +9,8 @@
     <icon>https://intilery.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome</id>
-        <link href="https://intilery.com/blog/welcome"/>
+        <id>Welcome</id>
+        <link href="https://intilery.com/blog/2020/09/28/welcome"/>
         <updated>2020-09-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></summary>
     </entry>

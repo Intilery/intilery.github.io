@@ -145,6 +145,8 @@ We recommend using database IDs instead of simple email addresses or usernames, 
 
 **Instead of using an email address or a username as a User ID, send them along as [traits](#traits).**
 
+***Note:*** When looking at events or customers in the Intilery platform, you may see references to "customerId", this is the internal unique ID for the customer that Intilery assigns. This ID is for Intilery use only.
+
 ## Traits
 
 Traits are pieces of information you know about a user that are included in an `identify` call. These could be demographics like `age` or `gender`, account-specific like `plan`, or even things like whether a user has seen a particular A/B test variation. Up to you!

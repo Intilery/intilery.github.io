@@ -36,6 +36,8 @@ Intilery does **not** recommend using simple email addresses or usernames as as 
 
 **Tip!** Even if you don’t use an email address or a username as a User ID, you should still send them in the analytics payload as [traits](/docs/schema/identify#traits).
 
+***Note:*** When looking at events or customers in the Intilery platform, you may see references to "customerId", this is the internal unique ID for the customer that Intilery assigns. This ID is for Intilery use only.
+
 ## When to call Identify
 
 You should make an Identify call in the following situations:
@@ -126,3 +128,4 @@ There are a few things that might cause your numbers to be off.
 The most common problem people run into when tracking new user signups client-side is that only a portion of their new users are showing up in reports.
 
 This is usually caused by the page redirecting or reloading before the tracking calls get a chance to run. Intilery recommends that you make those calls from a welcome page after the user registers, rather than trying to squeeze in the tracking calls on the sign-up page itself.
+

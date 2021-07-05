@@ -51,3 +51,5 @@ POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/tra
 	"bookingId" : "1234" 
 }
 ```
+
+***Note:*** When looking at events or customers in the Intilery platform, you may see references to "customerId", this is the internal unique ID for the customer that Intilery assigns. This ID is for Intilery use only.

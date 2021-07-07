@@ -198,4 +198,7 @@ Once you add a few track calls, **you’re done with this tutorial!**
 
 **Note:** Events are displayed in the Events section on the Intilery app, along with validation.
 
-You successfully installed analytics.jstracking.
+You successfully installed analytics.js tracking.
+
+## Hosting your own marketing preferences page
+See [Marketing Preferences Hosting](../tag/marketing_prefs_hosting.md)

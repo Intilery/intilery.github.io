@@ -10,6 +10,11 @@ Intilery host a basic marketing preferences page which is linked to in all of ou
 
 If a custom version of this page is required, it can be self-hosted.
 
+# What the page will need to do
+ * Retrieve marketing preferences for the customer using a http GET
+ * Render a list of channels and subscription categories on the page
+ * Update the marketing preferences for the customer by building a new preferences object and performing a http POST
+
 ## Page URL
 The default page is hosted at:
 https://marketingprefs.intilery.com/content?s=aW50aWxlcnk6bWFya2V0aW5nOjg1MWZlMjM1LWY3MTEtNGVkZS05N2ZkLWFhOWUxNWIzOTg0YQ==
@@ -23,10 +28,12 @@ So the example link above might be generated in our email editor with...
 https://marketingprefs.intilery.com/content?s={(customer._subscriptionId)!""}
 ```
 
+The above would be replaced with the URL of your own hosted page.  The URL parameter name can of course be changed to suit.
+
 ## Example page
 ![Marketing Preferences](/img/marprefs_eg.png)
 
-## Retrieving existing marketing preferences for the customer
+## Retrieving marketing preferences for the customer
 A single endpoint returns the customers marketing preferences with the list of known channels and subscription categories.
 Note that channels are "opt-in" and categories are "opt-out".  If a new subscription category is added, the default status of that category for the customer will be *subscribed*.
 
@@ -66,7 +73,7 @@ GET https://events.intilery.com/cdp/marketing-preferences/276db9bf-ac46-4dc3-bb7
 }
 ```
 
-## Updating customer marketing preferences
+## Update the marketing preferences for the customer
 
 ### Request endpoint
 The same endpoint used to retrieve the customer marketing preferences is also used to update. Only the method is different.

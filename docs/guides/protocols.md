@@ -22,7 +22,7 @@ validating data, and ultimately allow your business to grow faster.
 
 ## There are four steps to using Protocols
 
-[1. Align teams with a Tracking Plan](/docs/guides/trackingplan)
+[1. Align teams with a Tracking Plan](/docs/guides/tracking-plan)
 
 Good data quality starts with a well thought out Tracking Plan. With Protocols, 
 you can define your events and corresponding properties in a Tracking Plan.

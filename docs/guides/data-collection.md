@@ -77,7 +77,7 @@ Regardless of approach, here are some important notes to keep in mind:
 
 ## Create a Tracking Plan
 
-A [tracking plan](/docs/guides/trackingplan) clarifies what events to track, where those events 
+A [tracking plan](/docs/guides/tracking-plan) clarifies what events to track, where those events 
 live in the code base, and why those events are necessary from a business perspective.
 The tracking plan served as a project management tool to align an entire organization around
 data as the basis on which to make decisions. The tracking plan helps marketers,

@@ -12,10 +12,13 @@ module.exports = {
         ],
         'Tracking Events': [
         	"guides/protocols",
-        	"guides/trackingplan",
+        	"guides/tracking-plan",
         	"guides/data-collection",
         	"guides/validate",
         	"guides/validate-schema",
+        ],
+        'Marketing Preferences': [
+            "guides/marketing-preferences-hosting"
         ]
     },
     apis: {
@@ -32,8 +35,7 @@ module.exports = {
         	'tag/reference',
         	'tag/gtm',
         	'tag/gtm-datalayer',
-        	'tag/gtm-ecommerce',
-        	'tag/marketing_prefs_hosting'
+        	'tag/gtm-ecommerce'
         ],
     },
     sdk: {

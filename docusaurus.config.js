@@ -63,12 +63,6 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/customers/overview',
-          activeBasePath: 'docs/customers/overview',
-          label: 'Customers',
-          position: 'left',
-        },
-        {
           to: 'docs/roadmap/roadmap',
           activeBasePath: 'docs/roadmap/roadmap',
           label: 'Roadmap',

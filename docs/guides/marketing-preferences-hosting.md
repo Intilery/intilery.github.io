@@ -1,7 +1,7 @@
 ---
-id: marketing_prefs_hosting
+id: marketing-preferences-hosting
 title: Hosting your own Marketing Preferences page
-sidebar_label: Hosting Marketing Preferences
+sidebar_label: Hosting
 ---
 
 # Marketing Preferences Hosting
@@ -15,38 +15,39 @@ If a custom version of this page is required, it can be self-hosted.
  * Update the marketing preferences for the customer by building a new preferences object and POSTing to our endpoint
 
 ## Page URL
-The default page is hosted at:
-https://marketingprefs.intilery.com/content?s=aW50aWxlcnk6bWFya2V0aW5nOjg1MWZlMjM1LWY3MTEtNGVkZS05N2ZkLWFhOWUxNWIzOTg0YQ==
+The default page is hosted by Intilery [(see example here)](https://marketingprefs.intilery.com/content?s=aW50aWxlcnk6bWFya2V0aW5nOjg1MWZlMjM1LWY3MTEtNGVkZS05N2ZkLWFhOWUxNWIzOTg0YQ==):
 
-The *s* parameter is an important property applied to all customers called the *Subscription ID*.  For custom hosting, this parameter can of course be named as desired.  The merge tag for a customers subscription id is:
-```
+We pass a customer specific **Subscription ID** as a parameter on the querystring (`s`).  For custom hosting, this parameter can be named as desired.  The merge tag for a customer's _subscription id_ is:
+
+```freemarker
 {(customer._subscriptionId)!""}
 ```
-So the example link above might be generated in our email editor with...
-```
+
+So the link above is generated using:
+
+```freemarker
 https://marketingprefs.intilery.com/content?s={(customer._subscriptionId)!""}
 ```
 
-The above would need be replaced with the URL of your own hosted page.  The URL parameter name can of course be changed to suit but the merge tag *must* remain the same as this property of the customer cannot be renamed.
+For self hosting replace with the URL with your own hosted page.  The URL `s` parameter name can be changed to suit, but the merge tag **must** remain the same as this property of the customer cannot be renamed.
 
-## Example page
-![Marketing Preferences](/img/marprefs_eg.png)
 
 ## Retrieving marketing preferences for the customer
 A single endpoint returns the customers marketing preferences with the list of known channels and subscription categories.
 Note that channels are "opt-in" and categories are "opt-out".  If a new subscription category is added, the default status of that category for the customer will be *subscribed*.
 
 ### Request endpoint
-```
+```http request
 GET https://events.intilery.com/cdp/marketing-preferences/<subscriptionId>
 ```
+
 For example...
-```
+```http request
 GET https://events.intilery.com/cdp/marketing-preferences/276db9bf-ac46-4dc3-bb7d-e94a7eb1de51
 ```
 
 ### Example response
-```
+```json
 {
     "writeKey": "ZXhhbXBsZTpleGFtcGxlOkVYQU1QTEU=",
     "customerId": "276db9bf-ac46-4dc3-bb7d-e94a7eb1de51",
@@ -76,7 +77,7 @@ GET https://events.intilery.com/cdp/marketing-preferences/276db9bf-ac46-4dc3-bb7
 
 ### Request endpoint
 The same endpoint used to retrieve the customer marketing preferences is also used to update. Only the method is different.
-```
+```http request
 POST https://events.intilery.com/cdp/marketing-preferences/<subscription id>
 ```
 
@@ -87,7 +88,7 @@ The example POST below updates the example customers marketing preferences as fo
 Note that the category/channel fields match up to those in the retrieved preferences.
 We recommend calling this endpoint from your servers to avoid any browser related CORS or blocking issues.
 
-```
+```javascript
 const data = {
     "categories": [{
         "category": "marketing_tricks",
@@ -120,19 +121,19 @@ $.ajax({
 
 ### Campaign Reporting
 
-To tie the unsubscribe/subscribe to a campaign for reporting, add the parameter ?assetId=XXX
+To tie the unsubscribe/subscribe to a campaign for reporting, add the parameter`?assetId=XXX`
 
-The assetID can be found in the URL parameter utm_campaign
+The assetID can be found in the URL parameter `utm_campaign`
 
 E.g. the for the url
 
-```
+```http request
 https://yourdomain.com/prefs?s<subscriptionId>&utm_campaign=July-1&utm_medium=email&utm_source=Intilery
 ```
 
-The assetId is July-1 you should POST to
+The assetId is `July-1` you should POST to
 
-```
+```http request
 POST https://events.intilery.com/cdp/marketing-preferences/<subscription id>?assetId=July-1
 ```
 
@@ -144,13 +145,13 @@ The endpoint will return a 200 response to indicate success.
 
 ## Unsubscribing from all communications
 Send the following data to the endpoint
-```
+```json5
 {
     "categories": [],
     "channels": [],
     "unsubscribeAll": true,
     "unsubscribeReason": "" // can be set to a string value to be recorded against the customer for your own records
-};
+}
 ```
 
 

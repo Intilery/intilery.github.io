@@ -1,5 +1,5 @@
 ---
-id: trackingplan
+id: tracking-plan
 title: What is a tracking plan?
 sidebar_label: Tracking Plan
 ---

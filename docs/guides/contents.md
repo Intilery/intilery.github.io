@@ -6,7 +6,7 @@ sidebar_label: Contents
 
 ## How to use these docs
 
-These docs are aimed at those who are integrating itnilery into their marketing stack and will give you a guide to getting started, what you need to prepare to make sure you can build the best customer engagement automations for your business. 
+These docs are aimed at those who are integrating Intilery into their marketing stack and will give you a guide to getting started, what you need to prepare to make sure you can build the best customer engagement automations for your business. 
 
 ## What Is Intilery?
 

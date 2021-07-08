@@ -11,9 +11,8 @@ Intilery host a basic marketing preferences page which is linked to in all of ou
 If a custom version of this page is required, it can be self-hosted.
 
 # What the page will need to do
- * Retrieve marketing preferences for the customer using a http GET
- * Render a list of channels and subscription categories on the page
- * Update the marketing preferences for the customer by building a new preferences object and performing a http POST
+ * Retrieve marketing preferences for the customer from the Intilery endpoint
+ * Update the marketing preferences for the customer by building a new preferences object and POSTing to our endpoint
 
 ## Page URL
 The default page is hosted at:
@@ -28,7 +27,7 @@ So the example link above might be generated in our email editor with...
 https://marketingprefs.intilery.com/content?s={(customer._subscriptionId)!""}
 ```
 
-The above would be replaced with the URL of your own hosted page.  The URL parameter name can of course be changed to suit.
+The above would need be replaced with the URL of your own hosted page.  The URL parameter name can of course be changed to suit but the merge tag *must* remain the same as this property of the customer cannot be renamed.
 
 ## Example page
 ![Marketing Preferences](/img/marprefs_eg.png)
@@ -39,7 +38,7 @@ Note that channels are "opt-in" and categories are "opt-out".  If a new subscrip
 
 ### Request endpoint
 ```
-GET https://events.intilery.com/cdp/marketing-preferences/<subscription id>
+GET https://events.intilery.com/cdp/marketing-preferences/<subscriptionId>
 ```
 For example...
 ```
@@ -86,6 +85,7 @@ The example POST below updates the example customers marketing preferences as fo
  * Unsubscribe from the new_product_alerts subscription category
  * Subscribe to the SMS channel
 Note that the category/channel fields match up to those in the retrieved preferences.
+We recommend calling this endpoint from your servers to avoid any browser related CORS or blocking issues.
 
 ```
 const data = {
@@ -128,7 +128,7 @@ Send the following data to the endpoint
     "categories": [],
     "channels": [],
     "unsubscribeAll": true,
-    "unsubscribeReason": "" // can be set to a string value to be recorded against the customer
+    "unsubscribeReason": "" // can be set to a string value to be recorded against the customer for your own records
 };
 ```
 

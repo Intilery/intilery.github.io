@@ -201,4 +201,4 @@ Once you add a few track calls, **you’re done with this tutorial!**
 You successfully installed analytics.js tracking.
 
 ## Hosting your own marketing preferences page
-See [Marketing Preferences Hosting](../tag/marketing_prefs_hosting.md)
+See [Marketing Preferences Hosting](../guides/marketing-preferences-hosting.md)

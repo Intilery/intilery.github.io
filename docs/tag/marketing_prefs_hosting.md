@@ -1,7 +1,7 @@
 ---
 id: marketing_prefs_hosting
 title: Hosting your own Marketing Preferences page
-sidebar_label: Hosting Marprefs
+sidebar_label: Hosting Marketing Preferences
 ---
 
 # Marketing Preferences Hosting
@@ -118,7 +118,28 @@ $.ajax({
 });
 ```
 
+### Campaign Reporting
+
+To tie the unsubscribe/subscribe to a campaign for reporting, add the parameter ?assetId=XXX
+
+The assetID can be found in the URL parameter utm_campaign
+
+E.g. the for the url
+
+```
+https://yourdomain.com/prefs?s<subscriptionId>&utm_campaign=July-1&utm_medium=email&utm_source=Intilery
+```
+
+The assetId is July-1 you should POST to
+
+```
+POST https://events.intilery.com/cdp/marketing-preferences/<subscription id>?assetId=July-1
+```
+
+
+
 ### Example response
+
 The endpoint will return a 200 response to indicate success.
 
 ## Unsubscribing from all communications

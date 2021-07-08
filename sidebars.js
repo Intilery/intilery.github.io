@@ -32,7 +32,8 @@ module.exports = {
         	'tag/reference',
         	'tag/gtm',
         	'tag/gtm-datalayer',
-        	'tag/gtm-ecommerce'
+        	'tag/gtm-ecommerce',
+        	'tag/marketing_prefs_hosting'
         ],
     },
     sdk: {

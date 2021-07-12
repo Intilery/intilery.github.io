@@ -7,7 +7,8 @@ module.exports = {
         	"guides/full",
         	"guides/fullimp",
         	"guides/faq",
-        	"guides/identifying-customers",
+            "guides/glossary",
+            "guides/identifying-customers",
         	"guides/mtcs",
         ],
         'Tracking Events': [

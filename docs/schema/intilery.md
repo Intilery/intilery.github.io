@@ -1,6 +1,6 @@
 ---
 id: intilery
-title: Intilery Default Schema
+title: Intilery Core Schema
 sidebar_label: Intilery Schema
 ---
 
@@ -10,9 +10,9 @@ These events can be found in the Intilery app on the Schema page shown below
 
 ![Schema](/img/schema-default.png)
 
-# Default Events
+# Core Events
 
-## Mobile
+## App
 
 ### Application Lifecycle Events
 
@@ -41,6 +41,13 @@ These events can be found in the Intilery app on the Schema page shown below
 - [Email Marked as Spam](./email#email-marked-as-spam)
 - [Email Opened](./email#email-opened)
 - [Unsubscribed](./email#unsubscribed)
+
+## SMS
+
+- [SMS Sent](./sms#sms-sent)
+- [SMS Not Sent](./sms#sms-not-sent)
+- [SMS Delivered](./sms#sms-delivered)
+
 
 ## API
 

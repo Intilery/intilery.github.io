@@ -5,7 +5,7 @@ sidebar_label: Validate Schemas
 
 ---
 
-Standard events, those detailed at [Intilery Default Schema](/docs/schema/intilery) do not need to be validated in order for these events to be recorded. The event's cannot be modified except for the [Identify event](/docs/schema/identify) in order to validate addtional customer traits.
+Standard events, those detailed at [Intilery Core Schema](/docs/schema/intilery) do not need to be validated in order for these events to be recorded. The event's cannot be modified except for the [Identify event](/docs/schema/identify) in order to validate addtional customer traits.
 
 ## Validating Traits
 

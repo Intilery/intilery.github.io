@@ -188,9 +188,9 @@ analytics.track('Article Bookmarked', {  title: 'Snow Fall',  subtitle: 'The Ava
 
 If you’re just getting started, some of the events you should track are events that indicate the success of your site, like **Signed Up**, **Item Purchased** or **Article Bookmarked**.
 
-**Note:** Events for default schema's can be found in the [/schema/contents](Schema Section) you should choose an industry specific schema and implement those events if possible.
+**Note:** Events for core schema's can be found in the [/schema/contents](Schema Section) you should choose an industry specific schema and implement those events if possible.
 
-**Note:** Any event can be sent with any properties, using a default schema saves you having to work out the event names and properties yourself.
+**Note:** Any event can be sent with any properties, using a core schema saves you having to work out the event names and properties yourself.
 
 The properties passed in with the events can be simple properties or nested objects
 

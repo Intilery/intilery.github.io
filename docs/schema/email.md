@@ -19,6 +19,7 @@ When an email is [delivered](#email-delivered), a recipient can take one or many
 The email category has the following semantic events:
 
 - [Email Sent](#email-sent)
+  [Email Not Sent](#email-not-sent)
 - [Email Bounced](#email-bounced)
 - [Email Delivered](#email-delivered)
 - [Email Link Clicked](#email-link-clicked)
@@ -73,6 +74,23 @@ This event supports the following semantic context properties:
 }
 ```
 
+
+### Email Not Sent
+
+When you have a Journey trigger a campaign send, but there are conditions on the
+campaign that prevent the email from being sent, we raise a not sent event. e.g. this
+could be that the Campaign is not transactional and the customer is unsubsribed.
+
+#### Properties
+
+This event supports the following semantic properties:
+
+| Property        | Type   | Description                        |
+| --------------- | ------ | ---------------------------------- |
+| `email_id`      | String | An ID used to identify the email.  |
+| `email_subject` | String | The email’s subject line.          |
+| `campaign_id`   | String | An id used to identify a campaign  |
+| `campaign_name` | String | A name used to identify a campaign |
 
 
 ### Email Bounced

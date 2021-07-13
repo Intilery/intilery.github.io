@@ -1,7 +1,7 @@
 ---
-id: mobile
-title: Native Mobile Schema
-sidebar_label: Mobile
+id: app
+title: Native App Schema
+sidebar_label: Mobile App
 ---
 
 One of the core components of the Intilery [Schema](./contents) is the [`track`](./track) method. It records any arbitrary event that the user has triggered. For Mobile tracking, in addition to `screen` calls, you’ll want to send **specific event names** that we recognize semantically. That way, we can transform them correctly before actioning them in the Intilery CDP and Customer Engagement Platform.

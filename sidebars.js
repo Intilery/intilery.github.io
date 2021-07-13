@@ -58,15 +58,16 @@ module.exports = {
     },
     schema: ["schema/contents",
         {
-            'Default Schemas': [
+            'Core Schemas': [
                 "schema/intilery",
                 "schema/common",
                 "schema/email",
+                "schema/sms",
                 "schema/identify",
                 "schema/track",
                 "schema/screen",
                 "schema/page",
-                "schema/mobile",
+                "schema/app",
                 "schema/b2b",
                 "schema/video",
                 "schema/subscription"

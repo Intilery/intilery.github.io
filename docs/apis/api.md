@@ -218,7 +218,8 @@ Example page call:
 
 ```json
 {
-	"event":"page", "userId":"ABC/123",
+	"event":"page", 
+  "userId":"ABC/123",
 	"anonymousId":"14834fb6-e82e-47f9-a7e0-892c45064d89",
 	"context": {
       "page": {
@@ -305,7 +306,7 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
 {
   "batch": [
     {
-      "type": "identify",
+      "event": "identify",
       "userId": "019mr8mf4r",
       "traits": {
         "email": "jake@yahoo.com",
@@ -315,9 +316,8 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
       "timestamp": "2012-12-02T00:30:08.276Z"
     },
     {
-      "type": "track",
-      "userId": "019mr8mf4r",
       "event": "Song Played",
+      "userId": "019mr8mf4r",
       "properties": {
         "name": "Fallin for You",
         "artist": "Dierks Bentley"
@@ -325,7 +325,7 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
       "timestamp": "2012-12-02T00:30:12.984Z"
     },
     {
-      "type": "identify",
+      "event": "identify",
       "userId": "971mj8mk7p",
       "traits": {
         "email": "cindy@example.com",
@@ -335,9 +335,8 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
       "timestamp": "2015-2-02T00:30:08.276Z"
     },
     {
-      "type": "track",
-      "userId": "971mj8mk7p",
       "event": "Song Played",
+      "userId": "971mj8mk7p",
       "properties": {
         "name": "Get Right",
         "artist": "Jennifer Lopez"
@@ -356,7 +355,7 @@ POST https://tracking.intilery.com/track/{clientID}/{accountid}/{BRANDID}/v1/bat
 
 | Field                        |   Type | Description |
 | ------------ | ------------ | ----------- |
-| `batch` | *Array*              | An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `type` property with a valid method name. |
+| `batch` | *Array*              | An array of `identify`, `group`, `track`, `page` and `screen` method calls. Each call **must** have an `event` property with a valid method name. |
 | `context` | *Object, optional* | The same as [Context](/docs/schema/common#context) for other calls, but it will be merged with any context inside each of the items in the batch. |
 
 ## Collecting IP Address
@@ -386,7 +385,7 @@ Regulations enable you to issue a single request to delete and suppress data abo
 | Unsuppress           | Stop an ongoing suppression                           |
 | Suppress             | Suppress new data without deleting existing data      |
 | NoTrack              | Stops track events, but you can still send messages (emails, SMS, etc...) and send commands and identify via the API, but not via the JS Tag |
-| Track                  | Undo the NoTrack | 
+| Track                  | Undo the NoTrack |
 | Access                | Request the data held on the user to be supplied as a zip file |
 
 

@@ -16,22 +16,22 @@ These events can be found in the Intilery app on the Schema page shown below
 
 ### Application Lifecycle Events
 
-- [Application Installed](./mobile#application-installed)
-- [Application Opened](./mobile#application-opened)
-- [Application Updated](./mobile#application-updated)
-- [Application Backgrounded](./mobile#application-backgrounded)
-- [Application Crashed](./mobile#application-crashed)
-- [Application Uninstalled](./mobile#application-uninstalled)
+- [Application Installed](./app#application-installed)
+- [Application Opened](./app#application-opened)
+- [Application Updated](./app#application-updated)
+- [Application Backgrounded](./app#application-backgrounded)
+- [Application Crashed](./app#application-crashed)
+- [Application Uninstalled](./app#application-uninstalled)
 
 ### Campaign Events
 
-- [Push Notification Received](./mobile#push-notification-received)
-- [Push Notification Tapped](./mobile#push-notification-tapped)
-- [Push Notification Bounced](./mobile#push-notification-bounced)
-- [Install Attributed](./mobile#install-attributed)
-- [Deep Link Clicked](./mobile#deep-link-clicked)
-- [Deep Link Opened](./mobile#deep-link-opened)
-- [Install Attributed](./mobile#install-attributed)
+- [Push Notification Received](./app#push-notification-received)
+- [Push Notification Tapped](./app#push-notification-tapped)
+- [Push Notification Bounced](./app#push-notification-bounced)
+- [Install Attributed](./app#install-attributed)
+- [Deep Link Clicked](./app#deep-link-clicked)
+- [Deep Link Opened](./app#deep-link-opened)
+- [Install Attributed](./app#install-attributed)
 
 ## Email
 

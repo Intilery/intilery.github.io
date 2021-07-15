@@ -104,7 +104,7 @@ Analytics.setup(with: AnalyticsConfiguration(writeKey: "YOUR_WRITE_KEY"))
 
 ### Application Lifecycle Tracking
 
-The Intilery-iOS SDK can automatically instrument [common application lifecycle events](/docs/schema/mobile/) such as “Application Installed”, “Application Updated” and “Application Opened”. Simply enable this option when you initialize the SDK.
+The Intilery-iOS SDK can automatically instrument [common application lifecycle events](/docs/schema/app/) such as “Application Installed”, “Application Updated” and “Application Opened”. Simply enable this option when you initialize the SDK.
 
 #### Swift
 
@@ -261,7 +261,7 @@ Find details on the identify method payload in the [Identify Schema documentatio
 
 Intilery's Track method lets you record the actions your users perform. Every action triggers what we call an “event”, which can also have associated properties.
 
-To get started, the Intilery iOS SDK can automatically track a few key common events with the [Intilery Native Mobile Schema](/docs/schema/mobile/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Enable this option during initialization.
+To get started, the Intilery iOS SDK can automatically track a few key common events with the [Intilery Native Mobile Schema](/docs/schema/app/), such as the `Application Installed`, `Application Updated` and `Application Opened`. Enable this option during initialization.
 
 You might also want to track events that are indicators of success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Intilery recommends tracking just a few important events to start out. You can always add more later! An example Track call might look like this:
 

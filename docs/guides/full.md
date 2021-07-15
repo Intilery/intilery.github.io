@@ -11,7 +11,7 @@ Now that we’ve shown you Intilery in action, let’s step back and think throu
   - Shortcut! Check if a Business Spec meets your needs
     - [B2B Schema](/docs/schema/b2b)
     - [Ecommerce Schema](/docs/schema/retail)
-    - [Mobile Spec](/docs/schema/mobile)
+    - [Mobile Spec](/docs/schema/app)
     - [Video Spec](/docs/schema/video)
 - [Create naming conventions](#create-naming-conventions)
 - Develop a Tracking Plan
@@ -75,7 +75,7 @@ If your organization sells products online, the E-commerce Spec covers the custo
 
 #### Mobile Spec
 
-The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Intilery Android and iOS SDKs] (coming soon). Read more about [the Native Mobile Spec](/docs/schema/mobile)
+The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Intilery Android and iOS SDKs] (coming soon). Read more about [the Native Mobile Spec](/docs/schema/app)
 
 ## Create naming conventions
 

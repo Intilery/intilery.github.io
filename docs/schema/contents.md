@@ -32,7 +32,7 @@ Second, it **details the event data we capture across customer engagement channe
 
 Third, it **shares the events we recommend you track for a particular industry based on our experience working with many customers**. When you respect these specs, it makes your data more robust and portable, as well as enabling you to choose other technologies to move data to and from Intilery, such as Google, Facebook, Segment, Zapier
 
-- [Mobile](./mobile)
+- [App](./app)
 
 - [E-Commerce](./retail)
 

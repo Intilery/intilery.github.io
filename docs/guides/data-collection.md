@@ -94,7 +94,7 @@ Google Sheet template. Note that you can use any tool to create the tracking pla
 
 To help you get started, we developed a Tracking Plan template in
 [Google Sheets](https://docs.google.com/spreadsheets/d/13D0nG-_5RmEmUj8LHraH4Ndv0oQunXHzdN9NRJNFqsM/edit?usp=sharing) . The template includes all of our semantic schemas including [eCommerce](/docs/schema/retail),
-[B2B SaaS](/docs/schema/b2b), [Mobile](/docs/schema/mobile) and [Video](/docs/schema/video), and a collection of common properties.
+[B2B SaaS](/docs/schema/b2b), [Mobile](/docs/schema/app) and [Video](/docs/schema/video), and a collection of common properties.
 
 We highly recommend you start by [defining your business objectives](#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 

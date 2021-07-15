@@ -230,7 +230,7 @@ The Android library currently automatically sends the `userId` and `anonymousId`
 
 The Track call lets you record the actions your users perform. Every action triggers what we call an “event”, which can also have associated properties.
 
-To get started, the Analytics-Android SDK can automatically tracks a few key common events using the Intilery [Native Mobile Spec](/docs/schema/mobile), such as the `Application Installed`, `Application Updated` and `Application Opened`. You can enable this option during initialization.
+To get started, the Analytics-Android SDK can automatically tracks a few key common events using the Intilery [Native Mobile Spec](/docs/schema/app), such as the `Application Installed`, `Application Updated` and `Application Opened`. You can enable this option during initialization.
 
 You might also want to track events that indicate success for your mobile app, like **Signed Up**, **Item Purchased** or **Article Bookmarked**. Intilery recommends tracking just a few important events. You can always add more later!
 

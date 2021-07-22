@@ -147,7 +147,8 @@ Traits can be any valid JSON.
 
 | Field | | Type | Description |
 | ------------- | ------------ | ------------------------------------------------------------ |--|
-| **userId**    | **required** | String | Unique identifier for the user in your database              |
+| **anonymousId** | *optional if userID is set instead* | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required.<br/>See the [Identities docs](/docs/schema/identify#identities) for more details. |
+| **userId**    | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](/docs/schema/identify#identities) for more details. |
 | **event**     | **required** | String |  must be “**identify**”                                       |
 | **traits**    | **required** | Object | Free-form dictionary of traits of the user, like email or firstName or an object like address |
 | **timestamp** | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z), if not provided, it will be set at the time the event arrives at the server |
@@ -197,7 +198,8 @@ Example added to basket event
 
 | Field |  | Type | Description |
 | -------------- | ------------ | ------------------------------------------------------------ |--|
-| **userId**     | **required** | String | Unique identifier for the user in your database              |
+| **anonymousId** | *optional if userID is set instead* | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required.<br/>See the [Identities docs](/docs/schema/identify#identities) for more details. |
+| **userId**    | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](/docs/schema/identify#identities) for more details. |
 | **event**      | **required** | String | Name of the action that a user has performed.                |
 | **timestamp**  | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) for then the event happened, if not set, it is set by the server at the time the event is received |
 | **properties** | optional     | Object | Free-form dictionary of properties of the event, like price or sku |
@@ -244,8 +246,8 @@ Example page call:
 
 | Field | | Type | Description |
 | --------------- | ------------ | ------------------------------------------------------------ |--|
-| **userId**      | optional*    | String | Unique identifier for the user in your database. If not known, you must pass anonymousId |
-| **anonymousId** | optional*    | String | A pseudo-unique substitute for a userId, for cases when you don't know who the customer is at present. |
+| **anonymousId** | *optional if userID is set instead* | String | A pseudo-unique substitute for a User ID, for cases when you don’t have an absolutely unique identifier. A userId or an anonymousId is required.<br/>See the [Identities docs](/docs/schema/identify#identities) for more details. |
+| **userId**      | *optional if anonymousID is set instead* | String | Unique identifier for the user in your database. A userId or an anonymousId is required. See the [Identities docs](/docs/schema/identify#identities) for more details. |
 | **event**       | **required** | String | must be “**page**”                                           |
 | **timestamp**   | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z) for then the event happened, set on receipt if not provided |
 | **properties**  | optional     | Object | Free-form dictionary of properties of the event, like price or sku |

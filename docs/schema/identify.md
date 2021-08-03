@@ -21,7 +21,8 @@ Here’s the payload of a typical `identify` call with most [common fields](/doc
 
 ```json
 {
-  "type": "identify",
+  "userId": "97980cfea0067",
+  "event": "identify",
   "traits": {
     "name": "Peter Gibbons",
     "email": "peter@example.com",
@@ -36,8 +37,7 @@ Here’s the payload of a typical `identify` call with most [common fields](/doc
         { "channel": "push", "subscribed": false }
       ] 
     }
-  },
-  "userId": "97980cfea0067"
+  }
 }
 ```
 

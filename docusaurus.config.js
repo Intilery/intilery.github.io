@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Intilery Documentation',
+  title: 'Documentation for Developers',
   tagline: 'Making marketeers the best they can be',
   url: 'https://intilery.com',
   baseUrl: '/',
@@ -38,7 +38,7 @@ module.exports = {
       items: [
         {
           to: 'docs/guides/contents',
-          label: 'Guides',
+          label: 'Start Your Integration',
           position: 'left',
         },
         {
@@ -49,7 +49,7 @@ module.exports = {
         },
         {
           to: 'docs/tag/tag1',
-          label: 'JavaScript Tag',
+          label: 'Websites',
           position: 'left',
         },
         {
@@ -59,20 +59,8 @@ module.exports = {
         },
         {
           to: 'docs/apis/api',
-          label: 'HTTP APIs',
+          label: 'APIs for Servers',
           position: 'left',
-        },
-        {
-          to: 'docs/roadmap/roadmap',
-          activeBasePath: 'docs/roadmap/roadmap',
-          label: 'Roadmap',
-          position: 'left',
-        },
-        {to: 'blog', label: 'Blog', position: 'right'},
-        {
-          href: 'https://github.com/Intilery/intilery.github.io',
-          label: 'GitHub',
-          position: 'right',
         },
       ],
     },
@@ -83,24 +71,24 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'User Guides',
-              to: 'http://support.intilery.com/',
+              label: 'Start Your Integration',
+              to: 'docs/guides/contents',
             },
             {
-              label: 'API',
-              to: 'docs/apis/api',
+              label: 'Standard Data',
+              to: 'docs/schema/contents',
             },
             {
-              label: 'JavaScript Tag',
+              label: 'Website Integration',
               to: 'docs/tag/tag1',
             },
             {
-              label: 'Mobile SDKs',
+              label: 'Mobile App Integration',
               to: 'docs/app/main',
             },
             {
-              label: 'Schema',
-              to: 'docs/schema/contents',
+              label: 'Server API Integration',
+              to: 'docs/apis/api',
             },
           ],
         },
@@ -129,12 +117,16 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Marketing Blog',
-              href: 'https://www.intilery.com/category/blog/',
+              label: 'User Guides',
+              href: 'http://support.intilery.com/',
+            },
+            {
+              label: 'Roadmap',
+              to: 'docs/roadmap/roadmap',
             },
             {
               label: 'Blog',
-              to: 'blog',
+              href: 'https://www.intilery.com/category/blog/',
             },
             {
               label: 'GitHub',

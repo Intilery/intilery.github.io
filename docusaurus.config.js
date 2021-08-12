@@ -42,8 +42,9 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/apis/api',
-          label: 'APIs',
+          to: 'docs/schema/contents',
+          activeBasePath: 'docs/schema/contents',
+          label: 'Schema',
           position: 'left',
         },
         {
@@ -52,14 +53,13 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/sdk/ios',
-          label: 'Mobile SDKs',
+          to: 'docs/app/main',
+          label: 'Mobile Apps',
           position: 'left',
         },
         {
-          to: 'docs/schema/contents',
-          activeBasePath: 'docs/schema/contents',
-          label: 'Schema',
+          to: 'docs/apis/api',
+          label: 'HTTP APIs',
           position: 'left',
         },
         {

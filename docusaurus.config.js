@@ -96,7 +96,7 @@ module.exports = {
             },
             {
               label: 'Mobile SDKs',
-              to: 'docs/sdk/ios',
+              to: 'docs/app/main',
             },
             {
               label: 'Schema',

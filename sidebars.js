@@ -54,8 +54,8 @@ module.exports = {
     app: {
         'App Integration': [
             'app/main',
-            'app/push',
             'app/api',
+            'app/push',
         ],
     	'iOS Native SDK': [
     		'app/ios',

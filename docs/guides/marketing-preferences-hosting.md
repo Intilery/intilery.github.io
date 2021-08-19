@@ -17,7 +17,7 @@ If a custom version of this page is required, it can be self-hosted.
  * Retrieve marketing preferences for the customer from the Intilery endpoint
  * Update the marketing preferences for the customer by building a new preferences object and POSTing to our endpoint
 
-## Page URL
+## Generating the Subscription ID
 The default page is hosted by Intilery [(see example here)](https://marketingprefs.intilery.com/content?s=aW50aWxlcnk6bWFya2V0aW5nOjg1MWZlMjM1LWY3MTEtNGVkZS05N2ZkLWFhOWUxNWIzOTg0YQ==):
 
 We pass a customer specific **Subscription ID** as a parameter on the
@@ -39,6 +39,8 @@ For self-hosting replace with the URL with your own hosted page.
 The URL `s` parameter name can be changed to suit, 
 but the merge tag **must** remain the same as this property of the
 customer cannot be renamed.
+
+### Retrieving the Subscription ID
 
 e.g. If the link to your marketing preferences page is:
 ```freemarker

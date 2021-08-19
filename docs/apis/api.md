@@ -18,8 +18,12 @@ HTTP API directly — that’s what this reference is for.
 ## Endpoint
 
 ```http request
-https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/{action}
+POST https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/{action}
 ```
+
+The endpoint expects a POST of JSON data.
+
+### Path Parameters 
 
 You can determine the values of your clientId, accountId and BRANDID from the URL
 of your login to the Intilery platform:
@@ -34,26 +38,28 @@ If you have multiple accounts this will be: `accountid.clientid.intilery.com`.
 | **clientId** |  The value in your login URL before `intilery.com`. It will be lower case. |
 | **accountId** | The value in your login URL before your clientId, or the same as your clientId. It will be lower case |
 | **BRANDID** | Unless you have multiple brands configured, this will be your accountId in upper case |
+| **action** | Either `identify`, `track`, `page` or `screen` depending on the event type being sent, see below | 
 
-The endpoint expects a POST of JSON data.
 
-Authentication is via a shared secret passed in the auth-token header.
+### Authentication
 
-The actions are detailed below.
+Authentication is via a shared secret passed in the `auth-token` header. You can 
+create and manage your authentication tokens from the **API Keys** menu.
 
 ### Headers
 
 #### Content-Type
 
-You must provide a content-type header of application/json
+You must provide a `content-type` header of `application/json`
 
 #### Auth-Token
 
 Authentication to handled by a shared secret that must be passed in a header
+`auth-token`
 
 ### Example Request
 
-```bash
+```shell
 curl "https://tracking.intilery.com/track/client/account/BRAND/v1/{action}" -i -X POST \
 -H "content-type: application/json" \
 -H "auth-token: 1234abcd" \

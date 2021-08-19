@@ -6,7 +6,10 @@ sidebar_label: Hosting
 
 # Marketing Preferences Hosting
 
-Intilery host a basic marketing preferences page which is linked to in all of our email communications.  This can be used by the customer to subscribe or opt out of communications based on communication medium (channel) or subscription category (interests).
+Intilery host a basic marketing preferences page which is linked to in all of our 
+email communications.  This can be used by the customer to subscribe or opt out 
+of communications based on communication medium (channel) or subscription 
+category (interests).
 
 If a custom version of this page is required, it can be self-hosted.
 
@@ -17,7 +20,9 @@ If a custom version of this page is required, it can be self-hosted.
 ## Page URL
 The default page is hosted by Intilery [(see example here)](https://marketingprefs.intilery.com/content?s=aW50aWxlcnk6bWFya2V0aW5nOjg1MWZlMjM1LWY3MTEtNGVkZS05N2ZkLWFhOWUxNWIzOTg0YQ==):
 
-We pass a customer specific **Subscription ID** as a parameter on the querystring (`s`).  For custom hosting, this parameter can be named as desired.  The merge tag for a customer's _subscription id_ is:
+We pass a customer specific **Subscription ID** as a parameter on the
+querystring (`s`).  For custom hosting, this parameter can be named as desired.
+The merge tag for a customer's _subscription id_ is:
 
 ```freemarker
 {(customer._subscriptionId)!""}
@@ -29,12 +34,37 @@ So the link above is generated using:
 https://marketingprefs.intilery.com/content?s={(customer._subscriptionId)!""}
 ```
 
-For self hosting replace with the URL with your own hosted page.  The URL `s` parameter name can be changed to suit, but the merge tag **must** remain the same as this property of the customer cannot be renamed.
+For self-hosting replace with the URL with your own hosted page.  
 
+The URL `s` parameter name can be changed to suit, 
+but the merge tag **must** remain the same as this property of the
+customer cannot be renamed.
+
+e.g. If the link to your marketing preferences page is:
+```freemarker
+https://your-domain.com/marketing-preferences/{(customer._subscriptionId)!""}
+```
+
+you can read the `subscriptionId` with some JavaScript:
+```javascript
+window.location.href.split('/')[window.location.href.split('/').length-1]
+```
+
+or if the link to you marketing preferences page is:
+```freemarker
+https://your-domain.com/marketing-preferences?s={(customer._subscriptionId)!""}
+```
+
+you can read the `subscriptionId` with this JavaScript:
+```javascript
+new URLSearchParams(window.location.search).get('s')
+```
 
 ## Retrieving marketing preferences for the customer
-A single endpoint returns the customers marketing preferences with the list of known channels and subscription categories.
-Note that channels are "opt-in" and categories are "opt-out".  If a new subscription category is added, the default status of that category for the customer will be *subscribed*.
+A single endpoint returns the customers marketing preferences with the list of
+known channels and subscription categories. Note that channels are "opt-in" and 
+categories are "opt-out".  If a new subscription category is added, the default 
+status of that category for the customer will be *subscribed*.
 
 ### Request endpoint
 ```http request

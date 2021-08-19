@@ -8,15 +8,15 @@ need for merge tags in campaigns. What traits do you capture about the customer.
 
 Use the [Intilery core schema](../schema/common). Include the additional lifecycle
 events from the [app schema](../schema/app). If you are using transactions use
-the [e-commerce schema](../schema/retail) Add your own custom events if
+the [e-commerce schema](../schema/retail). Add your own custom events if
 needed so you can build audiences and target customers with the right campaigns.
 
 ## Integrate Tracking with your App
 
 We provide native libraries that wrap the Intilery API endpoints with some easy to 
-use track, identify and screen view calls. The libraries are all open source and the
-SDKs queues API calls rather than making a network request for each event
-tracked, to help improve the user’s battery life.
+use track, identify and screen view calls. The libraries are all open source. The
+SDKs queue API calls rather than making a network request for each event
+tracked. This helps improve the user’s battery life over a more chatty protocol.
 
 Batches are sent either:
 
@@ -28,12 +28,12 @@ To limit memory and disk usage, Intilery only queues up to 1000 events.
 When the app is terminated, Intilery saves the queue to disk,
 and loads that data again at app launch so there is no data loss.
 
-  * [iOS Native SDK](./ios)
-  * [Android Native SDK](./android)
+  * [iOS Native SDK](ios)
+  * [Android Native SDK](android)
 
 If you develop your app using [flutter](https://flutter.dev),
 [react-native](https://reactnative.dev/), or another cross-platform development
-kit you can either integrate using the native libraries or build your own 
+kit you can integrate using the native libraries or build your own 
 connection to the [API direct](./api).
 
 ## Integrate Push Notifications with your App

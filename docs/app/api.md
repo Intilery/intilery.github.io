@@ -1,31 +1,31 @@
 # API For Mobile
 
-When sending data to Intilery from a mobile app you can use the same endpoints
-that are used by the [JavaScript tag](../tag/tag1) detailed below.
+When sending data to Intilery from a mobile app you use the same endpoints
+as the [JavaScript tag](../tag/tag1) detailed below.
 
-We would recommend that to preserve the users' battery and minimise network
-connections, that you batch events up and send them to the batch endpoint. See
+We recommend that to preserve the users' battery and minimise network
+connections, you should batch events up and send them to the batch endpoint. See
 our [Native SDKs](./main#integrate-tracking-with-your-app) for examples.
 
 ## Write Key
 
 To match the data to your account you need to include a `writeKey` with each call.
-You can get your `writeKey` by going to the **Tag** menu and copying it out of
+You get your `writeKey` by going to the **Tag** menu and copying it out of
 the JavaScript Website Tag from line 3:
 
 ```javascript
 analytics.load("<this is the writeKey you need to copy>"); 
 ```
 
-You will pass the `writeKey` in each event or batch sent to Intilery. 
+You  pass the `writeKey` in each event or batch sent to Intilery. 
 
 ## Endpoints
 
-To send data to Intilery you `POST` a JSON document
+To send data to Intilery `POST` a JSON document
 with the `content-type` header set to `application/json`.
 
 Send the data as described in the appropriate [schema](../schema/contents) 
-passing in the `writeKey` as part of the root object.
+with the `writeKey` as part of the root object.
 
 ### Single Event Endpoint
 
@@ -46,7 +46,7 @@ e.g. sending a [screen](../schema/screen) event you would send:
 
 ### Batch Event Endpoint
 
-When you batch events up, you send a list of the events in the order they
+When you batch events up, send a list of the events in the order they
 happened.
 
 The `writeKey` is only passed in the root of the request, along with `batch`.

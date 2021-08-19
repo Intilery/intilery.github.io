@@ -16,8 +16,8 @@ You then supply Intilery with the FCM key to enable push notifications to be sen
 :::note
 
 A customer can have more than one device, but the device is only every linked to
-one customer. If a customer has more than one device, when a push is sent, it is
-sent to all the customer's devices.
+one customer. If a customer has more than one device, when a push campaign is
+scheduled it is sent to all the customer's devices.
 
 :::
 
@@ -29,25 +29,26 @@ token is refreshed regularly](https://firebase.google.com/docs/cloud-messaging/m
 Intilery will remove stale tokens that are more than 2 months old.
 You should configure your app to refresh the FCM token once every 30 - 45 days.
 
-When we attempt to send a push message if we get an error back from firebase
-indicating that the token is no longer valid the token will be removed by Intilery.
+When we attempt to send a push message, if we get an error back from firebase
+indicating that the token is no longer valid, the token will be removed by Intilery.
 
 ## Sending the FCM Token to Intilery
 
-When a user first installs the app and you ask them to accept push messages, 
-send a `Register Push` event to Intilery. As the customer is not signed in, there
-will be no `userId`, so don't pass one.
+When a user first installs the app, you can ask them to accept push messages.
 
-When a user has push enabled and have not yet signed in,  send
-events to Intilery using the FCM Device ID as the `userId` in subsequent events.
+If the user accepts, send a `Register Push` event to Intilery. As the customer is
+not signed in at this point, there will be no `userId`, so use the FCM generated 
+`deviceId`.
 
-When a user does not have push enabled, they are anonymous, so send events
-to Intilery with only a `anonymousId`. You can use the FCM Device ID as the
-`anonymousId`.
+Continue to use the FCM Device ID as the `userId` in subsequent events.
+
+When a user does **not enable push**, they are anonymous, so send
+events to Intilery with only an `anonymousId`. You can use the FCM Device ID as
+the `anonymousId`.
 
 When a customer Signs In or Registers, send an `Identify` as you normally would
 to identify the customer, then if push is enabled send a `Register Push` with the
-`userId` in the event.
+`userId` matching your unique user identifier.
 
 ### Register Push Event
 

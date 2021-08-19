@@ -4,6 +4,8 @@ title: Event Tracking API Guide
 sidebar_label: API Guide
 ---
 
+# API For Servers 
+
 The Intilery HTTP Tracking API lets you record analytics data from
 any website or application. The requests hit our servers, and we action
 this in the Intilery CDP and Customer Engagement Platform
@@ -58,11 +60,11 @@ curl "https://tracking.intilery.com/track/client/account/BRAND/v1/{action}" -i -
 -d @event.json
 ```
 
-## Permissions
+### Permissions
 
 Your Authentication token will be set with permissions at the Account and Brand level, token’s can be created that have access to all Brands within an Account or a token for each Brand (and account).
 
-## Limits
+### Limits
 
 The API is set to 100 requests per second with a burst of 500, limit and burst explained [here](https://en.wikipedia.org/wiki/Token_bucket)
 
@@ -70,7 +72,7 @@ If limits are exceeded you will receive a 429 Error (limit exceeded) response.
 
 The maximum size of any request is 1mb, exceeding this will return a 413 Error.
 
-## Response
+### Response
 
 The API will respond with the appropriate HTTP response code, along with a body in the form of: -
 
@@ -83,7 +85,7 @@ The API will respond with the appropriate HTTP response code, along with a body 
 
 The eventID is a unique ID that is passed to all systems within the platform, this eventID can be used to query the status of the request (event) and receive any errors that occur
 
-### Response Error Codes
+#### Response Error Codes
 
 | Code  | Reason                                            |
 | ---- | ------------------------------------------------------------ |
@@ -106,7 +108,7 @@ A `400` error response will return a JSON object with additional information on 
 }
 ```
 
-# Identify Action
+## Identify Action
 
 identify lets you tie a user to their actions and record traits about them. It includes a unique User ID and any optional traits you know about them.
 
@@ -154,7 +156,7 @@ Traits can be any valid JSON.
 | **timestamp** | optional | String | [ISO-8601 UTC Timestamp](http://en.wikipedia.org/wiki/ISO_8601) (e.g. 2019-11-18T13:30:11.444Z), if not provided, it will be set at the time the event arrives at the server |
 | **context**   | optional     | Object | Dictionary of extra information that provides useful context about a message, but is not directly related to the API call like ip address or locale |
 
-# Track Action
+## Track Action
 
 track lets you record the actions your users perform, record analytics for them or issue commands. Every action triggers what we call an “event”, which can also have associated properties.
 
@@ -207,7 +209,7 @@ Example added to basket event
 
 The track endpoint can also be used to pass specific [Track Action Commands](./commands)  to trigger campaign sends.
 
-# Page Action
+## Page Action
 
 The page action lets you record page views on your website, along with optional extra information
 about the page being viewed. The JavaScript tag will raise a page event whenever a new page is loaded.

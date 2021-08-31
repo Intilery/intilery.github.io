@@ -46,6 +46,8 @@ module.exports = {
         'Getting Started': [
         	'tag/tag1',
         	'tag/reference',
+        ],
+        'Integrating with GTM': [
         	'tag/gtm',
         	'tag/gtm-datalayer',
         	'tag/gtm-ecommerce'

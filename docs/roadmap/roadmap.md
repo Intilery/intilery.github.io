@@ -15,10 +15,10 @@ We’re adding advanced campaign scheduling to handle repeated schedules and fol
 Brighter better emails with more personalisation and content options including:
 
 * Improved UX for using personalized content with merge tags highlighting, and sample content both during editing and preview.
-
-* Collapsible sidebar for the Email Builder
-* Emoji picker for text editor inside text blocks, buttons and titles
 * Integration of Nifty Images
+* AMP Carousels
+* Redesign of the asset overview page
+* Better content targeting to audiences
 
 
 ### SMS Enhancements
@@ -72,3 +72,6 @@ Setting up schema and getting the data right is hard, it’s important, that’s
 
 ### Integration/Platform
 We know you can meet all your marketing needs using the Intilery Platform, but hey, you still have some systems running that are deeply integrated with another platform, don’t worry, we got you covered as we allow you to integrate with other systems directly or through platforms like zapier.
+
+
+

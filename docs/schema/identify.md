@@ -9,6 +9,7 @@ sidebar_label: Identify
 Our recommendation for when and how often you should call `identify` is as follows:
 
 - After a user registers
+  - You should set the source, medium and campaign traits at this time
 - After a user logs in
 - When a user updates their info (eg changes or adds a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
@@ -27,7 +28,9 @@ Here’s the payload of a typical `identify` call with most [common fields](/doc
     "name": "Peter Gibbons",
     "email": "peter@example.com",
     "plan": "premium",
-    "logins": 5,
+    "source" : "google",
+    "medium" : "cpc",
+    "campaign" : "free trial",
     "marketingPreferences": { 
       "channels": [ 
         { "channel": "email", "subscribed": true },
@@ -48,7 +51,9 @@ analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
   email: "peter@example.com",
   plan: "premium",
-  logins: 5,
+  source : "google",
+  medium : "cpc",
+  campaign : "free trial",
   "marketingPreferences": { 
       "channels": [ 
         { "channel": "email", "subscribed": true },
@@ -165,7 +170,10 @@ Reserved traits we’ve standardized:
 | `birthday`             | Date     | User’s birthday                                              |
 | `company`              | Object   | Company the user represents, optionally containing: `name` (a String), `id` (a String or Number), `industry` (a String), `employee_count` (a Number) or `plan` (a String) |
 | `createdAt`            | Date     | Date the user’s account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings. |
-| `campaign`             | Object   | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. This maps directly to the common UTM campaign parameters. This is set when the customer is initially created and not updated on subsequent identify calls |
+| `source`               | String   | Identifies which site sent the traffic                       |
+| `medium`               | String   | Identifies what type of link was used, such as [cost per click](https://en.wikipedia.org/wiki/Cost_per_click) or email. |
+| `campaign`             | String   | Identifies a specific product promotion or strategic campaign. |
+| `content`              | String   | Identifies what specifically was clicked to bring the user to the site, such as a [banner ad](https://en.wikipedia.org/wiki/Banner_ad) or a [text link](https://en.wikipedia.org/wiki/Hyperlink). It is often used for [A/B testing](https://en.wikipedia.org/wiki/A/B_testing) and [content-targeted ads](https://en.wikipedia.org/wiki/Contextual_advertising). |
 | `description`          | String   | Description of the user                                      |
 | `email`                | String   | Email address of a user                                      |
 | `firstName`            | String   | First name of a user                                         |

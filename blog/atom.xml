@@ -13,5 +13,9 @@
         <link href="https://intilery.com/blog/welcome"/>
         <updated>2020-09-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></summary>
+        <author>
+            <name>Tom McMillen</name>
+            <uri>https://github.com/cymantic</uri>
+        </author>
     </entry>
 </feed>

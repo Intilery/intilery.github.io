@@ -1,1 +1,0 @@
-(self.webpackChunkintilery=self.webpackChunkintilery||[]).push([[6945],{6945:function(e,i,n){"use strict";n.r(i)}}]);

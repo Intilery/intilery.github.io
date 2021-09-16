@@ -40,7 +40,13 @@ The URL `s` parameter name can be changed to suit,
 but the merge tag **must** remain the same as this property of the
 customer cannot be renamed.
 
-### Retrieving the Subscription ID
+When you have replaced the link with `your-domain` Intilery will embed the link in the
+email with appropriate UTM tracking parameters, e.g.
+```http request
+https://your-domain.com/marketing-preferences/<subscriptionId>?utm_campaign=MyCampaign&utm_medium=email&utm_source=Intilery
+```
+
+### Reading the Subscription ID
 
 e.g. If the link to your marketing preferences page is:
 ```freemarker
@@ -62,13 +68,20 @@ you can read the `subscriptionId` with this JavaScript:
 new URLSearchParams(window.location.search).get('s')
 ```
 
+### Reading the Asset ID / UTM Campaign
+
+Retrieve the asset ID for the campaign by reading it from the `utm_campaign` search parameter:
+```javascript
+new URLSearchParams(window.location.search).get('utm_campaign')
+```
+
 ## Retrieving marketing preferences for the customer
 A single endpoint returns the customers marketing preferences with the list of
 known channels and subscription categories. Note that channels are "opt-in" and 
 categories are "opt-out".  If a new subscription category is added, the default 
 status of that category for the customer will be *subscribed*.
 
-### Request endpoint
+### HTTP endpoint
 ```http request
 GET https://events.intilery.com/cdp/marketing-preferences/<subscriptionId>
 ```
@@ -107,11 +120,16 @@ GET https://events.intilery.com/cdp/marketing-preferences/276db9bf-ac46-4dc3-bb7
 
 ## Update the marketing preferences for the customer
 
-### Request endpoint
+### HTTP endpoint
 The same endpoint used to retrieve the customer marketing preferences is also used to update. Only the method is different.
 ```http request
-POST https://events.intilery.com/cdp/marketing-preferences/<subscription id>
+POST https://events.intilery.com/cdp/marketing-preferences/<subscription id>?assetId=<campaign name>
 ```
+
+### Tracking Unsubscribes by Campaign
+
+The parameter `assetId` is optional, but recommended. Pass this back to Intilery to
+ensure that unsubscribes are attributed to the right campaign.
 
 ### Example code
 The example POST below updates the example customers marketing preferences as follows:-
@@ -141,7 +159,7 @@ const data = {
 };
 $.ajax({
     type: 'POST',
-    url: `https://events.intilery.com/cdp/marketing-preferences/276db9bf-ac46-4dc3-bb7d-e94a7eb1de51`,
+    url: `https://events.intilery.com/cdp/marketing-preferences/276db9bf-ac46-4dc3-bb7d-e94a7eb1de51?assetId=MyCampaign`,
     crossDomain: true,
     contentType: 'application/json; charset=utf-8',
     data: JSON.stringify(data),
@@ -151,31 +169,12 @@ $.ajax({
 });
 ```
 
-### Campaign Reporting
-
-To tie the unsubscribe/subscribe to a campaign for reporting, add the parameter`?assetId=XXX`
-
-The assetID can be found in the URL parameter `utm_campaign`
-
-E.g. the for the url
-
-```http request
-https://yourdomain.com/prefs?s<subscriptionId>&utm_campaign=July-1&utm_medium=email&utm_source=Intilery
-```
-
-The assetId is `July-1` you should POST to
-
-```http request
-POST https://events.intilery.com/cdp/marketing-preferences/<subscription id>?assetId=July-1
-```
-
-
-
 ### Example response
 
 The endpoint will return a 200 response to indicate success.
 
 ## Unsubscribing from all communications
+
 Send the following data to the endpoint
 ```json5
 {

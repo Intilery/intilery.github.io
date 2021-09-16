@@ -4,7 +4,7 @@ title: Hosting your own Marketing Preferences page
 sidebar_label: Self Hosting
 ---
 
-# Self Hosting
+# Self Hosting Marketing Preferences
 
 If you want to host and brand your marketing preferences page yourself, then you
 need to edit the link in the email. We'd recommend you create a standard row

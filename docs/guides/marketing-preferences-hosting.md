@@ -1,19 +1,17 @@
 ---
 id: marketing-preferences-hosting
 title: Hosting your own Marketing Preferences page
-sidebar_label: Hosting
+sidebar_label: Self Hosting
 ---
 
-# Marketing Preferences Hosting
+# Self Hosting
 
-Intilery host a basic marketing preferences page which is linked to in all of our 
-email communications.  This can be used by the customer to subscribe or opt out 
-of communications based on communication medium (channel) or subscription 
-category (interests).
+If you want to host and brand your marketing preferences page yourself, then you
+need to edit the link in the email. We'd recommend you create a standard row
+containing the link so you can drag and drop it in for each email you build rather
+than editing the link each time.
 
-If a custom version of this page is required, it can be self-hosted.
-
-# What the page will need to do
+## What your page will need to do
  * Retrieve marketing preferences for the customer from the Intilery endpoint
  * Update the marketing preferences for the customer by building a new preferences object and POSTing to our endpoint
 

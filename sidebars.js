@@ -19,6 +19,7 @@ module.exports = {
         	"guides/validate-schema",
         ],
         'Marketing Preferences': [
+            "guides/marketing-preferences",
             "guides/marketing-preferences-hosting"
         ]
     },

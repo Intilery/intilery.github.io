@@ -11,7 +11,9 @@ In order to send messages from Intilery to your app you should:
    - [iOS](https://firebase.google.com/docs/cloud-messaging/ios/client)
    - [Android](https://firebase.google.com/docs/cloud-messaging/android/client)
 
-You then supply Intilery with the FCM key to enable push notifications to be sent.
+You then supply
+[Intilery with the JSON FCM key](https://firebase.google.com/docs/admin/setup#initialize-sdk) 
+to enable push notifications to be sent.
 
 :::note
 

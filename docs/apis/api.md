@@ -25,7 +25,7 @@ The endpoint expects a POST of JSON data.
 
 ### Path Parameters 
 
-You can determine the values of your clientId, accountId and BRANDID from the URL
+You can determine the values of your clientId, accountId and brandId from the URL
 of your login to the Intilery platform:
 
 If you have only a single account this will be: `clientId.intilery.com` and your `accountid`
@@ -37,7 +37,7 @@ If you have multiple accounts this will be: `accountid.clientid.intilery.com`.
 | --- | --- |
 | **clientId** |  The value in your login URL before `intilery.com`. It will be lower case. |
 | **accountId** | The value in your login URL before your clientId, or the same as your clientId. It will be lower case |
-| **BRANDID** | Unless you have multiple brands configured, this will be your accountId in upper case |
+| **brandId** | Unless you have multiple brands configured, this will be your accountId in UPPER CASE |
 | **action** | Either `identify`, `track`, `page` or `screen` depending on the event type being sent, see below | 
 
 

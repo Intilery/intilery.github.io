@@ -32,7 +32,7 @@ This document has four parts…
 
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}
 
-You will be given you clientId, accountIds and brandIDs.
+You will be given you clientId, accountIds and brandIds.
 
 The endpoint expects a GET and returns JSON
 

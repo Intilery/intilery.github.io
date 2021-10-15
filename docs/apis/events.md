@@ -14,13 +14,6 @@ You can use this API to…
 - **React to an event raised in a Journey to trigger something in another tool** to connect an agent in a call centre to a customer
 - **New Customers** access new customer records and send them to another system (identify event)
 
-This document has four parts…
-
-1. [**Product Highlights**](#product-highlights)
-2. [**Quickstart**](#quickstart): Walks you through how to get started querying your customer events in <1 min
-3. [**API Reference**](#api-reference): Retrieve a list of events sorted by recent activity or filter on specific events and their properties
-4. [**Integration**](#integrationr): Example of adding a customer to a facebook audience using zapier
-
 ## Product Highlights
 
 1. **Realtime Access** - fetch your entire customer events
@@ -51,7 +44,7 @@ You must provide a content-type header of application/json
 
 Authentication to handled by a shared secret that must be passed in a header
 
-### Example Request
+## Example Request
 
 ```bash
 curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/events" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
@@ -69,23 +62,16 @@ If limits are exceeded you will receive a 429 Error (limit exceeded) response.
 
 The maximum size of any request is 1mb, exceeding this will return a 413 Error.
 
-## Quickstart
 
-### Set up Access
-
-To access the events API, you will need you clientID, accountID and brandID, along with the authentication token. Get these from the API Keys section.
-
-The events API expects the authentication token to be supplied in the request headers.
-
-### Request Arguments
+## Optional Request Arguments
 
 | **Query Parameter** | **Description**                                              | **Example**                   |
 | ------------ | ------------------------------------------------------------ | ----------------------------- |
 | `include`    | The event action to include in the query    | page                         |
-| `exclude`    | A comma-separated list of event actions to exclude from the query             | Page Viewed,Experiment Viewed |
+| `exclude`    | A comma-separated list of event actions to exclude from the query             | page,logged_in,registered,identify |
 | `start`      | Returns all the events that start after `start` (in ISO 8601). | 2006-01-02                    |
 | `end`        | Returns all the events that end before `end` (in ISO 8601).  | 2018-01-02                    |
-| `sort`       | Determines whether the result is ascending or descending. Defaults to descending. | asc,desc                      |
+| `sort`       | Determines whether the result is **asc**ending or **desc**ending. Defaults to descending. | asc                      |
 | `from`       | An integer representing the page of results to return, default is 0. | 100 |
 | `size`       | A limit on the number of objects to be returned, between 1 and 100. | 10 |
 
@@ -93,6 +79,14 @@ The events API expects the authentication token to be supplied in the request he
 You can use the `from` parameter to page through up to 10,000 results.
 
 You can use the `start` and `end` to pass in a datetime to restrict the result set.
+
+## Quickstart
+
+### Set up Access
+
+To access the events API, you will need you clientID, accountID and brandID, along with the authentication token. Get these from the API Keys section.
+
+The events API expects the authentication token to be supplied in the request headers.
 
 ### Access the event stream
 

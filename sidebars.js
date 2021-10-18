@@ -79,7 +79,7 @@ module.exports = {
             'apis/api',
             'apis/commands',
             'apis/events',
-            'apis/profile'
+            'apis/profiles'
         ],
     },
     customers: {

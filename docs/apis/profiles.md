@@ -1,7 +1,7 @@
 ---
-id: profile
-title: Profile API
-sidebar_label: Profile
+id: profiles
+title: Profiles API
+sidebar_label: Profiles
 ---
 
 The Intilery Profile API provides a single API to read user-level customer data. Intilery now allows you to query the entire user object programmatically, including the `external_ids` , `traits` , and `events` that make up a user’s journey through your product.

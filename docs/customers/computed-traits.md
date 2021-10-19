@@ -160,4 +160,4 @@ returns:
 }
 ```
 
-You can read the [full Profile API docs](/docs/apis/profile) to learn more.
+You can read the [full Profile API docs](/docs/apis/profiles) to learn more.

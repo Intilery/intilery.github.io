@@ -4,7 +4,7 @@ title: Audiences
 sidebar_label: Audiences
 ---
 
-Audiences allow you to define cohorts of customers based on their event behavior and traits that Intilery then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be used to target and personalise marketing campaigns as well as audience membership being availavle in the [Profile API](/docs/apis/profile)
+Audiences allow you to define cohorts of customers based on their event behavior and traits that Intilery then keeps up-to-date over time. Audiences can be built from your core **tracking events**, **traits**, or **computed traits**. These audiences can then be used to target and personalise marketing campaigns as well as audience membership being availavle in the [Profile API](/docs/apis/profiles)
 
 ## Building an Audience
 
@@ -30,31 +30,3 @@ You can also use computed traits in an audience definition. For example, if you 
 
 ![Computed Traits](/img/audience4.png)
 
-## Accessing your Audiences using the Profiles API
-
-You can access your audiences using the Profile API by querying the `/traits` endpoint. For example, if you can query for the `high_value_user` with the following GET request:
-
-```
-https://tracking.intilery.com/track/intilery/marketing/MARKETING/v1/profiles/email:xxx.xxx@intilery.com/audiences
-```
-
-returns:
-
-```
-{
-    "lastName": "Bloggs",
-    "website": "www.intilery.com",
-    "externalId": "joe.bloggs@intilery.com",
-    "organisation": "Intilery",
-    "industry": "Other",
-    "firstName": "Joe",
-    "phone": "+44111222333444",
-    "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-    "email": "joe.bloggs@intilery.com",
-    "audiences": [
-    	"high value customers"
-    ]
-}
-```
-
-You can read the [full Profile API docs](/docs/apis/profile) to learn more.

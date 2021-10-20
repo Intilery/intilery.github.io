@@ -113,14 +113,6 @@ You can query all of a user’s metadata (created_at, updated_at, …):
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/meta
 ```
 
-#### Audiences
-
-You can query all of a user’s audiences, both static and dynamic
-
-```http
-https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/audiences
-```
-
 ## API Reference
 
 
@@ -225,7 +217,6 @@ x-amzn-RequestId: 1111-2222-3333-4444
 | Get a Profile’s Traits    | /email:joe.bloggs@intilery.com/traits                        |
 | Get a Profile’s Metadata  | /email:joe.bloggs@intilery.com/metadata                      |
 | Get a Profile’s Events    | /email:joe.bloggs@intilery.com/events                        |
-| Get a Profile’s Audiences | /email:joe.bloggs@intilery.com/audiences                     |
 
 ### Get a Profile’s Traits
 
@@ -590,9 +581,6 @@ GET /track/v1/profiles/userId:123-rty/meta
         },
       ...
     },
-    "audiences": [
-        "audience_2_days"
-    ],
     "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
     "marketingPreferences": {
         "channels": [
@@ -622,77 +610,6 @@ GET /track/v1/profiles/userId:123-rty/meta
         "audience_board"
     ],
     "lastActivityTime": "2020-11-19T13:39:17.380Z",
-    "email": "joe.bloggs@intilery.com"
-}
-```
-
-### Get a Customer's Audiences
-
-Get a single profile’s metadata within a collection using an `external_id`.
-
-```http
-GET /track/v1/profiles/userId:123-rty/audiences
-```
-
-**Request**
-
-```
-   curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/audiences" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
-```
-
-**404 Not Found**
-
-```json
-{
-  "error": {
-    "code": "not_found",
-    "message": "Profile was not found."
-  }
-}
-```
-
-**200 OK**
-
-```json
-{
-    "lastName": "Bloggs",
-    "website": "www.intilery.com",
-    "externalId": "joe.bloggs@intilery.com",
-    "organisation": "Intilery",
-    "industry": "Other",
-    "firstName": "Joe",
-    "phone": "111222333444",
-    "audiences": [
-        "audience_124516e8-6023-4b3a-8779-bcccb5d10eaf"
-    ],
-    "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-    "marketingPreferences": {
-        "channels": [
-            {
-                "subscribed": true,
-                "channel": "email"
-            },
-            {
-                "subscribed": true,
-                "channel": "sms"
-            },
-            {
-                "subscribed": false,
-                "channel": "whatsapp"
-            },
-            {
-                "subscribed": false,
-                "channel": "facebook"
-            },
-            {
-                "subscribed": false,
-                "channel": "push"
-            }
-        ]
-    },
-    "audiencesStatic": [
-        "audience_board"
-    ],
     "email": "joe.bloggs@intilery.com"
 }
 ```

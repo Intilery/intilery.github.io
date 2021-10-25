@@ -30,4 +30,9 @@ campaigns being blocked)
 
 ![Add Play Break](/img/gaming/add-playBreak.png)
 
+### Ensure the Exclusions is Protected
+
+So that the Exclusions block can only be updated through the authenticated 
+REST API and not from a JS Tag, make sure you tick the **protected** box.
+
 ![List of Exclusions](/img/gaming/list-exclusions.png)

@@ -120,7 +120,7 @@ https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/traits
 ```
 
-All traits, both standard and computed traits are included
+All traits are included
 
 **Metadata** You can query all of a user’s metadata (created_at, updated_at, …):
 
@@ -278,9 +278,6 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
     "firstName": "Joe",
     "phone": "+44111222333444",
     "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-    "computed": {
-      "number_email_delivered_all_time": 9,
-   	}
     "marketingPreferences": {
         "channels": [
             {
@@ -323,9 +320,6 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
         "firstName": "Joe",
         "phone": "+44111222333444",
         "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-        "computed": {
-          "number_email_delivered_all_time": 9,
-        }
         "marketingPreferences": {
             "channels": [
                 {
@@ -836,39 +830,3 @@ Intilery provides an API where customers can fetch data about their users given 
 ![Server-side Personalization](https://www.lucidchart.com/publicSegments/view/25df2e70-a666-4581-8f86-1a000dbf1f49/image.png)
 
 Since this API has access to all of a customer’s data, we do not support CORS and ask that you do not expose the access secret (e.g. in a client-side app). We advise customers to create personalization service in their infrastructure that other apps, websites or services communicate with to fetch personalizations about their users.
-
-### Example Workflow
-
-If you want to display the most relevant blog posts given a reader’s favorite blog category:
-
-1. **Create a computed trait** `favorite_blog_category` **in Intilery UI**
-
-2. Create
-
-    
-
-   ```plaintext
-   /api/recommended-posts
-   ```
-
-    
-
-   in customer-built personalization service
-
-    
-
-   [Engineer]
-
-   - Accept `user_id`, `email` or `anonymous_id` to fetch `favorite_blog_category` using API
-   - Return array of most recent posts of that category to render in recommended section
-
-3. Add recommended section to the blog
-
-    
-
-   [Engineer]
-
-   - Client-side by making a request to `/recommended-posts` if it accepts CORS (recommended for static blogs, WordPress plugin, or other CMS solutions)
-   - Server-side by collecting all the personalizations you want to make on the blog in a single request to increase the total time to load (recommended for custom blog setup)
-
-Now, users who take a few minutes to read through an article on the blog will find posts recommended using their historical reading pattern including the post they just read.

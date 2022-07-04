@@ -1,120 +1,103 @@
 ---
-id: profile
-title: Profile API
-sidebar_label: Profile
+id: profiles
+title: Profiles API
+sidebar_label: Profiles
 ---
 
-The Intilery Profile API provides a single API to read user-level customer data. Intilery now allows you to query the entire user object programmatically, including the `external_ids` , `traits` , and `events` that make up a user’s journey through your product.
+The Intilery Profile API provides a single API to read user-level customer data. 
+Intilery now allows you to query the entire user object programmatically, 
+including your `userId`, customer `traits`, and `events` that make up a user’s
+journey through your product.
 
 You can use this API to…
 
-- **Build an in-app recommendation engine** to show users or accounts the last 5 products they viewed but didn’t purchase
-- **Train user-level machine learning prediction models** to determine a users next purchase or likelihood to churn
-- **Empower your** **sales and** **support associates with the complete customer context** by embedding the user profile in third-party tools like Zendesk or Desk.com
-- **Qualify leads faster** by embedding the user event timeline in Pipedrive
+ - **Build an in-app recommendation engine** to show users or accounts the
+last 5 products they viewed but didn’t purchase
+ - **Train user-level machine learning prediction models** to determine a 
+users next purchase or likelihood to churn
+ - **Empower your sales and support associates with the complete 
+customer context** by embedding the user profile in third-party tools like 
+Zendesk or Desk.com
+ - **Qualify leads faster** by embedding the user event timeline in Pipedrive
 
 This document has four parts…
 
-1. [**Product Highlights**](#product-highlights)
-2. [**Quickstart**](#quickstart): Walks you through how to get started querying your user profile in <1 min
-3. [**API Reference**](#api-reference): Retrieve a list of users sorted by recent activity or find a particular user
-4. [**Personalization**](#recommended-implementation): Example personalization solution built on Personas using server-side personalization
+ 1. [**Product Highlights**](#product-highlights)
+ 2. [**Quickstart**](#quickstart): Walks you through how to get started
+querying your user profile in <1 min
+ 3. [**API Reference**](#api-reference): Retrieve a list of users sorted by
+recent activity or find a particular user
+ 4. [**Personalization**](#recommended-implementation): Example
+personalization solution built on Personas using server-side personalization
 
 ## Product Highlights
 
-1. **Realtime Access** - fetch your entire user profile
-2. **Realtime Data** — query streaming data on the user profile that just happened
-3. **One Identity** — query an end user’s interactions across web, mobile, server, and third party touch-points
-4. **Rich Data** — query any amount of custom events or user traits
-5. **Any External ID** — the API supports query from any external ID: email, user_id or intilery ID
-
-## Endpoint
-
-https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}
-
-You will be given you clientId, accountIds and brandIDs.
-
-The endpoint expects a GET and returns JSON
-
-Authentication is via a shared secret passed in the auth-token header.
-
-The actions are detailed below.
-
-### Headers
-
-#### Content-Type
-
-You must provide a content-type header of application/json
-
-#### Auth-Token
-
-Authentication to handled by a shared secret that must be passed in a header
-
-### Example Request
-
-```bash
-curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
-```
-
-## Permissions
-
-Your Authentication token will be set with permissions at the Account and Brand level, token’s can be created that have access to all Brands within an Account or a token for each Brand (and account).
-
-## Limits
-
-The API is set to 100 requests per second with a burst of 500, limit and burst explained [here](https://en.wikipedia.org/wiki/Token_bucket)
-
-If limits are exceeded you will receive a 429 Error (limit exceeded) response.
-
-The maximum size of any request is 1mb, exceeding this will return a 413 Error.
-
-The event endpoint will return a maximum of 100 events per request, along with a scrollId to scroll through the remainder of the events
+ 1. **Realtime Access** - fetch your entire user profile
+ 2. **Realtime Data** — query streaming data on the user profile that just happened
+ 3. **One Identity** — query an end user’s interactions across web, mobile, 
+server, and third party touch-points
+ 4. **Rich Data** — query any amount of custom events or user traits
+ 5. **Query On Any ID** — the API supports query by: email, userId or intileryId
 
 ## Quickstart
 
 ### Set up Access
 
-To access the profile API, you will need you clientID, accountID and brandID, along with the authentication token, these are provided by your account manager (and will shortly be available in the UI).
+To access the profile API, you will need your clientID, accountID and brandID,
+along with the authentication token, these are provided by your account 
+manager. Generate your API Key from the API Keys menu available if you have
+the development policy as part of your role.
 
-The profile API expects the authentication token to be supplied in the request headers.
 
 ### Find a user’s external id
 
-1. Head over to customers > customer details: `https://{clientID}.{accountID}.intilery.com/customers` (replace clientID and accountID with your details)
-2. And press on any interesting custoimer in the list.
-3. Copy their `external_id` (ex: `joe.bloggs@intilery.com`) Note: a userID (extneralD) does not have to be an email address, this is your unique id for your customer.
+1. Login and head over to Customers
+2. And press on any interesting customer in the list.
+3. Copy their __External Id__
+
+Note: a userId is passed in through the API and is stored as an External Id.
+This is your unique id for your customer.
+
+In the example below the external ID is `qrc-117322`. 
 
 ![externalID](/img/externalid.png)
 
 ### Query the user’s event history
 
-1. Download and open [Postman](https://www.getpostman.com/), a nice app for exploring HTTP APIs
+ 1. Download and open [Postman](https://www.getpostman.com/), a nice app for exploring HTTP APIs 
+ 2. Create your Postman GET request to query the user’s event’s history
+   - The URL is: `https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/events`
+   - Replace `clientID, accountID and BRANDID` with your own values along with the id of your customer (qrc-117322 in this case)
+   - Set the headers for `content-type` to be `application/json` and `auth-token` to be your generated API Key
+   - Replace `{idType}:{external_id}` with your external id type (userId) and external id pair from the customer details page
+ 3. Press the Send button in Postman.
+ 
+![postman](/img/postman.png)
 
-2. Create your Postman GET request to query the user’s event’s history: i. The URL is: https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/events`
+### Explore more of the API
 
-   ii. Replace `clientID, accountID and BRANDID` with your own values along with the id of your customer (Joe.bloggs@intilery.com in this case)
+#### Search by Any ID
+You can query directly by a customer's email, userId (External Id) or Intilery generated ID (id):
 
-   iii. Replace `{idType}:{ext_id}>` with your external id type (userId) and id pair from the customer detils page
-
-   
-
-![postman](/img/postman1.png)
-
-1. Press the Send button in Postman.
-
-### Explore the user’s event history in the response
-
-![postman](/img/postman2.png)
-
-**E. Explore more of the API**
-
-**Search by an External ID** You can query directly by a customer's email, user_id or intileryID (id):
-
-```http
-https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/events
+**User ID (External ID)**
+```http request
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:qrc-117322/events
 ```
 
-**Traits** You can query a user’s traits (first_name, last_name, …):
+**Email**
+```http request
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/email:joe.bloggs@intilery.com/events
+```
+
+**Intilery ID**
+```http request
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/id:725722e8-83a3-45fc-a212-7ee05e97e9dc/events
+```
+
+
+#### Traits
+
+You can query a user’s traits (first_name, last_name, …):
 
 ```http
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/traits
@@ -122,39 +105,51 @@ https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles
 
 All traits are included
 
-**Metadata** You can query all of a user’s metadata (created_at, updated_at, …):
+#### Metadata
+
+You can query all of a user’s metadata (created_at, updated_at, …):
 
 ```http
 https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/meta
 ```
 
-**Audiences** You can query all of a user’s audiences, both static and dynamic
-
-```http
-https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/userId:1234-erty/audiences
-```
-
 ## API Reference
 
-The Intilery API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. [JSON](http://www.json.org/) is returned by all API responses, including errors.
 
-**Endpoint**
+### Endpoint
 
-```http
-https://tracking.intilery.com/track/
-```
+`https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}`
 
-### Authentication
+### Headers
 
-The Profile API uses basic authentication for authorization — with the **Authentication Token** as the authorization key. Your **Authentication Token** carries access to all of your customer data, so be sure to keep them secret! Do not share your Access Secret in publicly accessible areas such as GitHub, client-side code, and so forth.
+#### Content-Type
 
-Your Authentication Token will be supplied by your account manager
+You must provide a `content-type` header of `application/json`
 
-When making requests to the Profile API, use the Authentication Token as a header with key auth-token.
+#### Auth-Token
+
+Authentication via a shared secret API Key must be passed in a header
+
+### Example Request
 
 ```bash
-curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
+curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/{endpoint}" -i -X GET \
+   -H "content-type: application/json" \
+   -H "auth-token: 1234abcd"
 ```
+
+### Limits
+
+The API is set to 100 requests per second with a burst of 500,
+limit and burst explained [here](https://en.wikipedia.org/wiki/Token_bucket)
+
+If limits are exceeded you will receive a 429 Error (limit exceeded) response.
+
+The maximum size of any request is 1mb, exceeding this will return a 413 Error.
+
+The event endpoint will return a maximum of 100 events per request.
+
+The Intilery API is organized around [REST](http://en.wikipedia.org/wiki/Representational_State_Transfer). Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients. [JSON](http://www.json.org/) is returned by all API responses, including errors.
 
 ### Errors
 
@@ -191,24 +186,19 @@ Intilery uses conventional HTTP response codes to indicate the success or failur
 | **not_found**             | The customer could not be found                              |
 | **internal_server_error** | Something went wrong internal to Intilery                    |
 
-### Limits
-
-The API is set to 100 requests per second with a burst of 500, limit and burst explained [here](https://en.wikipedia.org/wiki/Token_bucket)
-
-If limits are exceeded you will receive a 429 Error (limit exceeded) response.
 
 ### Pagination
 
 All top-level API resources have support for bulk fetches using “list” API methods. For instance you can list profiles, a profile’s events, a profile’s traits, and a profile’s external_ids. These list API methods share a common structure, taking at least two parameters: `from` and `size`.
 
-#### Request Arguments
+### Request Arguments
 
 | **Argument** | **Description**                                              |
 | ------------ | ------------------------------------------------------------ |
 | `from`       | An integer representing the page of results to return, default is 0. |
 | `size`       | A limit on the number of objects to be returned, between 1 and 100. |
 
-#### Request IDs
+### Request IDs
 
 Each API request has an associated request identifier. You can find this value in the response headers, under `x-amzn-RequestId`. **If you need to contact us about a specific request, providing the request identifier will ensure the fastest possible resolution.**
 
@@ -227,7 +217,6 @@ x-amzn-RequestId: 1111-2222-3333-4444
 | Get a Profile’s Traits    | /email:joe.bloggs@intilery.com/traits                        |
 | Get a Profile’s Metadata  | /email:joe.bloggs@intilery.com/metadata                      |
 | Get a Profile’s Events    | /email:joe.bloggs@intilery.com/events                        |
-| Get a Profile’s Audiences | /email:joe.bloggs@intilery.com/audiences                     |
 
 ### Get a Profile’s Traits
 
@@ -461,155 +450,27 @@ Get a single profile’s events within a collection using an `external_id`.
 
 **Query Parameters**
 
-| **Argument** | **Description**                                              | **Example**                   |
+| **Query Parameter** | **Description**                                              | **Example**                   |
 | ------------ | ------------------------------------------------------------ | ----------------------------- |
-| `include`    | A comma-separated list of event keys to include.             | page,                         |
-| `exclude`    | A comma-separated list of event keys to excluse.             | Page Viewed,Experiment Viewed |
+| `include`    | The event action to include in the query    | page                         |
+| `exclude`    | A comma-separated list of event actions to exclude from the query             | page,logged_in,registered,identify |
 | `start`      | Returns all the events that start after `start` (in ISO 8601). | 2006-01-02                    |
 | `end`        | Returns all the events that end before `end` (in ISO 8601).  | 2018-01-02                    |
-| `sort`       | Determines whether the result is ascending or descending. Defaults to descending. | asc,desc                      |
-| `limit`      | The number of results to return, accepts an integer between 1 and 100 inclusive, default is 100 | 50                            |
-
-
+| `sort`       | Determines whether the result is **asc**ending or **desc**ending. Defaults to descending. | asc                      |
+| `from`       | An integer representing the page of results to return, default is 0. | 100 |
+| `size`       | A limit on the number of objects to be returned, between 1 and 100. | 10 |
 
 ### Pagination
+You can use the `from` parameter to page through up to 10,000 results.
 
-The events endpoint supports pagination using a scrollId (cursor), to fetch the next "page" of results, replace the query parameters with the scrollId parameter
-
-#### Request Arguments
-
-| **Argument** | **Description**                                    |
-| ------------ | -------------------------------------------------- |
-| scrollId     | The id of the "cursor" to the next page of results |
-
-#### Example
-
-Given the event request example above, the response included a "scrollId" that can be used to get the next page of results.
-
-***Note:*** a scrollId is always included regardless of whether there are any more results, a request including the scrollId whioch returns an a response with an empty array for the data indicates no more results, or a response with less results than the limit supplied indicates that this is the last page of results
-
-Get a single profile’s events within a collection using an `external_id`.
-
-```http
-    GET /track/v1/profiles/userId:123-rty/events
-```
-
-**Request**
-
-```bash
-   curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/events?scrollId={scrollId}" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
-```
-
-***Note:*** it is not required to pass in any of the event parameters again, such as include, exclude, limit, start, end, sort. The scrollId is a cursor to the original request
-
-**400 Invalid Request**
-
-```json
-{
-    "error": {
-        "code": "invalid_request_error",
-        "message": "scrollId is invalid or has timed out"
-    }
-}
-```
-
-**200 OK**
-
-```json
-{
-  	"scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAMzh3FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4ehZjSS1MbWxmMlRVeVlVNVJPU3JzOTVRAAAAAAAzOHgWY0ktTG1sZjJUVXlZVTVST1Nyczk1UQAAAAAAMzh7FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4eRZjSS1MbWxmMlRVeVlVNVJPU3JzOTVR",
-    "data": [
-        {
-            "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "externalId": "joe.bloggs@intilery.com",
-            "email": "joe.bloggs@intilery.com",
-            "eventId": "ec717144-924c-4826-981b-848459c39176",
-            "eventTime": "2020-11-19T13:39:17.380Z",
-            "receivedTime": "2020-11-19T13:39:17.912Z",
-            "eventAction": "email_opened",
-            "clientId": "intilery",
-            "accountId": "marketing",
-            "brandId": "MARKETING",
-            "customerId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "source": "SEGMENT_API",
-            "rawData": {
-                "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-                "action": "track",
-                "event": "Email Opened",
-                "context": {
-                    "ip": "217.42.6.253",
-                    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15",
-                    "traits": {
-                        "email": "joe.bloggs@intilery.com"
-                    }
-                },
-                "properties": {
-                    "email_id": "41937e92-b472-46ae-94e3-f29cc05cda5d",
-                    "email_subject": "Thanks for requesting an Intilery trial",
-                    "campaign_id": "TRIAL_WELCOME"
-                },
-                "timestamp": "2020-11-19T13:39:17.380Z",
-                "sendType": "email"
-            }
-        },
-        {
-            "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "externalId": "joe.bloggs@intilery.com",
-            "email": "joe.bloggs@intilery.com",
-            "eventId": "4b7c99d4-0714-41e0-b285-1ef300634984",
-            "clientId": "intilery",
-            "source": "SEGMENT_API",
-            "rawData": {
-                "context": {
-                    "traits": {
-                        "email": "joe.bloggs@intilery.com"
-                    },
-                    "ip": "217.42.6.253",
-                    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15"
-                },
-                "sendType": "email",
-                "action": "track",
-                "event": "Email Opened",
-                "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-                "properties": {
-                    "email_id": "41937e92-b472-46ae-94e3-f29cc05cda5d",
-                    "email_subject": "Thanks for requesting an Intilery trial",
-                    "campaign_id": "TRIAL_WELCOME"
-                },
-                "timestamp": "2020-11-19T13:37:50.929Z"
-            },
-            "eventAction": "email_opened",
-            "userId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "accountId": "marketing",
-            "receivedTime": "2020-11-19T13:37:51.407Z",
-            "brandId": "MARKETING",
-            "eventTime": "2020-11-19T13:37:50.929Z",
-            "customerId": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe"
-        }
-			]
-		}
-	}
-```
-
-200 OK**
-
-```json
-{
-  	"scrollId": "DnF1ZXJ5VGhlbkZldGNoBQAAAAAAMzh3FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4ehZjSS1MbWxmMlRVeVlVNVJPU3JzOTVRAAAAAAAzOHgWY0ktTG1sZjJUVXlZVTVST1Nyczk1UQAAAAAAMzh7FmNJLUxtbGYyVFV5WVU1Uk9TcnM5NVEAAAAAADM4eRZjSS1MbWxmMlRVeVlVNVJPU3JzOTVR",
-    "data": []
-		}
-	}
-```
-
-***Note:*** The data property will contain an empty array if there are no more results
+You can use the `start` and `end` to pass in a datetime to restrict the result set.
 
 ### Get a Customer's Metadata
 
 Get a single profile’s metadata within a collection using an `external_id`.
 
 ```http
-     GET /track/v1/profiles/userId:123-rty/meta
+GET /track/v1/profiles/userId:123-rty/meta
 ```
 
 **Request**
@@ -714,9 +575,6 @@ Get a single profile’s metadata within a collection using an `external_id`.
         },
       ...
     },
-    "audiences": [
-        "audience_2_days"
-    ],
     "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
     "marketingPreferences": {
         "channels": [
@@ -750,76 +608,42 @@ Get a single profile’s metadata within a collection using an `external_id`.
 }
 ```
 
-### Get a Customer's Audiences
+### Listing all Customer Profiles
 
-Get a single profile’s metadata within a collection using an `external_id`.
+If you request the endpoint:
 
-```http
-     GET /track/v1/profiles/userId:123-rty/audiences
+#### Initial Request
+```http request
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles
 ```
 
-**Request**
+You will get back the first 100 customers, and a `scrollId` which will allow you to
+make additional requests to stream through the full results set.
 
-```
-   curl "https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/{idType}:{id}/audiences" -i -X GET \ -H "content-type: application/json" \ -H "auth-token: 1234abcd"
-```
-
-**404 Not Found**
-
-```json
+```json5
 {
-  "error": {
-    "code": "not_found",
-    "message": "Profile was not found."
-  }
-}
-```
-
-**200 OK**
-
-```json
-{
-    "lastName": "Bloggs",
-    "website": "www.intilery.com",
-    "externalId": "joe.bloggs@intilery.com",
-    "organisation": "Intilery",
-    "industry": "Other",
-    "firstName": "Joe",
-    "phone": "111222333444",
-    "audiences": [
-        "audience_124516e8-6023-4b3a-8779-bcccb5d10eaf"
-    ],
-    "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-    "marketingPreferences": {
-        "channels": [
-            {
-                "subscribed": true,
-                "channel": "email"
-            },
-            {
-                "subscribed": true,
-                "channel": "sms"
-            },
-            {
-                "subscribed": false,
-                "channel": "whatsapp"
-            },
-            {
-                "subscribed": false,
-                "channel": "facebook"
-            },
-            {
-                "subscribed": false,
-                "channel": "push"
-            }
-        ]
+  "scrollId":"dsfmLKHJosidjflksjflksjfonawlefnEWOILKsdlfjlsjfpoiwhfekln",
+  "data": [
+    {
+      // customer data
     },
-    "audiencesStatic": [
-        "audience_board"
-    ],
-    "email": "joe.bloggs@intilery.com"
+    {
+      // customer data
+    }
+  ]
 }
 ```
+
+#### Scroll Request
+
+To scroll through the rest of the results, add the `scrollId` as a query parameter:
+```http request
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles?scrollid=<your-scroll-id>
+```
+
+If data is returned, record the scroll Id and make another request until their are
+no more customer profiles.
+
 
 ## Personalization
 

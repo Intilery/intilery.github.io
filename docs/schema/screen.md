@@ -8,7 +8,7 @@ The `screen` call lets you record whenever a user sees a screen, the mobile equi
 
 Here’s the payload of a typical `screen` call, with most [common fields](/docs/schema/common) removed:
 
-```javascript
+```json
 {
   "type": "screen",
   "name": "Home",
@@ -55,7 +55,6 @@ Here’s a complete example of a `screen` call:
   "properties": {
     "variation": "blue signup button"
   },
-  "receivedAt": "2015-02-23T22:28:55.387Z",
   "sentAt": "2015-02-23T22:28:55.111Z",
   "timestamp": "2015-02-23T22:28:55.111Z",
   "type": "screen",

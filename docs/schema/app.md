@@ -16,33 +16,15 @@ The Intilery Native Mobile Spec includes the following semantic events:
 
 **Application Lifecycle Events**
 
-- [Overview of Events](#overview-of-events)
-- [Lifecycle Events](#lifecycle-events)
   - [Application Installed](#application-installed)
   - [Application Opened](#application-opened)
   - [Application Backgrounded](#application-backgrounded)
   - [Application Updated](#application-updated)
   - [Application Uninstalled](#application-uninstalled)
   - [Application Crashed](#application-crashed)
-- [Campaign Events](#campaign-events)
-  - [Install Attributed](#install-attributed)
-  - [Push Notification Received](#push-notification-received)
-  - [Push Notification Tapped](#push-notification-tapped)
-  - [Push Notification Bounced](#push-notification-bounced)
-  - [Deep Link Opened](#deep-link-opened)
-  - [Deep Link Clicked](#deep-link-clicked)
 
 **Campaign Events**
 
-- [Overview of Events](#overview-of-events)
-- [Lifecycle Events](#lifecycle-events)
-  - [Application Installed](#application-installed)
-  - [Application Opened](#application-opened)
-  - [Application Backgrounded](#application-backgrounded)
-  - [Application Updated](#application-updated)
-  - [Application Uninstalled](#application-uninstalled)
-  - [Application Crashed](#application-crashed)
-- [Campaign Events](#campaign-events)
   - [Install Attributed](#install-attributed)
   - [Push Notification Received](#push-notification-received)
   - [Push Notification Tapped](#push-notification-tapped)
@@ -52,7 +34,7 @@ The Intilery Native Mobile Spec includes the following semantic events:
 
 We recommend using the above event names if you’re going to be integrating the events yourself. This will ensure that they can be mapped effectively in the CDP and Customer Engagement Platform
 
-Additionally, though they’re not formally part of the Native Mobile Schema, we also collect `Order Completed` from our ecommerce spec automatically upon in-app purchases on iOS and can collect screen views automatically in iOS and Android. (when this becomes available)
+Additionally, though they’re not formally part of the Native Mobile Schema, we also collect `Order Completed` from our ecommerce spec automatically upon in-app purchases on iOS and can collect screen views automatically in iOS and Android.
 
 ## Lifecycle Events
 
@@ -68,7 +50,7 @@ The following events will be tracked automatically when lifecycle events are ena
 
 This event fires when a user **first** opens your mobile application. Note, if the user never opens your app after installing, we will not be able to collect this event. This event does not wait for attribution or campaign information to be received, and is collected automatically by our SDKs.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -88,7 +70,7 @@ This event fires when a user **first** opens your mobile application. Note, if t
 
 This event fires when a user launches or foregrounds your mobile application after the first open. It will fire after the `Application Installed` event and again after the app is re-opened after being closed. This event does not wait for attribution information to be received but may include information about referring applications or deep link URLs if available to the application upon open.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -113,7 +95,7 @@ This event fires when a user launches or foregrounds your mobile application aft
 
 This event should be sent when a user backgrounds the application upon [`applicationDidEnterBackground`](https://developer.apple.com/reference/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground)
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -126,7 +108,7 @@ This event should be sent when a user backgrounds the application upon [`applica
 
 This event fires when a user updates the application. Our SDK will automatically collect this event in lieu of an “Application Opened” event when we determine that the Open is first since an update.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -151,7 +133,7 @@ This event fires when a user updates the application. Our SDK will automatically
 
 Fire this event when a user uninstalls the application. Several destination partners will detect this for you using Silent Push Notifications and send this event to Intilery on your behalf.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -164,7 +146,7 @@ Fire this event when a user uninstalls the application. Several destination part
 
 You can send this event when you receive a crash notification from your app, but is not meant to supplant traditional crash reporting tools. By tracking crashes as an analytics event with device and user information, you can analyze the which types of users are impacted by crashes and how those crashes, in turn, affect their engagement. You may also want to target those customers with tailored communications in other channels if they’ve encountered several crashes.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -180,7 +162,7 @@ As the walls between apps become increasingly lowered, capturing information abo
 ### Install Attributed
 
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -210,9 +192,9 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 ### Push Notification Received
 
-This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS SDK](/docs/sdk/ios/)
+This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS SDK](/docs/app/ios/)
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -237,9 +219,9 @@ This event can be sent when a push notification is received in the app. It can b
 
 ### Push Notification Tapped
 
-This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS SDK](/docs/sdk/ios/)
+This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS SDK](/docs/app/ios/)
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -268,7 +250,7 @@ This event can be sent when a user taps on a push notification associated with y
 
 This event fires when a push notification from a provider bounces. If your push notification provider forwards push lifecycle events to Intilery, they should include this event in their suite.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -299,9 +281,9 @@ When your application is opened using a referring link, Intilery or your package
 
 This event is fired *in addition* to the associated `Application Opened` event.
 
-Our [iOS SDK](/docs/sdk/ios/) SDK can collect this event automatically if configured to do so.
+Our [iOS SDK](/docs/app/ios/) SDK can collect this event automatically if configured to do so.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",
@@ -322,7 +304,7 @@ Our [iOS SDK](/docs/sdk/ios/) SDK can collect this event automatically if config
 
 This event may be provided by deep link providers postback mechanisms or an internal redirect service if you use one in order to provide a waypoint funnel step between your content or advertisement and the resulting app open.
 
-```javascript
+```json
 {
   "userId": "019mr8mf4r",
   "type": "track",

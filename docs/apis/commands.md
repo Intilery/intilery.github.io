@@ -25,6 +25,7 @@ or [identified](/docs/tag/reference#identify) via the [Analytics.js tag](/docs/t
 | **send_email** | send the specified email  |
 | **send_sms**   | send the specified sms    |
 | **send_print** | send the specified letter |
+| **send_push** | send the specified push to all customers devices |
 | **start_journey** | start a journey |
 
 ## Event Data for send_ commands

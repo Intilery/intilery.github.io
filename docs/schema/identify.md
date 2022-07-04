@@ -9,6 +9,7 @@ sidebar_label: Identify
 Our recommendation for when and how often you should call `identify` is as follows:
 
 - After a user registers
+  - You should set the source, medium and campaign traits at this time
 - After a user logs in
 - When a user updates their info (eg changes or adds a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
@@ -27,7 +28,11 @@ Here’s the payload of a typical `identify` call with most [common fields](/doc
     "name": "Peter Gibbons",
     "email": "peter@example.com",
     "plan": "premium",
-    "logins": 5,
+    "campaign": {
+      "source": "google",
+      "medium": "cpc",
+      "name": "free trial"
+    },
     "marketingPreferences": { 
       "channels": [ 
         { "channel": "email", "subscribed": true },
@@ -48,7 +53,11 @@ analytics.identify("97980cfea0067", {
   name: "Peter Gibbons",
   email: "peter@example.com",
   plan: "premium",
-  logins: 5,
+  campaign: {
+    source : "google",
+    medium : "cpc",
+    name: "free trial"
+  },
   "marketingPreferences": { 
       "channels": [ 
         { "channel": "email", "subscribed": true },
@@ -86,7 +95,7 @@ Here’s a complete example of an `identify` call:
       "name" : "campaign name",
       "source" : "Google",
       "medium" : "ppc"
-    }
+    },
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36"
   },
   "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
@@ -165,7 +174,8 @@ Reserved traits we’ve standardized:
 | `birthday`             | Date     | User’s birthday                                              |
 | `company`              | Object   | Company the user represents, optionally containing: `name` (a String), `id` (a String or Number), `industry` (a String), `employee_count` (a Number) or `plan` (a String) |
 | `createdAt`            | Date     | Date the user’s account was first created. We recommend [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) date strings. |
-| `campaign`             | Object   | Dictionary of information about the campaign that resulted in the API call, containing `name`, `source`, `medium`, `term`, `content`, and any other custom UTM parameter. This maps directly to the common UTM campaign parameters. This is set when the customer is initially created and not updated on subsequent identify calls |
+| `campaign`             | Object   | Identifies a specific product promotion or strategic campaign that created the customer, has keys: `medium`, `source`, `name` with string values. |
+| `content`              | String   | Identifies what specifically was clicked to bring the user to the site, such as a [banner ad](https://en.wikipedia.org/wiki/Banner_ad) or a [text link](https://en.wikipedia.org/wiki/Hyperlink). It is often used for [A/B testing](https://en.wikipedia.org/wiki/A/B_testing) and [content-targeted ads](https://en.wikipedia.org/wiki/Contextual_advertising). |
 | `description`          | String   | Description of the user                                      |
 | `email`                | String   | Email address of a user                                      |
 | `firstName`            | String   | First name of a user                                         |

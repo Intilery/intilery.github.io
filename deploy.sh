@@ -1,0 +1,1 @@
+GIT_USER=${GITHUB_USERNAME} USE_SSH=true yarn deploy

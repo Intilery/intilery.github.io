@@ -189,7 +189,7 @@ And of course, import the SDK in the files that you use it by adding the followi
 
 The `identify` method is how you tell Intilery who the current user is. It takes a 
 unique User ID, and any optional traits you know about them. You can read more 
-about it in the [identify reference](/docs/sdk/ios#identify).
+about it in the [identify reference](/docs/app/ios#identify).
 
 Here’s what a basic call to `identify` might look like:
 
@@ -213,7 +213,7 @@ Once you’ve added an `identify` call, you’re ready to move on to tracking!
 The `track` method is how you tell Intilery about the actions your users are 
 performing in your app. Every action triggers what we call an “event”, which 
 can also have associated properties. You can read more about `track` in 
-the [track method reference](/docs/sdk/ios#track).
+the [track method reference](/docs/app/ios#track).
 
 To get started, the Intilery iOS SDK can automatically track a few important common
 events, such as **Application Installed**, **Application Updated** and

@@ -6,7 +6,7 @@ sidebar_label: Troubleshooting Android
 
 ## No events in my debugger
 
-1. Check that you followed all of the [Getting Started](/docs/sdk/android#getting-started) steps correctly
+1. Check that you followed all of the [Getting Started](/docs/app/android#getting-started) steps correctly
 
 2. Check that you entered the correct
 

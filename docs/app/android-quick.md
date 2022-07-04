@@ -6,7 +6,7 @@ sidebar_label: Android Quickstart tutorial
 
 This tutorial will help you start sending analytics data from your Android app to Intilery.
 
-If you want to dive deeper at any point, check out the [Android Source Reference](/docs/sdk/android).
+If you want to dive deeper at any point, check out the [Android Source Reference](/docs/app/android).
 
 ## Step 1: Install the Library
 
@@ -53,7 +53,7 @@ Ensure that the necessary permissions are declared in your application’s `Andr
 
 **Good to know**: For any of the different methods described in this quickstart, you can replace the properties and traits in the code samples with variables that represent the data collected.
 
-The `identify` method is one of our core API methods. It’s how you tie one of your users and their actions to a recognizable userId. It also lets you record traits about the user, like their email, name, account type, etc. You can read more about it in the [identify reference](/docs/sdk/android#identify).
+The `identify` method is one of our core API methods. It’s how you tie one of your users and their actions to a recognizable userId. It also lets you record traits about the user, like their email, name, account type, etc. You can read more about it in the [identify reference](/docs/app/android#identify).
 
 When and where you call `identify` depends on how your users are authenticated, but doing it in the `onCreate` method of your [Application](http://developer.android.com/reference/android/app/Application.html) class would be most common, as long as you know who your user is. If your user is still anonymous, you should skip this part and we’ll attribute the subsequent events to an `anonymousId` instead.
 
@@ -71,7 +71,7 @@ Once you’ve added an `identify` call, you’re ready to move on to…
 
 ## Step 5. Track Actions
 
-The track method is how you record any actions your users perform. Each action is known by a name, like “Purchased a T-Shirt”. You can also record properties specific to those actions. You can read more about `track` in the [track reference](/docs/sdk/android#track).
+The track method is how you record any actions your users perform. Each action is known by a name, like “Purchased a T-Shirt”. You can also record properties specific to those actions. You can read more about `track` in the [track reference](/docs/app/android#track).
 
 To get started, our SDK can automatically track a few key common events, such as the **Application Installed**, **Application Updated** and **Application Opened**. Simply enable this option during initialization.
 
@@ -108,5 +108,5 @@ Once you’ve added a few `track` calls, **you’re done!** You successfully ins
 
 ## What’s Next?
 
-We just walked through the quickest way to get started with Intilery using Analytics for Android. You might also want to check out our full [Analytics for Android reference](/docs/sdk/android) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api) to get a sense for the bigger picture.
+We just walked through the quickest way to get started with Intilery using Analytics for Android. You might also want to check out our full [Analytics for Android reference](/docs/app/android) to see what else is possible, or read about the [Tracking API methods](/docs/apis/api) to get a sense for the bigger picture.
 

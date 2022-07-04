@@ -19,42 +19,9 @@ module.exports = {
         	"guides/validate-schema",
         ],
         'Marketing Preferences': [
+            "guides/marketing-preferences",
             "guides/marketing-preferences-hosting"
         ]
-    },
-    apis: {
-        'Getting Started': [
-        'apis/api',
-        'apis/commands',
-        'apis/events',
-        'apis/profile'
-        ],
-    },
-    tag: {
-        'Getting Started': [
-        	'tag/tag1',
-        	'tag/reference',
-        	'tag/gtm',
-        	'tag/gtm-datalayer',
-        	'tag/gtm-ecommerce'
-        ],
-    },
-    sdk: {
-    	'iOS': [
-    		'sdk/ios',
-    		'sdk/ios-quickstart',
-    		'sdk/ios14',
-    		'sdk/ios-trouble',
-    		'sdk/ios-faq',
-    		'sdk/ios-push'
-    	],
-    	'Android': [
-    		'sdk/android',
-    		'sdk/android-quickstart',
-    		'sdk/android-trouble',
-    		'sdk/android-faq',
-    		'sdk/android-push'
-    	]
     },
     schema: ["schema/contents",
         {
@@ -65,8 +32,8 @@ module.exports = {
                 "schema/sms",
                 "schema/identify",
                 "schema/track",
-                "schema/screen",
                 "schema/page",
+                "schema/screen",
                 "schema/app",
                 "schema/b2b",
                 "schema/video",
@@ -76,6 +43,45 @@ module.exports = {
         "schema/retail",
         "schema/gaming"
     ],
+    tag: {
+        'Getting Started': [
+        	'tag/tag1',
+        	'tag/reference',
+        ],
+        'Integrating with GTM': [
+        	'tag/gtm',
+        	'tag/gtm-datalayer',
+        	'tag/gtm-ecommerce'
+        ],
+    },
+    app: {
+        'App Integration': [
+            'app/main',
+            'app/api',
+            'app/push',
+        ],
+    	'iOS Native SDK': [
+    		'app/ios',
+    		'app/ios-quickstart',
+    		'app/ios14',
+    		'app/ios-trouble',
+    		'app/ios-faq',
+    	],
+    	'Android Native SDK': [
+    		'app/android',
+    		'app/android-quickstart',
+    		'app/android-trouble',
+    		'app/android-faq',
+    	]
+    },
+    apis: {
+        'Getting Started': [
+            'apis/api',
+            'apis/commands',
+            'apis/events',
+            'apis/profiles'
+        ],
+    },
     customers: {
     	'Customers Overview': [
     		'customers/overview',

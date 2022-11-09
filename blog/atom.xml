@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://intilery.com/blog</id>
+    <id>https://docs.intilery.com/blog</id>
     <title>Documentation for Developers Blog</title>
     <updated>2020-09-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://intilery.com/blog"/>
+    <link rel="alternate" href="https://docs.intilery.com/blog"/>
     <subtitle>Documentation for Developers Blog</subtitle>
-    <icon>https://intilery.com/img/favicon.ico</icon>
+    <icon>https://docs.intilery.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>welcome</id>
-        <link href="https://intilery.com/blog/welcome"/>
+        <link href="https://docs.intilery.com/blog/welcome"/>
         <updated>2020-09-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></summary>
     </entry>

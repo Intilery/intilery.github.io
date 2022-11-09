@@ -2,14 +2,14 @@
 <rss version="2.0">
     <channel>
         <title>Documentation for Developers Blog</title>
-        <link>https://intilery.com/blog</link>
+        <link>https://docs.intilery.com/blog</link>
         <description>Documentation for Developers Blog</description>
         <lastBuildDate>Mon, 28 Sep 2020 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://intilery.com/blog/welcome</link>
+            <link>https://docs.intilery.com/blog/welcome</link>
             <guid>welcome</guid>
             <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></description>

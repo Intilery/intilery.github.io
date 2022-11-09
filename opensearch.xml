@@ -4,8 +4,8 @@
   <ShortName>Documentation for Developers</ShortName>
   <Description>Search Documentation for Developers</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://intilery.com/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://intilery.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://intilery.com/opensearch.xml" />
-  <moz:SearchForm>https://intilery.com/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://docs.intilery.com/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://docs.intilery.com/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://docs.intilery.com/opensearch.xml" />
+  <moz:SearchForm>https://docs.intilery.com/</moz:SearchForm>
 </OpenSearchDescription>

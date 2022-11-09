@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Documentation for Developers',
   tagline: 'Making marketeers the best they can be',
-  url: 'https://intilery.com',
+  url: 'https://docs.intilery.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',

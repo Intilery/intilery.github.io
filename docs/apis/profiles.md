@@ -195,7 +195,7 @@ All top-level API resources have support for bulk fetches using “list” API m
 
 | **Argument** | **Description**                                              |
 | ------------ | ------------------------------------------------------------ |
-| `from`       | An integer representing the page of results to return, default is 0. |
+| `from`       | Defines the number of hits to skip, defaulting to 0. Together with the size parameter, defines a page of results. |
 | `size`       | A limit on the number of objects to be returned, between 1 and 100. |
 
 ### Request IDs
@@ -457,7 +457,7 @@ Get a single profile’s events within a collection using an `external_id`.
 | `start`      | Returns all the events that start after `start` (in ISO 8601). | 2006-01-02                    |
 | `end`        | Returns all the events that end before `end` (in ISO 8601).  | 2018-01-02                    |
 | `sort`       | Determines whether the result is **asc**ending or **desc**ending. Defaults to descending. | asc                      |
-| `from`       | An integer representing the page of results to return, default is 0. | 100 |
+| `from`       | Defines the number of hits to skip, defaulting to 0. Together with the size parameter, defines a page of results. | 100 |
 | `size`       | A limit on the number of objects to be returned, between 1 and 100. | 10 |
 
 ### Pagination

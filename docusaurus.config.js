@@ -12,13 +12,10 @@ module.exports = {
   	prism: {
       additionalLanguages: ['swift'],
     },
-  	googleAnalytics: {
-  		trackingID: 'G-9T47KP3LPV',
-  	},
-  	algolia: {
-    	  apiKey: "c5e1cd13947d1b0e5910f70a6fdab529",
-	      indexName: "intilery",
-    	},
+  	// algolia: {
+    // 	  apiKey: "c5e1cd13947d1b0e5910f70a6fdab529",
+	  //     indexName: "intilery",
+    // },
     colorMode: {
       disableSwitch: true,
     },
@@ -152,6 +149,9 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        googleAnalytics: {
+          trackingID: 'G-9T47KP3LPV',
         },
       },
     ],

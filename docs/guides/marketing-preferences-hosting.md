@@ -23,13 +23,13 @@ querystring (`s`).  For custom hosting, this parameter can be named as desired.
 The merge tag for a customer's _subscription id_ is:
 
 ```freemarker
-{(customer._subscriptionId)!""}
+${(customer._subscriptionId)!""}
 ```
 
 So the link above is generated using:
 
 ```freemarker
-https://marketingprefs.intilery.com/content?s={(customer._subscriptionId)!""}
+https://marketingprefs.intilery.com/content?s=${(customer._subscriptionId)!""}
 ```
 
 For self-hosting replace with the URL with your own hosted page.  
@@ -48,7 +48,7 @@ https://your-domain.com/marketing-preferences/<subscriptionId>?utm_campaign=MyCa
 
 e.g. If the link to your marketing preferences page is:
 ```freemarker
-https://your-domain.com/marketing-preferences/{(customer._subscriptionId)!""}
+https://your-domain.com/marketing-preferences/${(customer._subscriptionId)!""}
 ```
 
 you can read the `subscriptionId` with some JavaScript:
@@ -58,7 +58,7 @@ window.location.href.split('/')[window.location.href.split('/').length-1]
 
 or if the link to you marketing preferences page is:
 ```freemarker
-https://your-domain.com/marketing-preferences?s={(customer._subscriptionId)!""}
+https://your-domain.com/marketing-preferences?s=${(customer._subscriptionId)!""}
 ```
 
 you can read the `subscriptionId` with this JavaScript:

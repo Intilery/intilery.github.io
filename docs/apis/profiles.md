@@ -638,7 +638,7 @@ make additional requests to stream through the full results set.
 
 To scroll through the rest of the results, add the `scrollId` as a query parameter:
 ```http request
-GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles?scrollid=<your-scroll-id>
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles?scrollId=<your-scroll-id>
 ```
 
 If data is returned, record the scroll Id and make another request until their are

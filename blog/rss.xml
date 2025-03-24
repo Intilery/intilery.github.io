@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Documentation for Developers Blog</title>
         <link>https://docs.intilery.com/blog</link>
@@ -7,12 +7,20 @@
         <lastBuildDate>Mon, 28 Sep 2020 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://docs.intilery.com/blog/welcome</link>
-            <guid>welcome</guid>
+            <guid>https://docs.intilery.com/blog/welcome</guid>
             <pubDate>Mon, 28 Sep 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></description>
+            <content:encoded><![CDATA[<p>Welcome to the Intilery Platform Documentation site, we're starting off with the basics
+and we'll be adding more soon... if you want to get started quickly, contact our sales
+team who are <a href="https://www.intilery.com/book-a-demo" target="_blank" rel="noopener noreferrer">ready to demo</a>
+and get you up and running.</p>]]></content:encoded>
+            <category>intilery</category>
+            <category>hello</category>
+            <category>docusaurus</category>
         </item>
     </channel>
 </rss>

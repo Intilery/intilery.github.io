@@ -9,9 +9,20 @@
     <icon>https://docs.intilery.com/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome</id>
+        <id>https://docs.intilery.com/blog/welcome</id>
         <link href="https://docs.intilery.com/blog/welcome"/>
         <updated>2020-09-28T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Welcome to the Intilery Platform Documentation site, we're starting off with the basics]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to the Intilery Platform Documentation site, we're starting off with the basics
+and we'll be adding more soon... if you want to get started quickly, contact our sales
+team who are <a href="https://www.intilery.com/book-a-demo" target="_blank" rel="noopener noreferrer">ready to demo</a>
+and get you up and running.</p>]]></content>
+        <author>
+            <name>Tom McMillen</name>
+            <uri>https://github.com/cymantic</uri>
+        </author>
+        <category label="intilery" term="intilery"/>
+        <category label="hello" term="hello"/>
+        <category label="docusaurus" term="docusaurus"/>
     </entry>
 </feed>

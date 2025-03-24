@@ -48,7 +48,7 @@ dependencies {
 
 ### Step 2. Initialize the Client
 
-We recommend initializing the client in your `Application` subclass. You’ll need your [Intilery Write Key](/docs/tag/tag1#client-keys) for your Android Source.
+We recommend initializing the client in your `Application` subclass. You’ll need your Intilery Write Key for your Android Source.
 
 #### Java
 
@@ -439,7 +439,7 @@ Analytics.with(context).reset();
 Analytics.with(context).reset()
 ```
 
-**Reset does not clear events in the queue**, and any remaining events in the queue are sent the next time the app starts. You might want to call [Flush](#flush) before you call Reset.
+**Reset does not clear events in the queue**, and any remaining events in the queue are sent the next time the app starts. You might want to call Flush before you call Reset.
 
 **Note**: When you call `reset`, the next time the app opens Intilery generates a new AnonymousId. This can impact the number of Monthly Tracked Users (MTUs) you process.
 

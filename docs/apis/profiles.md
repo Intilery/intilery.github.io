@@ -24,7 +24,7 @@ This document has four parts…
 
  1. [**Product Highlights**](#product-highlights)
  2. [**Quickstart**](#quickstart): Walks you through how to get started
-querying your user profile in <1 min
+querying your user profile in &lt;1 min
  3. [**API Reference**](#api-reference): Retrieve a list of users sorted by
 recent activity or find a particular user
  4. [**Personalization**](#recommended-implementation): Example

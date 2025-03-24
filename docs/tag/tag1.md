@@ -42,7 +42,7 @@ To add the Intilery tag to your site using a tag manager, such as google tag man
 
 ## Step 2: Identify Customers
 
-The identify method is how you tell Intilery who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/schema/Identify), examples of the identify event are also included on the tag page in the Intilery app.
+The identify method is how you tell Intilery who the current user is. It includes a unique User ID, and any optional traits you know about them. You can read more about it in the [identify method reference](/docs/schema/identify), examples of the identify event are also included on the tag page in the Intilery app.
 
 **Note:** You don’t need to call identify for anonymous visitors to your site. Intilery automatically assigns them an anonymousId, so just calling page and track works just fine without identify.
 

@@ -111,7 +111,7 @@ The only required argument to track in analytics.js is an event name string. Rea
 
 The page method lets you record page views on your website, along with optional extra information about the page being viewed.
 
-A page call is included by default as the final line in the analytics.js [snippet](/docs/tag/tag1#installing-intilery). You may modify this page call within the guidelines below.
+A page call is included by default as the final line in the analytics.js [snippet](/docs/tag/tag1#Installing Intilery). You may modify this page call within the guidelines below.
 
 page method definition:
 

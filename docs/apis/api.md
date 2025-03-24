@@ -11,7 +11,7 @@ any website or application. The requests hit our servers, and we action
 this in the Intilery CDP and Customer Engagement Platform
 
 Intilery has native libraries for integration for [websites with JavaScript](../tag/tag1), 
-and mobile devices running [iOS](docs/app/ios) and [Android](docs/app/android) that are all 
+and mobile devices running [iOS](/docs/app/ios) and [Android](/docs/app/android) that are all 
 built for high-performance. But sometimes you may want to send to the 
 HTTP API directly — that’s what this reference is for.
 
@@ -405,5 +405,5 @@ If you’re having trouble we have a few tips that help common problems.
 ### No events in my debugger
 
 1. Double check that you’ve set up the library correctly.
-2. Make sure that you’re calling one of our API methods once the library is successfully installed—[`identify`](./api/#identify), [`track`](./api#track), etc.
+2. Make sure that you’re calling one of our API methods once the library is successfully installed—[`identify`](/docs/apis/api##Identify Action), [`track`](/docs/apis/api#Track Action), etc.
 

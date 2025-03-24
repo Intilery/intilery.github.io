@@ -16,7 +16,7 @@ sidebar_label: Troubleshooting Android
 
    [client-keys--write-keys](/docs/tag/tag1#client-keys--write-keys)
 
-3. [Enable logging](#debugging) to confirm if call is being sent to Intilery
+3. [Enable logging](#Adding debug logging) to confirm if call is being sent to Intilery
 
 ## Still having issues?
 

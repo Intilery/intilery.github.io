@@ -94,7 +94,7 @@ module.exports = {
           items: [
             {
               label: 'Twitter',
-              href: 'https://twitter.com/intilery',
+              href: 'https://x.com/intilery',
             },
             {
               label: 'LinkedIn',
@@ -116,14 +116,6 @@ module.exports = {
             {
               label: 'User Guides',
               href: 'http://support.intilery.com/',
-            },
-            {
-              label: 'Roadmap',
-              to: 'docs/roadmap/roadmap',
-            },
-            {
-              label: 'Blog',
-              href: 'https://www.intilery.com/category/blog/',
             },
             {
               label: 'GitHub',

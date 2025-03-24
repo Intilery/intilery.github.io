@@ -48,7 +48,7 @@ configuration.recordScreenViews = YES; // Enable this to record screen views aut
 [SEGAnalytics setupWithConfiguration:configuration];
 ```
 
-**Tip**: You don’t need to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info](#track) for more info.
+**Tip**: You don’t need to use initialization config parameters to track lifecycle events (`Application Opened`, `Application Installed`, `Application Updated`) and screen views automatically, but we highly recommend that you do so you can start off already tracking some important core events. See [the track call info](#Step 4: Track Actions) for more info.
 
 Import the SDK in the files that you use it by adding the following line:
 

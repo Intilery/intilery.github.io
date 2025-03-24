@@ -15,7 +15,7 @@ Now that we’ve shown you Intilery in action, let’s step back and think throu
     - [Video Spec](/docs/schema/video)
 - [Create naming conventions](#create-naming-conventions)
 - Develop a Tracking Plan
-  - [Plan your Identify and Group calls](#plan-your-identify-and-group-calls)
+  - [Plan your Identify and Group calls](#Plan your Identify calls)
   - [Plan your Track events](#plan-your-track-events)
   - [Define your Track event properties](#define-your-track-event-properties)
 

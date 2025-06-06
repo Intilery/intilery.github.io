@@ -4,7 +4,7 @@ title: Screen Schema
 sidebar_label: Screen
 ---
 
-The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or `screen` in one of our in analytics.js or HTTP API is the first step in getting started with Intilery.
+The `screen` call lets you record whenever a user sees a screen, the mobile equivalent of `page`, in your mobile app, along with any properties about the screen. Calling `page` or `screen` in one of our APIs is the first step in getting started with Intilery.
 
 Here’s the payload of a typical `screen` call, with most [common fields](/docs/schema/common) removed:
 

@@ -45,11 +45,6 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'docs/tag/tag1',
-          label: 'Websites',
-          position: 'left',
-        },
-        {
           to: 'docs/app/main',
           label: 'Mobile Apps',
           position: 'left',

@@ -14,9 +14,7 @@ Each event must provide the `assetId` property to identify the asset code of the
 When the asset is sent, the current state of the **customer** is added by the Intilery CDP as a root merge tag,
 so does not need to be passed in on the track event.
 
-Note that you can only send to a **customer** who has been [identified](./api#identify-action) via the [HTTP API](/docs/apis/api)
-or [identified](/docs/tag/reference#identify) via the [Analytics.js tag](/docs/tag/tag1)
-
+Note that you can only send to a **customer** who has been [identified](./api#identify-action) via the [HTTP API](/docs/apis/api).
 
 ## Commands
 

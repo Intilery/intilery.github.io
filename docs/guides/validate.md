@@ -43,12 +43,6 @@ This is the schema that Intilery has extracted from the data sent for the event.
 
 ![schema](/img/schema.png)
 
-#### Analytics
-
-This shows the data as it was sent from the [analytics.js](/docs/tag/tag1) tag
-
-![analytics](/img/analytics.png)
-
 #### Edit
 
 This enables you to set the requirements of the schema and it's properties

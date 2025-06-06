@@ -4,9 +4,7 @@ title: Page Schema
 sidebar_label: Page
 ---
 
-The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](./screen/) the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api) is the first step to integrating and using Intilery.
-
-**Note: In `analytics.js` a `page` call is included in the snippet by default** just after `analytics.load`. We do that because you **must** call this method at least once per page load. However, you can choose to add an optional `name` or `properties` to the default call, or call it multiple times if you have a single-page application.
+The `page` call lets you record whenever a user sees a page of your website, along with any optional properties about the page. Calling `page` or [`screen`](./screen/) via the [API]](/docs/apis/api) is the first step to integrating and using Intilery.
 
 Here’s the payload of a typical `page` call with most [common fields](./common/) removed:
 
@@ -15,7 +13,7 @@ Here’s the payload of a typical `page` call with most [common fields](./common
   "type": "page",
   "name": "Home",
   "properties": {
-    "title": "Welcome | Initech",
+    "title": "Welcome | Exampletech",
     "url": "http://www.example.com"
   }
 }
@@ -54,7 +52,7 @@ Here’s a complete example of a `page` call:
   "messageId": "022bb90c-bbac-11e4-8dfc-aa07a5b093db",
   "name": "Home",
   "properties": {
-    "title": "Welcome | Initech",
+    "title": "Welcome | Exampletech",
     "url": "http://www.example.com"
   },
   "receivedAt": "2015-02-23T22:28:55.387Z",
@@ -94,4 +92,3 @@ Reserved properties we have standardized:
 | `url`        | String        | Full URL of the page. First we look for the canonical url. If the canonical url is not provided, we use [`location.href`](https://developer.mozilla.org/en-US/docs/Web/API/Location) from the DOM API. |
 | `keywords`   | Array[String] | A list/array of keywords describing the content of the page. The keywords would most likely be the same as, or similar to, the keywords you would find in an html [meta](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#Attributes) tag for SEO purposes. This property is mainly used by content publishers that rely heavily on pageview tracking. This is not automatically collected. |
 
-**Note:** In [analytics.js](/docs/tag/tag1) we automatically send the following properties: `title`, `path`, `url`, `referrer`, and `search`.

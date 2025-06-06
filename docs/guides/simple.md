@@ -4,7 +4,7 @@ title: Simple Integration
 sidebar_label: Simple Integration
 ---
 
-When you implement Intilery, you add Intilery code to your website, app, or server. 
+When you implement Intilery, you add code to your website, app, or server. 
 This code generates messages based on specific triggers you define.
 
 In the simplest implementation, the code can be a snippet of Javascript that you copy 
@@ -14,7 +14,7 @@ or closed, when the user performs different actions, or when time based conditio
 met (for example “ticket reservation expired” or “cart abandoned after 2 hours”).
 
 The best way to learn about how Intilery works is to see it in action. This tutorial walks
-you though an installation using one of our libraries: either our Javascript, PHP,
+you though an installation using one of our libraries: either our Javascript,
 or iOS library.
 
 ## Before you begin

@@ -99,23 +99,25 @@ Your tracking plan is probably maintained in a spreadsheet and serves as a proje
 
 ### Plan your Identify calls
 
-The Identify call updates all records of the user with a set of traits, and so is extremely important for building your understanding of your users. But how do you choose which traits to include? The example below shows an Identify call using [analytics.js](/docs/tag/tag1)) for Intilery:
+The Identify call updates all records of the user with a set of traits, and so is extremely important for building your understanding of your users. But how do you choose which traits to include? The example below shows an *identify* event.
 
-```javascript
-analytics.identify({
-  name: 'Jane Kim',
-  email: 'janekim@example.com',
-  login: 'janekay',
-  type: 'user',
-  created: '2016-11-07T16:40:52.238Z',
-});
+```json
+{
+  "userId": "myUserId",
+  "event": "identify",
+  "traits": {
+    "email": "john.doe@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "policyType": "annual",
+    "cars": 3
+  }
+}
 ```
 
-The traits represent dimensions in your data that you can group or pivot on. For example, in the above, you can easily create audiences of all types that are `users` or accounts created within a time window of your choosing.
+The traits represent dimensions in your data that you can group or pivot on. For example, in the above, you can easily create audiences of all customers with an annual policy, customers created within a time window of your choosing or customers with more than 2 cars.
 
-When you plan your deployment, think about what information you can collect as traits that would be useful to you when grouping users together, and plan how you will collect that information.
-
-**Note:** In the Intilery Schema page in the Intilery platform, you can set the accessability of properties and traits, so that for example, a users "address" cannot change via the analytics.js call, and what data can be accessed.
+When you plan your deployment, think about what information you can collect as traits that would be useful to you when grouping your customers together, and plan how you will collect that information.
 
 ### Plan your Track events
 
@@ -157,10 +159,14 @@ Each Track call can accept an optional dictionary of properties, which can conta
 
 Events should be generic and high-level, but properties should be specific and detailed. For example, at Intilery, `Business Tier Workspace Created` is a horrible event name. Instead, we used `Workspace Created` with a `property` of `account_tier` and value of `business` :
 
-```javascript
-analytics.track('Workspace Created', {
-  account_tier: 'business'
-})
+```json
+{
+  "userId": "myUserId",
+  "event": "workspace created",
+  "properties": {
+    "account_tier": "business"
+  }
+}
 ```
 
 Similar to the traits in the Identify call, the properties provide a column that you can pivot against or filter on in your analytics tools or allow you to create am audience of customers.
@@ -169,12 +175,16 @@ Don’t create dynamically generated property names in the properties dictionary
 
 Here is Intilery’s `Lead Captured` Track call:
 
-```javascript
-analytics.track(userId, 'Lead Captured', {
-  email: 'email',
-  location: 'header navbar'
-  url: 'https://intilery.com/'
-});
+```json
+{
+  "userId": "myUserId",
+  "event": "lead captured",
+  "properties": {
+    "email": "email",
+    "location": "header navbar",
+    "url": "https://intilery.com"
+  }
+}
 ```
 
 The high-level event is **Lead Captured**, and all of the details appear in the properties dictionary. Because of this, we can easily see in our downstream tools how many leads were captured, and from which parts of the site.

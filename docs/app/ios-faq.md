@@ -112,7 +112,7 @@ Analytics.shared().identify(nil, traits: ["email": "example@example.com", "gende
 
 ## Can I anonymize IP addresses?
 
-Intilery collects IP addresses for device-mode (iOS, Android, Analytics.js and Xamarin) events automatically. If you don’t want to record your tracked users’ IP in destinations (and in storage destinations like S3), you can set the event’s `context.ip` field to `0.0.0.0` . The Intilery servers don’t record the IP address of the client for libraries if the `context.ip` field is already set.
+Intilery collects IP addresses for device-mode (iOS, Android and Xamarin) events automatically. If you don’t want to record your tracked users’ IP in destinations (and in storage destinations like S3), you can set the event’s `context.ip` field to `0.0.0.0` . The Intilery servers don’t record the IP address of the client for libraries if the `context.ip` field is already set.
 
 The following examples show how to set a static 0 value for the IP.
 

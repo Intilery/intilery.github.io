@@ -127,7 +127,7 @@ Context is a dictionary of extra information that provides useful context on the
 | `location`  | Object   | Dictionary of information about the user’s current location, containing `city`, `country`, `latitude`, `longitude`, `region` and `speed`. |
 | `network`   | Object   | Dictionary of information about the current network connection, containing `bluetooth`, `carrier`, `cellular` and `wifi` |
 | `os`        | Object   | Dictionary of information about the operating system, containing `name` and `version` |
-| `page`      | Object   | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. This is automatically collected by [Analytics.js](/docs/tag/reference#context--traits). |
+| `page`      | Object   | Dictionary of information about the current page in the browser, containing `path`, `referrer`, `search`, `title` and `url`. |
 | `referrer`  | Object   | Dictionary of information about the way the user was referred to the website or app, containing `type`, `name`, `url` and `link` |
 | `screen`    | Object   | Dictionary of information about the device’s screen, containing `density`, `height` and `width` |
 | `timezone`  | String   | Timezones are sent as tzdata strings to add user timezone information which might be stripped from the timestamp, for example `America/New_York` |
@@ -137,7 +137,7 @@ Context is a dictionary of extra information that provides useful context on the
 
 ## Context Fields Automatically Collected
 
-Below is a chart that shows you which context variables are populated automatically by our iOS, Android and analytics.js libraries.
+Below is a chart that shows you which context variables are populated automatically by our iOS, Android and analytics.js (deprecated) libraries.
 
 Other libraries only collect `context.library`, any other context variables must be sent manually.
 

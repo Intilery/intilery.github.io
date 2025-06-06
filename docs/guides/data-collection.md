@@ -108,16 +108,18 @@ Once completed, the Google Sheet tracking plan can be shared with your stakehold
 
 The `.identify()` call is important, because it updates all records of the user with a set of traits. But how do you choose which traits to include?
 
-Here is a sample `.identify()` call (with [analytics.js](/docs/tag/tag1)) for Intilery:
+Here is a sample `.identify()` event...
 
-```javascript
-analytics.identify({
-  name: 'Kanye West',
-  email: 'kanye@iamawesome.com',
-  login: 'kanyew',
-  type: 'user',
-  created: '2016-11-07T16:40:52.238Z',
-});
+```json
+{
+    "userId": "myUserId",
+    "event": "identify",
+    "traits": {
+        "email": "john.doe@example.com",
+        "firstName": "John",
+        "lastName": "Doe"        
+    }
+}
 ```
 
 The traits represent dimensions in your data that you can group or pivot on. For example, in the above, you can easily create cohorts of all types that are `users` or accounts created within a time window of your choosing.
@@ -192,12 +194,16 @@ make it difficult and confusing to use later.
 
 Here is Intilery'’s `Lead Captured` `.track()` call:
 
-```javascript
-analytics.track(userId, 'Lead Captured', {
-  email: 'email',
-  location: 'header navbar'
-  url: 'https://intilery.com/'
-});
+```json
+{
+    "userId": "paultest2",
+    "event": "lead captured",
+    "traits": {
+        "email": "email",
+        "location": "header navbar",
+        "url": "https://intilery.com"
+    }
+}
 ```
 
 The high level event is **Lead Captured** and all of the details are tucked into

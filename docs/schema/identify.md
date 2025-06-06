@@ -14,9 +14,7 @@ Our recommendation for when and how often you should call `identify` is as follo
 - When a user updates their info (eg changes or adds a new address)
 - Upon loading any pages that are accessible by a logged in user (optional)
 
-***Note:** You should configure the accessability of customer traits to non-authenticated APIs (e.g. [Analytics.js](/docs/tag/tag1)) by default, customer traits are not able to be updated via non-authenticated APIs unless the accessor is set to do so.* (coming soon)
-
-Calling `identify` in the [Website Tag](/docs/tag/tag1) or [HTTP API](/docs/apis/api) is the first step to integrating and using Intilery.
+Calling `identify` [HTTP API](/docs/apis/api) is the first step to integrating and using Intilery.  This event creates or updates your customers.
 
 Here’s the payload of a typical `identify` call with most [common fields](/docs/schema/common) removed:
 
@@ -38,7 +36,6 @@ Here’s the payload of a typical `identify` call with most [common fields](/doc
         { "channel": "email", "subscribed": true },
         { "channel": "sms", "subscribed": true },
         { "channel": "whatsapp", "subscribed": false },
-        { "channel": "facebook", "subscribed": false },
         { "channel": "push", "subscribed": false }
       ] 
     }
@@ -63,7 +60,6 @@ analytics.identify("97980cfea0067", {
         { "channel": "email", "subscribed": true },
         { "channel": "sms", "subscribed": true },
         { "channel": "whatsapp", "subscribed": false },
-        { "channel": "facebook", "subscribed": false },
         { "channel": "push", "subscribed": false }
       ] 
     }
@@ -133,16 +129,6 @@ There are certain cases where you don’t actually know who the user is accordin
 In these cases, you should use an Anonymous ID.
 
 The Anonymous ID can be any pseudo-unique identifier. For example, on your servers you can use a session id. If you don’t have any readily available identifier, you can always generate a new random one—we recommend [UUIDs](http://en.wikipedia.org/wiki/Universally_unique_identifier).
-
-**Note:** Our [Website Tag](/docs/tag/tag1) **automatically** use Anonymous IDs under the covers to keep track of users as they navigate around your website or app, so you don’t need to worry about them when using those libraries.
-
-Here’s an example of a Javascript event for an anonymous user:
-
-```javascript
-analytics.identify({
-  subscriptionStatus: 'inactive'
-});
-```
 
 ### User ID
 

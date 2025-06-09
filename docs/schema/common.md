@@ -135,56 +135,6 @@ Context is a dictionary of extra information that provides useful context on the
 | `traits`    | Object   | Dictionary of `traits` of the current user  This is useful in cases where you need to `track` an event, but also associate information from a previous `identify` call. You should fill this object the same way you would fill traits in an [identify call](/docs/schema/identify/#traits). |
 | `userAgent` | String   | User agent of the device making the request                  |
 
-## Context Fields Automatically Collected
-
-Below is a chart that shows you which context variables are populated automatically by our iOS, Android and analytics.js (deprecated) libraries.
-
-Other libraries only collect `context.library`, any other context variables must be sent manually.
-
-| Context Field            | Analytics.js | Analytics-ios | Analytics-android |
-| ------------------------ | ------------ | ------------- | ----------------- |
-| app.name                 |              | √             | √                 |
-| app.version              |              | √             | √                 |
-| app.build                |              | √             | √                 |
-| campaign.name            | √            |               |                   |
-| campaign.source          | √            |               |                   |
-| campaign.medium          | √            |               |                   |
-| campaign.term            | √            |               |                   |
-| campaign.content         | √            |               |                   |
-| device.type              |              |               | √                 |
-| device.id                |              | √             | √                 |
-| device.advertisingId     |              | √             | √                 |
-| device.adTrackingEnabled |              | √             | √                 |
-| device.manufacturer      |              | √             | √                 |
-| device.model             |              | √             | √                 |
-| device.name              |              |               | √                 |
-| library.name             | √            | √             | √                 |
-| library.version          | √            | √             | √                 |
-| ip*                      | √            | √             | √                 |
-| locale                   |              | √             | √                 |
-| location.latitude        |              |               |                   |
-| location.longitude       |              |               |                   |
-| location.speed           |              |               |                   |
-| network.bluetooth        |              |               | √                 |
-| network.carrier          |              | √             | √                 |
-| network.cellular         |              | √             | √                 |
-| network.wifi             |              | √             | √                 |
-| os.name                  |              | √             | √                 |
-| os.version               |              | √             | √                 |
-| page.path                | √            |               |                   |
-| page.referrer            | √            |               |                   |
-| page.search              | √            |               |                   |
-| page.title               | √            |               |                   |
-| page.url                 | √            |               |                   |
-| screen.density           |              |               | √                 |
-| screen.height            |              | √             | √                 |
-| screen.width             |              | √             | √                 |
-| traits                   |              | √             | √                 |
-| userAgent                | √            |               | √                 |
-| timezone                 |              | √             | √                 |
-
-- IP Address is not collected by our libraries, but instead filled in by our servers when it receives a message for **client side events only**.
-- Our Android library collects `screen.density` with [this method](/docs/schema/common/#context-fields-automatically-collected).
 
 ## Timestamps
 

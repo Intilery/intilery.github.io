@@ -86,7 +86,7 @@ GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/prof
 
 **Email**
 ```http request
-GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/email:joe.bloggs@intilery.com/events
+GET https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/email:joe.bloggs@example.com/events
 ```
 
 **Intilery ID**
@@ -214,9 +214,9 @@ x-amzn-RequestId: 1111-2222-3333-4444
 
 | **Name**                  | **Route** https://tracking.intilery.com/track/{clientId}/{accountId}/{BRANDID}/v1/profiles/ … |
 | ------------------------- | ------------------------------------------------------------ |
-| Get a Profile’s Traits    | /email:joe.bloggs@intilery.com/traits                        |
-| Get a Profile’s Metadata  | /email:joe.bloggs@intilery.com/metadata                      |
-| Get a Profile’s Events    | /email:joe.bloggs@intilery.com/events                        |
+| Get a Profile’s Traits    | /email:joe.bloggs@example.com/traits                        |
+| Get a Profile’s Metadata  | /email:joe.bloggs@example.com/metadata                      |
+| Get a Profile’s Events    | /email:joe.bloggs@example.com/events                        |
 
 ### Get a Profile’s Traits
 
@@ -229,7 +229,7 @@ GET /track/v1/profiles/userId:123-rty/traits
 **Examples** Here’s what it looks to search for a profile’s traits by an external id, like by an `email`:
 
 ```http
-GET /track/v1/profiles/email:joe.bloggs@intilery.com/traits
+GET /track/v1/profiles/email:joe.bloggs@example.com/traits
 ```
 
 Or a id:
@@ -261,7 +261,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
 {
     "lastName": "Bloggs",
     "website": "www.intilery.com",
-    "externalId": "joe.bloggs@intilery.com",
+    "externalId": "joe.bloggs@example",
     "organisation": "Intilery",
     "industry": "Other",
     "firstName": "Joe",
@@ -291,7 +291,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
             }
         ]
     },
-    "email": "joe.bloggs@intilery.com"
+    "email": "joe.bloggs@example.com"
 }
 ```
 
@@ -303,7 +303,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
     {
         "lastName": "Bloggs",
         "website": "www.intilery.com",
-        "externalId": "joe.bloggs@intilery.com",
+        "externalId": "joe.bloggs@example.com",
         "organisation": "Intilery",
         "industry": "Other",
         "firstName": "Joe",
@@ -333,7 +333,7 @@ GET /v1/spaces/lg8283283/collections/users/profiles/id:1234-5678-asdf-ghjk/trait
                 }
             ]
         },
-        "email": "joe.bloggs@intilery.com"
+        "email": "joe.bloggs@example.com"
     	}
 		]
 	}
@@ -375,8 +375,8 @@ Get a single profile’s events within a collection using an `external_id`.
     "data": [
         {
             "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "externalId": "joe.bloggs@intilery.com",
-            "email": "joe.bloggs@intilery.com",
+            "externalId": "joe.bloggs@example.com",
+            "email": "joe.bloggs@example.com",
             "eventId": "ec717144-924c-4826-981b-848459c39176",
             "eventTime": "2020-11-19T13:39:17.380Z",
             "receivedTime": "2020-11-19T13:39:17.912Z",
@@ -395,7 +395,7 @@ Get a single profile’s events within a collection using an `external_id`.
                     "ip": "217.42.6.253",
                     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15",
                     "traits": {
-                        "email": "joe.bloggs@intilery.com"
+                        "email": "joe.bloggs@example.com"
                     }
                 },
                 "properties": {
@@ -409,15 +409,15 @@ Get a single profile’s events within a collection using an `external_id`.
         },
         {
             "id": "4c90b9cf-5e4d-4689-ba57-b0f3e7c813fe",
-            "externalId": "joe.bloggs@intilery.com",
-            "email": "joe.bloggs@intilery.com",
+            "externalId": "joe.bloggs@example.com",
+            "email": "joe.bloggs@example.com",
             "eventId": "4b7c99d4-0714-41e0-b285-1ef300634984",
             "clientId": "intilery",
             "source": "SEGMENT_API",
             "rawData": {
                 "context": {
                     "traits": {
-                        "email": "joe.bloggs@intilery.com"
+                        "email": "joe.bloggs@example.com"
                     },
                     "ip": "217.42.6.253",
                     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15"
@@ -497,7 +497,7 @@ GET /track/v1/profiles/userId:123-rty/meta
     "lastName": "Bloggs",
     "website": "www.intilery.com",
     "_subscriptionId": "aW50aWxlcnk6bWFya2V0aW5nOjg3MzA1NWVmLTdmYmYtNDYyNS1iMWNkLTEwYjRlNDc5YjIwZA==",
-    "externalId": "joe.bloggs@intilery.com",
+    "externalId": "joe.bloggs@example.com",
     "organisation": "Intilery",
     "industry": "Other",
     "firstName": "Joe",
@@ -513,7 +513,7 @@ GET /track/v1/profiles/userId:123-rty/meta
             "receivedTime": "2020-10-20T13:49:43.393Z",
             "context": {
                 "traits": {
-                    "email": "joe.bloggs@intilery.com"
+                    "email": "joe.bloggs@example.com"
                 }
             },
             "sendType": "email",
@@ -536,7 +536,7 @@ GET /track/v1/profiles/userId:123-rty/meta
             "receivedTime": "2020-11-09T10:10:34.653Z",
             "context": {
                 "traits": {
-                    "email": "joe.bloggs@intilery.com"
+                    "email": "joe.bloggs@example.com"
                 }
             },
             "sendType": "email",
@@ -558,7 +558,7 @@ GET /track/v1/profiles/userId:123-rty/meta
                 "ip": "217.42.6.253",
                 "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 ",
                 "traits": {
-                    "email": "joe.bloggs@intilery.com"
+                    "email": "joe.bloggs@example.com"
                 }
             },
             "sendType": "email",
@@ -604,7 +604,7 @@ GET /track/v1/profiles/userId:123-rty/meta
         "audience_board"
     ],
     "lastActivityTime": "2020-11-19T13:39:17.380Z",
-    "email": "joe.bloggs@intilery.com"
+    "email": "joe.bloggs@example.com"
 }
 ```
 

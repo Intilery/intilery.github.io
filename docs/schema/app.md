@@ -34,8 +34,6 @@ The Intilery Native Mobile Spec includes the following semantic events:
 
 We recommend using the above event names if you’re going to be integrating the events yourself. This will ensure that they can be mapped effectively in the CDP and Customer Engagement Platform
 
-Additionally, though they’re not formally part of the Native Mobile Schema, we also collect `Order Completed` from our ecommerce spec automatically upon in-app purchases on iOS and can collect screen views automatically in iOS and Android.
-
 ## Lifecycle Events
 
 Mobile applications live within a fairly bounded lifecycle. In order to understand and communicate effectively with your users, it’s crucial to instrument the core flows associated with installing and opening your app. The following events, many of which we can capture automatically in the latest versions of our SDKs (whenthey become available), allow you to get a picture of top-line metrics like DAUs, MAUs, Screen Views per session, etc. Automatic tracking of lifecycle events is completely optional.
@@ -192,7 +190,7 @@ As the walls between apps become increasingly lowered, capturing information abo
 
 ### Push Notification Received
 
-This event can be sent when a push notification is received in the app. It can be automatically enabled on [iOS SDK](/docs/app/ios/)
+This event can be sent when a push notification is received in the app.
 
 ```json
 {
@@ -219,7 +217,7 @@ This event can be sent when a push notification is received in the app. It can b
 
 ### Push Notification Tapped
 
-This event can be sent when a user taps on a push notification associated with your app. It can be automatically enabled on [iOS SDK](/docs/app/ios/)
+This event can be sent when a user taps on a push notification associated with your app.
 
 ```json
 {
@@ -280,8 +278,6 @@ This event fires when a push notification from a provider bounces. If your push 
 When your application is opened using a referring link, Intilery or your packaged deep link partner can fire this event on your behalf.
 
 This event is fired *in addition* to the associated `Application Opened` event.
-
-Our [iOS SDK](/docs/app/ios/) SDK can collect this event automatically if configured to do so.
 
 ```json
 {

@@ -10,10 +10,6 @@ The Intilery HTTP Tracking API lets you record analytics data from
 any website or application. The requests hit our servers, and we action
 this in the Intilery CDP and Customer Engagement Platform
 
-Intilery has native libraries for integration for mobile devices running [iOS](/docs/app/ios) and [Android](/docs/app/android) that are all 
-built for high-performance. But sometimes you may want to send to the 
-HTTP API directly — that’s what this reference is for.
-
 ## Endpoint
 
 ```http request

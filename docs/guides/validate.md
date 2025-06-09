@@ -103,7 +103,7 @@ There are no options to validate booleans, you must pass in true or false (no qu
 
 ![arrays](/img/arrays.png)
 
-***Note:*** It is not currently possible to apply validation to objects within an array, Intilery will recognise the properties of objects within an array and make them available in [audiences](/docs/customers/audiences) and [computed traits](/docs/customers/computed-traits)
+***Note:*** It is not currently possible to apply validation to objects within an array, Intilery will recognise the properties of objects within an array and make them available in [audiences](/docs/customers/audiences).
 
 ## Schema
 

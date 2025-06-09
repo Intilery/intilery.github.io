@@ -75,7 +75,7 @@ If your organization sells products online, the E-commerce Spec covers the custo
 
 #### Mobile Spec
 
-The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track, and automatically collects many of these events when you use the [Intilery Android and iOS SDKs] (coming soon). Read more about [the Native Mobile Spec](/docs/schema/app)
+The native Mobile Spec is a common blueprint for the mobile user lifecycle. The Spec outlines the most important events for mobile apps to track.
 
 ## Create naming conventions
 
@@ -103,7 +103,7 @@ The Identify call updates all records of the user with a set of traits, and so i
 
 ```json
 {
-  "userId": "myUserId",
+  "userId": "johndoe1",
   "event": "identify",
   "traits": {
     "email": "john.doe@example.com",
@@ -161,7 +161,7 @@ Events should be generic and high-level, but properties should be specific and d
 
 ```json
 {
-  "userId": "myUserId",
+  "userId": "johndoe1",
   "event": "workspace created",
   "properties": {
     "account_tier": "business"
@@ -177,10 +177,10 @@ Here is Intilery’s `Lead Captured` Track call:
 
 ```json
 {
-  "userId": "myUserId",
+  "userId": "johndoe1",
   "event": "lead captured",
   "properties": {
-    "email": "email",
+    "email": "john.doe@example.com",
     "location": "header navbar",
     "url": "https://intilery.com"
   }

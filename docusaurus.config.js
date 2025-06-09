@@ -71,10 +71,6 @@ module.exports = {
               to: 'docs/schema/contents',
             },
             {
-              label: 'Website Integration',
-              to: 'docs/tag/tag1',
-            },
-            {
               label: 'Mobile App Integration',
               to: 'docs/app/main',
             },

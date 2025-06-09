@@ -69,14 +69,17 @@ Consider using Identify and traits when:
 
 ## How to Call Identify
 
-```javascript
-analytics.identify("12345abcde", {
-  "email": "michael.phillips@Intilery.com",
-  "name": "Michael Phillips",
-  "city": "New York",
-  "state": "NY",
-  "internal": True
-});
+```json
+{
+    "userId": "johndoe",
+    "event": "identify",
+    "traits": {
+        "email": "john.doe@example.com",
+        "name": "John Doe",
+        "state": "NY",
+        "internal": true
+    }
+}
 ```
 
 ## Using analytics.reset()
@@ -147,17 +150,17 @@ Your track calls should include both events and properties. **Events are the act
 Properties are powerful. They enable you to capture as much context about the event as you’d like, and then cross-tabulate or filter your downstream tools. For example, let’s say an eLearning website is tracking whenever a user bookmarks an educational article on a page. Here’s what a robust analytics.js Track call could look like:
 
 ```javascript
-analytics.track('Article Bookmarked', {
-  "title": 'How to Create a Tracking Plan',
-  "course": 'Intro to Data Strategy',
-  "author": 'Dr. Anna Lytics',
-  "publish_year": '2019',
-  "publish_month": '03',
-  "length": 'Medium - 1000-2000 words',
-  "assets": {'Infographics','Interactive Charts'},
-  "topics": {'Data Planning','Intilery','Data Flow'},
-  "button_location": 'Subheader - 3rd Column'
-});
+{
+    "userId": "johndoe",
+    "event": "article bookmarked",
+    "properties": {
+        "title": "How to create a tracking plan",
+        "course": "Introduction to data strategry",
+        "author": "Dr Ana Lytics",
+        "publish_year": 2019,
+        "length": "Medium - 1000-2000 words"
+    }
+}
 ```
 
 With this track call, we can analyze which authors had the most popular articles, which months and years led to the greatest volume of bookmarking overall, which button locations drive the most bookmark clicks, or which users gravitate towards infographics related to Data Planning.

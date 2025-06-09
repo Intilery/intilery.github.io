@@ -46,22 +46,8 @@ module.exports = {
     app: {
         'App Integration': [
             'app/main',
-            'app/api',
             'app/push',
-        ],
-    	'iOS Native SDK': [
-    		'app/ios',
-    		'app/ios-quickstart',
-    		'app/ios14',
-    		'app/ios-trouble',
-    		'app/ios-faq',
-    	],
-    	'Android Native SDK': [
-    		'app/android',
-    		'app/android-quickstart',
-    		'app/android-trouble',
-    		'app/android-faq',
-    	]
+        ]
     },
     apis: {
         'Getting Started': [
@@ -74,7 +60,6 @@ module.exports = {
     customers: {
     	'Customers Overview': [
     		'customers/overview',
-    		'customers/computed-traits',
     		'customers/sql-traits',
     		'customers/audiences',
     	],

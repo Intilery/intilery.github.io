@@ -24,9 +24,9 @@ Intilery's libraries generate and send messages to our tracking API in JSON form
 
 ### Intilery Messages
 
-When you implement Intilery, you add our code to your website, app, or server, which generates messages based on specific triggers you define. At its very simplest, this code can be a snippet that you copy and paste into the HTML of a website to track page views. It can also be as complex as Intilery calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example “ticket reservation expired” or “cart abandoned after 2 hours”).
+When you implement Intilery, you add your code to your website, app, or server, which generates messages based on specific triggers you define. At its very simplest, this code can be a snippet that you copy and paste into the HTML of a website to track page views. It can also be as complex as Intilery calls embedded in a React mobile app to send messages when the app is opened or closed, when the user performs different actions, or when time based conditions are met (for example “ticket reservation expired” or “cart abandoned after 2 hours”).
 
-Messages can be sent using the [Website Tag](/docs/tag/tag1) or [REST API](/docs/apis/api)
+Messages can be sent using the [REST API](/docs/apis/api).
 
 ### Anatomy of an Intilery message
 
@@ -36,7 +36,7 @@ The common fields include information specific to how the call was generated, li
 
 ## Where you can track
 
-Intilery supports several ways to implement tracking. The two most common are to use *device-based* or *server-based* libraries. You can use Intilery device-based libraries, such as JavaScript, iOS, and Android (iOS and Android comming soon), to make calls on users’ browsers or mobile devices. You can also track data server side by calling the Intilery REST API.
+Intilery supports several ways to implement tracking. The two most common are to use *device-based* or *server-based* libraries.
 
 
 

@@ -13,31 +13,16 @@ needed so you can build audiences and target customers with the right campaigns.
 
 ## Integrate Tracking with your App
 
-We provide native libraries that wrap the Intilery API endpoints with some easy to 
-use track, identify and screen view calls. The libraries are all open source. The
-SDKs queue API calls rather than making a network request for each event
+We suggest you integrate with our server-side API and queue requests or use the batch endpoints rather making a network request for each event
 tracked. This helps improve the user’s battery life over a more chatty protocol.
 
-Batches are sent either:
+Send batches either:
 
-- when there are 20 or more events in the queue
+- when there are 20 or more events in your queue
 - on a scheduled timer, every 30 seconds
 - when the app goes to the background
 
-To limit memory and disk usage, Intilery only queues up to 1000 events.
-When the app is terminated, Intilery saves the queue to disk,
-and loads that data again at app launch so there is no data loss.
-
-  * [iOS Native SDK](ios)
-  * [Android Native SDK](android)
-
-If you develop your app using [flutter](https://flutter.dev),
-[react-native](https://reactnative.dev/), or another cross-platform development
-kit you can integrate using the native libraries or build your own 
-connection to the [API direct](./api).
 
 ## Integrate Push Notifications with your App
 
-To send [push notifications](./push) to your app, we use
-[Google Firebase](https://firebase.google.com/) 
-as the messaging SDKs.
+To send [push notifications](./push) to your app, we use [Google Firebase](https://firebase.google.com/) as the messaging SDKs.

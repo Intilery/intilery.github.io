@@ -128,12 +128,6 @@ A customer you cannot identify yet. Also known as a [visitor](#visitor).
 
 A set of customers based on static (an upload) or dynamic (a query) rules.
 
-### Computed Traits
-
-Traits to apply to customers based on aggregation or calculations against events and
-properties that track customer behaviour for reuse in multiple [audience](#audience) 
-definitions.
-
 ### Customer
 
 A single identifiable customer record.

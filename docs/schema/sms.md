@@ -25,6 +25,7 @@ deliver the message, and based on their feedback of delivery we will raise an
 The email category has the following semantic events:
 
 - [SMS Sent](#sms-sent)
+- SMS Recipient Invalid
 - [SMS Not Sent](#sms-not-sent)
 - [SMS Delivered](#sms-delivered)
 

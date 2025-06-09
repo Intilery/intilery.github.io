@@ -19,7 +19,8 @@ When an email is [delivered](#email-delivered), a recipient can take one or many
 The email category has the following semantic events:
 
 - [Email Sent](#email-sent)
-  [Email Not Sent](#email-not-sent)
+- [Email Not Sent](#email-not-sent)
+- Email Recipient Invalid
 - [Email Bounced](#email-bounced)
 - [Email Delivered](#email-delivered)
 - [Email Link Clicked](#email-link-clicked)
@@ -62,7 +63,7 @@ This event supports the following semantic context properties:
   "event": "Email Sent",
   "context": {
     "traits": {
-      "email": "pgibbons@example.com"
+      "email": "john.doe@example.com"
     }
   },
   "properties": {
@@ -128,7 +129,7 @@ This event supports the following semantic context properties:
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@example.com"
+      "email": "john.doe@example.com"
     }
   },
   "properties": {
@@ -175,7 +176,7 @@ This event supports the following semantic context properties:
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@example.com"
+      "email": "john.doe@example.com"
     }
   },
   "properties": {
@@ -326,7 +327,7 @@ This event supports the following semantic context properties:
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@example.com"
+      "email": "john.doe@example.com"
     }
   },
   "properties": {
@@ -377,7 +378,7 @@ This event supports the following semantic context properties:
     "ip": "67.207.109.102",
     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36",
     "traits": {
-      "email": "pgibbons@example.com"
+      "email": "john.doe@example.com"
     }
   },
   "properties": {

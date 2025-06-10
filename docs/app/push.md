@@ -60,19 +60,18 @@ A `Register Push` event has these properties:
   * A `deviceType` of `iOS` or `Android` or `Web`
 
 If the user has signed in or registered, the `userId` will be your unique customer
-identifier. If they haven't, but have push enabled, then use the `deviceId`.
+identifier.
 
 ```json
 {
-   "userId": "<deviceId|userId>",
+   "userId": "johndoe",
    "event": "register push",
    "type": "track",
    "properties": {
       "deviceId":"<deviceId>",
       "fcmToken":"<fcmToken>",
       "deviceType":"iOS|Android|Web"
-   },
-   "writeKey": "<writeKey>"
+   }
 }
 ```
 

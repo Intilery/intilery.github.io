@@ -7,9 +7,9 @@
 
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 :root {
-   --ifm-font-family-base: 'Mulish', sans-serif;
+   --ifm-font-family-base: 'Inter', sans-serif;
 
   --ifm-color-primary: hsl(192, 100%, 39%);
   --ifm-color-primary-dark: hsl(192, 100%, 33%);

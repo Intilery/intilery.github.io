@@ -14,7 +14,7 @@ Once your customers have been uploaded, you can then [batch](/docs/apis/api#batc
 
 ### What traits (fields/properties) can I add to my customer?
 
-There are a set of reserved trait names that can be used, these are detailed at [common traits](/docs/schema/identify#traits), traits are set as using the [identify tag event](/docs/tag/reference#identify) or the [identify api event](/docs/apis/api#identify-action) or an identify event from one of our SDKs.
+There are a set of reserved trait names that can be used, these are detailed at [common traits](/docs/schema/identify#traits), traits are set as using the [identify api event](/docs/apis/api#identify-action).
 
 The [common traits](/docs/schema/identify#traits) do not need to be validated.
 

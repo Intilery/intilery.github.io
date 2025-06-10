@@ -22,7 +22,7 @@ Intilery’s Identify method lets you link a user to their actions and record tr
 
 Intilery recommends that you use a unique user identifier that won’t change for your `userId`, for example a database ID from your organization’s internal systems. (See below)
 
-When you make an [Identify call](/docs/schema/identify/) using Analytics.js, Intilery saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you’re using one of the Intilery mobile libraries, the `userId` and and traits are stored in the device’s memory. This makes it possible to append the user’s data to all subsequent [Page calls](/docs/tag/reference#page) or [Track calls](/docs/tag/reference#track) for the user, so you can properly attribute those actions.
+When you make an [Identify call](/docs/schema/identify/) using Analytics.js, Intilery saves the `userId` to the browser cookie, and writes all the user traits in local storage. If you’re using one of the Intilery mobile libraries, the `userId` and and traits are stored in the device’s memory.
 
 If a user returns to your site after the [cookie expires](#id-expiration-and-overwriting), Analytics.js looks for an old ID in the user’s `localStorage`, and if one is found, sets it as the user’s ID again in a new cookie. If the user clears their cookies *and* `localStorage`, all of the IDs are removed. The user gets a completely new `anonymousId` when they next visit the page.
 

@@ -86,7 +86,7 @@ Consider using Identify and traits when:
 
 When a user explicitly signs out of one of your applications, you can call `analytics.reset()` to stop logging further event activity to that user, and create a new `anonymousId` for subsequent activity (until the user logins in again and is subsequently `identify`-ed). **This call is most relevant for client-side Intilery libraries**, as it clears cookies in the user’s browser.
 
-Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out). For more info on this call, [see the Javascript source documentation](/docs/tag/reference#reset--logout)
+Make a `Reset()` call as soon as possible after sign-out occurs, and only after it succeeds (not immediately when the user clicks sign out).
 
 ## Page and Screen
 
@@ -103,9 +103,6 @@ The `Page` and `Screen` calls tell Intilery what web page or mobile screen the u
 | **userAgent**                  | *string*                                            | **os**      | name, version                                                |
 | **campaign**                   | *utm_source, utm_medium, utm_campaign, utm_content* | **screen**  | height, width                                                |
 
-### Page and Screen call properties
-
-You can always [override the auto-collected Page/Screen properties](/docs/tag/reference#default-page-properties) with your own, and set additional custom page or screen properties.
 
 ### Named Page & Screen Calls
 
@@ -126,7 +123,7 @@ If the presentation of user interface components don’t substantially change th
 
 **Note**: When you trigger a Page call manually, make sure the call happens *after* the UI element is successfully displayed, not when it is called. It shouldn’t be called as part of the click event that initiates it.
 
-For more info on Page calls, review [Page schema](/docs/schema/page/) and [Analytics.js docs](/docs/tag/reference#page)
+For more info on Page calls, review [Page schema](/docs/schema/page/).
 
 ### When to call Screen
 

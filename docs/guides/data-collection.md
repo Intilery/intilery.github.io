@@ -98,7 +98,7 @@ To help you get started, we developed a Tracking Plan template in
 
 We highly recommend you start by [defining your business objectives](#define-business-objectives), and have included a template in the **Goals** tab to guide that process.
 
-With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events. Most customers use [default page tracking](/docs/tag/reference#page) and skip over that tab. The identify tab is where you specify which user traits you intend to collect like `first_name`, `last_name`, `email`, etc. Read more about the [identify call below](/docs/tag/reference#identify).
+With your business goals defined, start by defining how you want to track Page/Screen, Identify and Group events.
 
 From there, we recommend you specify Track events in the **Track (Custom)** tab. Note that we pre-created events with varying numbers of grouped properties (1 Prop Event, 2 Prop Event, etc). While more challenging to manage at first, this structure allows you to use the **Minimize Rows** button at the top to organize and view all events.
 
@@ -112,7 +112,7 @@ Here is a sample `.identify()` event...
 
 ```json
 {
-    "userId": "myUserId",
+    "userId": "johndoe",
     "event": "identify",
     "traits": {
         "email": "john.doe@example.com",
@@ -174,13 +174,16 @@ detail on broader events.
 
 As mentioned earlier, events should be generic and high level, whereas properties
 are specific and detailed. For example, at Intilery, `Business Tier Asset Created` 
-is a horrible event name. Instead, we used Asset Created
-` with a `property` of `account_tier` and value of `business` :
+is a horrible event name. Instead, we used Asset Created with a `property` of `account_tier` and value of `business` :
 
 ```javascript
-analytics.track('Workspace Created', {
-  account_tier: 'business'
-})
+{
+    "userId": "johndoe",
+    "event": "workspace created",
+    "traits": {
+        "account_tier": "business"
+    }
+}
 ```
 
 Similar to the traits in the `.identify()` call, the properties provide you a column
@@ -196,7 +199,7 @@ Here is Intilery'’s `Lead Captured` `.track()` call:
 
 ```json
 {
-    "userId": "paultest2",
+    "userId": "johndoe",
     "event": "lead captured",
     "traits": {
         "email": "email",

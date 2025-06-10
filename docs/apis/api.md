@@ -39,7 +39,7 @@ If you have multiple accounts this will be: `accountid.clientid.intilery.com`.
 ### Authentication
 
 Authentication is via a shared secret passed in the `auth-token` header. You can 
-create and manage your authentication tokens from the **API Keys** menu.
+create and manage your authentication tokens from the **API Keys** menu under settings.
 
 ### Headers
 
@@ -63,7 +63,7 @@ curl "https://tracking.intilery.com/track/client/account/BRAND/v1/{action}" -i -
 
 ### Permissions
 
-Your Authentication token will be set with permissions at the Account and Brand level, token’s can be created that have access to all Brands within an Account or a token for each Brand (and account).
+Your Authentication token will be set with permissions at the Account and Brand level, tokens can be created that have access to all Brands within an Account or a token for each account.
 
 ### Limits
 

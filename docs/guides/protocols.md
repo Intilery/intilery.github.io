@@ -29,12 +29,12 @@ you can define your events and corresponding properties in a Tracking Plan.
 This tracking plan becomes a central source of truth for marketing, product,
 engineering, analytics, and business teams.
 
-[3. Enforce data standards with controls](/docs/guides/data-collection)
+[2. Enforce data standards with controls](/docs/guides/data-collection)
 
 To maintain a high degree of quality over time, we offer strict controls to block 
 non-conforming events. Blocked events are displayed in the event stream.
 
-[2. Validate data quality with violations](/docs/guides/validate)
+[3. Validate data quality with violations](/docs/guides/validate)
 
 With your tracking plan living in Intilery, any event or property that does not 
 match the tracking plan will generate a violation. Violations are displayed in the

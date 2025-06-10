@@ -97,14 +97,18 @@ This event supports the following semantic properties:
 Example:
 
 ```javascript
-analytics.track('Products Searched', {
-  query: {
-      "string": "blue rose",
-      "filters": {
-          "category":"flowers"
-      }
-  }
-});
+{
+    "userId": "johndoe",
+    "event": "products searched",
+    "properties": {
+        "query": {
+          "string": "blue rose,
+          "filter": {
+            "category": "flowers"
+          }
+        }
+    }
+}
 ```
 
 ### Product List Viewed

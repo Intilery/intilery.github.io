@@ -191,7 +191,7 @@ marketingPreferences: -
 
 Trait Updates
 
-Traits are designed to store the state of a customer, sending the a value for a trait either by the [Analytics.js identify](/docs/tag/reference#identify) or the [HTTP API identify](/docs/apis/api#identify-action) will result in the value of the trait being updating for the customer.
+Traits are designed to store the state of a customer, sending a value for a trait by the [HTTP API identify](/docs/apis/api#identify-action) will result in the value of the trait being updating for the customer.
 
 Changeable/transient values or multi-value traits should not be set as a single trait.
 
